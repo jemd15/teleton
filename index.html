@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="app/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="app/lib/animate.css/animate.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app/css/horizontal-timeline.css">
+    <link rel="stylesheet" href="app/css/countdown.css">
     <link rel="stylesheet" href="app/css/style.css">
     <title>Ideatón: Ideas Inclusivas</title>
 </head>
@@ -16,13 +18,14 @@
     <!--navbar-->
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
+            <div class="nav-wrapper light-green">
+                <a class="button-collapse" data-activates="slide-out" data-sidenav="left" data-closeonclick="true"><i class="material-icons white-text hide-on-med-and-up">menu</i></a>
+                <a ui-sref="inicio" class="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/inicio">Inicio</a></li>
-                    <li><a href="/ideas">Ideas</a></li>
-                    <li><a href="/noticias">Noticias</a></li>
-                    <li><a href="/sube-tu-idea">Sube tu Idea</a></li>
+                    <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
+                    <li ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
+                    <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
+                    <li ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,11 +36,46 @@
         <li><img id="logo-nav-bar" src="app/images/ideaton-logo-negro.png" alt=""></li>
         <li><a href='#login-modal' modal>Iniciar Sesión</a></li>
         <li><div class="divider"></div></li>
-        <<li><a href="/inicio">Inicio</a></li>
-        <li><a href="/ideas">Ideas</a></li>
-        <li><a href="/noticias">Noticias</a></li>
-        <li><a href="/sube-tu-idea">Sube tu Idea</a></li>
+        <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
+        <li ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
+        <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
+        <li ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
     </ul>
+
+    <!--estructura del modal/login-->
+    <div id="login-modal" class="modal container">
+        <div class="modal-content">
+            <div class="center">
+                <img id="logo-modal" src="app/images/ideaton-logo.png" alt="">
+                <h6>Inicia sesión con tu cuenta.</h6>
+                <button class="btn light-blue darken-4">Facebook</button>
+                <button class="btn light-blue darken-1">Twitter</button>
+                <h6>ó</h6>
+            </div>
+            <form class="col s12 m12 l12">
+                <div class="row">
+                    <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="center"><a class="btn light-green accent-3 modal-close">Ingresar</a></div>
+            </form>
+            <br>
+            <div class="center">
+                <a class="light-green-text text-accent-3 modal-close" href="#/registrar-usuario">Regístrate</a>
+            </div>
+        </div>
+    </div>
+
+    <!--inyeccion de vistas-->
+    <div ui-view></div>
 
     <script src="app/lib/jquery/dist/jquery.js"></script>
     <script src="app/lib/materialize/dist/js/materialize.js"></script>

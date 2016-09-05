@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="app/lib/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="app/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/lib/animate.css/animate.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app/css/style.css">
+    <title>Ideatón: Ideas Inclusivas</title>
+</head>
+<body class="grey lighten-3" ng-app="ideaton">
+
+    <!--navbar-->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Logo</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/inicio">Inicio</a></li>
+                    <li><a href="/ideas">Ideas</a></li>
+                    <li><a href="/noticias">Noticias</a></li>
+                    <li><a href="/sube-tu-idea">Sube tu Idea</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!--menu lateral version movil-->
+    <ul id="slide-out" class="side-nav light-green accent-3">
+        <li><img id="logo-nav-bar" src="app/images/ideaton-logo-negro.png" alt=""></li>
+        <li><a href='#login-modal' modal>Iniciar Sesión</a></li>
+        <li><div class="divider"></div></li>
+        <<li><a href="/inicio">Inicio</a></li>
+        <li><a href="/ideas">Ideas</a></li>
+        <li><a href="/noticias">Noticias</a></li>
+        <li><a href="/sube-tu-idea">Sube tu Idea</a></li>
+    </ul>
+
+    <script src="app/lib/jquery/dist/jquery.js"></script>
+    <script src="app/lib/materialize/dist/js/materialize.js"></script>
+    <script src="app/lib/angular/angular.js"></script>
+    <script src="app/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/lib/angular-materialize/src/angular-materialize.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/script.js"></script>
+    <script src="app/js/countdown.js"></script>
+</body>
+</html>

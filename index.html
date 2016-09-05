@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="app/lib/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" href="app/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="app/lib/animate.css/animate.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="app/css/horizontal-timeline.css">
     <link rel="stylesheet" href="app/css/countdown.css">
     <link rel="stylesheet" href="app/css/style.css">
@@ -17,29 +17,30 @@
 
     <!--navbar-->
     <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper light-green">
-                <a class="button-collapse" data-activates="slide-out" data-sidenav="left" data-closeonclick="true"><i class="material-icons white-text hide-on-med-and-up">menu</i></a>
+        <nav class="transparent">
+            <div class="nav-wrapper">
+                <a class="button-collapse hide-on-large-only" data-activates="slide-out" data-sidenav="left" data-closeonclick="true"><i class="material-icons white-text">menu</i></a>
                 <a ui-sref="inicio" class="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
-                    <li ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
-                    <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
-                    <li ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
+                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
+                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
+                    <li class="color-scroll hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+                    <li class="color-scroll" ><a href='#login-modal' modal>Sube tu Idea</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 
     <!--menu lateral version movil-->
-    <ul id="slide-out" class="side-nav light-green accent-3">
-        <li><img id="logo-nav-bar" src="app/images/ideaton-logo-negro.png" alt=""></li>
-        <li><a href='#login-modal' modal>Iniciar Sesión</a></li>
-        <li><div class="divider"></div></li>
-        <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
-        <li ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
-        <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
-        <li ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+    <ul id="slide-out" class="side-nav light-green">
+        <li class="white-text"><img id="logo-nav-bar" src="app/images/ideaton-logo-negro.png" alt=""></li>
+        <li class="white-text"><a href='#login-modal' modal>Iniciar Sesión</a></li>
+        <li class="white-text"><div class="divider"></div></li>
+        <li class="white-text" ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
+        <li class="white-text" ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
+        <li class="white-text" ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
+        <li class="white-text" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
     </ul>
 
     <!--estructura del modal/login-->
@@ -77,6 +78,34 @@
     <!--inyeccion de vistas-->
     <div ui-view></div>
 
+    <!--footer-->
+    <div id="footer" class="white-text">
+        <footer class="amber lighten-1 z-depth-1">
+            <div class="container center">
+                <div class="row get-in-touch">
+                    <div class="col l12 s12 m12">
+                        <h5 class="" data-unsp-sanitized="clean">Sigue y comenta con #Ideatón en:</h5>
+                        <div class="follow_us redes-sociales">
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-twitter"></i></a>
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-facebook"></i></a>
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-instagram"></i></a>
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-flickr"></i></a>
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-google-plus"></i></a>
+                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright amber darken-1 row">
+                <div class="center">
+                    <a class="white-text">© 2016 Copyright IDEATON. Todos los derechos reservados.</a>
+                    <br>
+                    <a class="white-text">Web App Developers #TeamCesarXUNCOCO</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
     <script src="app/lib/jquery/dist/jquery.js"></script>
     <script src="app/lib/materialize/dist/js/materialize.js"></script>
     <script src="app/lib/angular/angular.js"></script>
@@ -85,5 +114,6 @@
     <script src="app/js/app.js"></script>
     <script src="app/js/script.js"></script>
     <script src="app/js/countdown.js"></script>
+    <script src="app/js/navbar.js"></script>
 </body>
 </html>

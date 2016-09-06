@@ -38,10 +38,6 @@ angular.module('ideaton',
                 url: '/ideas',
                 templateUrl: 'app/views/ideas.html'
             })
-            .state('noticias', {
-                url: '/noticias',
-                templateUrl: 'app/views/noticias.html'
-            })
             .state('sube-tu-idea', {
                 url: '/sube-tu-idea',
                 templateUrl: 'app/views/sube-tu-idea.html'

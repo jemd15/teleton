@@ -1,6 +1,10 @@
-#countdown{
+div#countdown{
+    position: absolute;
     width: 50%;
-    margin: 5% auto;
+    left: 25%;
+    margin: 11% auto;
+    TOP: 0;
+    z-index: 100;
 }
 
 #clock span{

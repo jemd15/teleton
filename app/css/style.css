@@ -4,10 +4,6 @@ header{
 nav{
 
 }
-#vistas{
-    position: relative;
-    top: 0;
-}
 #bases{
     border: 2px solid;
     border-color: #4caf50;
@@ -29,4 +25,7 @@ nav{
 /**********************/
 .nav {
     transition-duration: 50ms;
+}
+.card.ex-large {
+    height: 650px;
 }

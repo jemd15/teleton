@@ -1,87 +1,96 @@
 <div class="container">
-    <br>
-    <h4>Formulario de Registro</h4>
     <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">person_pin</i>
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">Nombre</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">person_pin</i>
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Apellido</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">redeem</i>
-                    <input id="edad" type="text" class="validate">
-                    <label for="edad">Edad</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">phone</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Teléfono</label>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <h5>Ocupación</h5>
-                        <p class="col s12">
-                            <input class="with-gap" name="ocupacion" type="radio" id="universitario"  />
-                            <label for="universitario">Universitario.</label>
-                        </p>
-                        <p class="col s12">
-                            <input class="with-gap" name="ocupacion" type="radio" id="otro" />
-                            <label for="otro">Otro.</label>
-                        </p>
+        <div class="col s6">
+            <h4>Texto Explicativo</h4>
+            <h5>Rellena este formulario para... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aspernatur atque blanditiis consectetur cumque dolores ex fuga fugiat laboriosam necessitatibus nihil, nobis recusandae reprehenderit repudiandae sed, veritatis vero voluptate.</h5>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="card ex-large">
+                    <div class="card-content">
+                        <h4>Formulario de Registro</h4>
+                        <form class="col s12">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">person_pin</i>
+                                <input id="first_name" type="text" class="validate">
+                                <label for="first_name">Nombre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">person_pin</i>
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Apellido</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">redeem</i>
+                                <input id="edad" type="text" class="validate">
+                                <label for="edad">Edad</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Teléfono</label>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <h5>Ocupación</h5>
+                                    <p class="col s12">
+                                        <input class="with-gap" name="ocupacion" type="radio" id="universitario"  />
+                                        <label for="universitario">Universitario.</label>
+                                    </p>
+                                    <p class="col s12">
+                                        <input class="with-gap" name="ocupacion" type="radio" id="otro" />
+                                        <label for="otro">Otro.</label>
+                                    </p>
+                                </div>
+                                <div id="universitarioSelects" class="col s6 hide">
+                                    <div input-field class="col s12">
+                                        <select id="universidades" ng-model="select.value1" material-select watch>
+                                            <option ng-repeat="value in select.choices">{{value}}</option>
+                                        </select>
+                                        <label for="universidades"></label>
+                                    </div>
+                                    <div input-field class="col s12">
+                                        <select id="carreras" ng-model="select.value1" material-select watch>
+                                            <option ng-repeat="value in select.choices">{{value}}</option>
+                                        </select>
+                                        <label for="carreras"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Contraseña</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="password2" type="password" class="validate">
+                                <label for="password">Repetir Contraseña</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" class="validate">
+                                <label for="email" data-error="wrong" data-success="right">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email2" type="email" class="validate">
+                                <label for="email" data-error="wrong" data-success="right">Repetir Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                <label for="filled-in-box">Acepto los <a href="#!">terminos y condiciones</a></label>
+                            </div>
+                            <div class="col s12 center">
+                                <br>
+                                <button id="guardar" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div id="universitarioSelects" class="col s6 hide">
-                        <div input-field class="col s12">
-                            <select id="universidades" ng-model="select.value1" material-select watch>
-                                <option ng-repeat="value in select.choices">{{value}}</option>
-                            </select>
-                            <label for="universidades"></label>
-                        </div>
-                        <div input-field class="col s12">
-                            <select id="carreras" ng-model="select.value1" material-select watch>
-                                <option ng-repeat="value in select.choices">{{value}}</option>
-                            </select>
-                            <label for="carreras"></label>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">vpn_key</i>
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Contraseña</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">vpn_key</i>
-                    <input id="password2" type="password" class="validate">
-                    <label for="password">Repetir Contraseña</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" class="validate">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">email</i>
-                    <input id="email2" type="email" class="validate">
-                    <label for="email" data-error="wrong" data-success="right">Repetir Email</label>
-                </div>
-                <div class="input-field col s6">
-                    <input type="checkbox" class="filled-in" id="filled-in-box" />
-                    <label for="filled-in-box">Acepto los <a href="#!">terminos y condiciones</a></label>
-                </div>
-                <div class="col s12 center">
-                    <br>
-                    <button id="guardar" class="btn waves-effect waves-light" type="submit" name="action">Guardar
-                        <i class="material-icons right">send</i>
-                    </button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>

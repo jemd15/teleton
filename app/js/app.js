@@ -44,7 +44,7 @@ angular.module('ideaton',
             })
             .state('registrar-usuario', {
                 url: '/registrar-usuario',
-                templateUrl: 'app/views/registrate.html'
+                templateUrl: 'app/views/registrarse.html'
             })
             .state('detalle-proyecto',{
                 url: '/detalle-proyecto/:ideaID',

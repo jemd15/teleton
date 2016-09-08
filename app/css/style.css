@@ -12,6 +12,10 @@ nav{
     border: 2px solid;
     border-color: #4caf50;
 }
+
+#guardar{
+    position: center;
+}
 /*footer redes sociales*/
 .redes-sociales{
     font-size: 300%;

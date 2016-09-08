@@ -4,9 +4,13 @@ angular.module('ideaton',
 
 //controladores
     .controller('inicioCtrl', ["$scope", function ($scope) {
-        $scope.select = {
-            value: "Option1",
-            choices: ["mejor votados", "fecha"]
+        $scope.universidades = {
+            value: "universidad 1",
+            choices: ["universidad 1", "universidad 2"]
+        };
+        $scope.carreras = {
+            value: "carrera a",
+            choices: ["carrera a", "carrera b"]
         };
     }])
     .controller('detalleProyectoCtrl', function ($http, $stateParams) {

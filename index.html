@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="app/lib/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" href="app/lib/font-awesome/css/font-awesome.min.css">
@@ -34,14 +33,15 @@
     </div>
 
     <!--menu lateral version movil-->
-    <ul id="slide-out" class="side-nav grey darken-4">
+    <ul id="slide-out" class="side-nav grey darken-4" >
         <li class="white-text"><img id="logo-nav-bar" src="app/images/ideaton-logo-negro.png" alt=""></li>
         <li class="white-text"><a class="white-text" href='#login-modal' modal>Iniciar Sesión</a></li>
         <li class="white-text"><div class="divider"></div></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="inicio">Inicio</a></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="ideas">Ideas</a></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="bases">Bases</a></li>
-        <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+        <li class="white-text hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+        <li class="white-text" ><a href='#login-modal' class="white-text" modal>Sube tu Idea</a></li>
     </ul>
 
     <!--estructura del modal/login-->
@@ -77,35 +77,34 @@
     </div>
 
     <!--inyeccion de vistas-->
-    <div id="vistas" ui-view></div>
+    <div ui-view></div>
 
     <!--footer-->
-    <div id="footer" class="white-text">
-        <footer class="amber lighten-1 z-depth-1">
-            <div class="container center">
-                <div class="row get-in-touch">
-                    <div class="col l12 s12 m12">
-                        <h5 class="" data-unsp-sanitized="clean">Sigue y comenta con #Ideatón en:</h5>
-                        <div class="follow_us redes-sociales">
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-twitter"></i></a>
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-facebook"></i></a>
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-instagram"></i></a>
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-flickr"></i></a>
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-google-plus"></i></a>
-                            <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-youtube"></i></a>
-                        </div>
+    <footer class="page-footer white-text amber lighten-1 z-depth-1">
+        <div class="container center">
+            <div class="row get-in-touch">
+                <div class="col l12 s12 m12">
+                    <h5 class="" data-unsp-sanitized="clean">Sigue y comenta con #Ideatón en:</h5>
+                    <div class="follow_us redes-sociales">
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-twitter"></i></a>
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-facebook"></i></a>
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-instagram"></i></a>
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-flickr"></i></a>
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-google-plus"></i></a>
+                        <a href="#!" target="_blank" data-unsp-sanitized="clean"><i class="fa fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright amber darken-1 row">
-                <div class="center">
-                    <a class="white-text">© 2016 Copyright IDEATON. Todos los derechos reservados.</a>
-                    <br>
-                    <a class="white-text">Web App Developers #TeamUSS</a>
+        </div>
+        <div class="footer-copyright amber darken-1">
+            <div class="container">
+                <div class="row">
+                    <a class="col s12 m6 white-text">© 2016 Copyright IDEATON. Todos los derechos reservados.</a>
+                    <a class="col s12 m6 right white-text">Web App Developers #TeamUSS</a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script src="app/lib/jquery/dist/jquery.js"></script>
     <script src="app/lib/materialize/dist/js/materialize.js"></script>

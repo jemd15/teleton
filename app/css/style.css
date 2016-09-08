@@ -14,7 +14,7 @@ nav{
 }
 /*footer redes sociales*/
 .redes-sociales{
-    font-size: 300%;
+    font-size: 200%;
 }
 .follow_us i{
     color: white;
@@ -28,4 +28,7 @@ nav{
 }
 .card.ex-large {
     height: 650px;
+}
+#texto-explicativo-registrarse{
+    margin-top: 20%;
 }

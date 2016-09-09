@@ -1,14 +1,7 @@
-header{
-
-}
-nav{
-
-}
-#bases{
+.bases{
     border: 2px solid;
     border-color: #4caf50;
 }
-
 #guardar{
     position: center;
 }
@@ -23,12 +16,18 @@ nav{
     color: #ffb300;
 }
 /**********************/
-.nav {
-    transition-duration: 50ms;
+.brand-logo img{
+    width: 150px;
+    margin: 1px;
 }
-.card.ex-large {
-    height: 650px;
+.modal{
+    width: 500px;
 }
-#texto-explicativo-registrarse{
-    margin-top: 20%;
+#logo-modal{
+    width: 50%;
+    margin: 1px;
+}
+#logo-nav-bar{
+    width: 90%;
+    margin: 10px;
 }

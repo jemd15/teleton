@@ -29,3 +29,36 @@ nav{
 .card.ex-large {
     height: 650px;
 }
+/**********************/
+.create-list-login-panel {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px;
+}
+.center, .center-align {
+    text-align: center;
+}
+
+.create-list-connect-btn a {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 0.8rem 0rem;
+    height: auto;
+}
+.button-google {
+    color: white;
+    background: #dd4b39;
+}
+
+.button-twitter {
+    color: white;
+    background: #00bcf2;
+}
+
+.button-facebook {
+    color: white;
+    background: #3b5998;
+}

@@ -20,8 +20,18 @@
     width: 150px;
     margin: 1px;
 }
+/*ventana modal*/
 .modal{
-    width: 500px;
+    width: 70%;
+    max-width: 500px;
+}
+#logo-modal{
+    width: 30%;
+    margin: 1px;
+}
+#logo-nav-bar{
+    width: 90%;
+    margin: 10px;
 }
 /**********************/
 .create-list-login-panel {
@@ -33,7 +43,6 @@
 .center, .center-align {
     text-align: center;
 }
-
 .create-list-connect-btn a {
     width: 100%;
     max-width: 300px;
@@ -46,22 +55,11 @@
     color: white;
     background: #dd4b39;
 }
-
 .button-twitter {
     color: white;
     background: #00bcf2;
 }
-
 .button-facebook {
     color: white;
     background: #3b5998;
-}
-
-#logo-modal{
-    width: 50%;
-    margin: 1px;
-}
-#logo-nav-bar{
-    width: 90%;
-    margin: 10px;
 }

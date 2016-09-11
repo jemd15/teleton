@@ -5,6 +5,10 @@
 #guardar{
     position: center;
 }
+iframe{
+    width: 100%;
+    height: 650px;
+}
 /*footer redes sociales*/
 .redes-sociales{
     font-size: 200%;
@@ -30,7 +34,7 @@
     margin: 1px;
 }
 #logo-nav-bar{
-    width: 90%;
+    width: 40%;
     margin: 10px;
 }
 /**********************/

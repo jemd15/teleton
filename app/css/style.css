@@ -2,12 +2,23 @@
     border: 2px solid;
     border-color: #4caf50;
 }
+ul#categorias{
+    margin-top: 64px;
+    width: 130px !important;
+}
+.dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 #guardar{
     position: center;
 }
 iframe{
-    width: 100%;
+    width: 98.4%;
     height: 650px;
+    margin-left: 10px;
+}
+.titulo{
+    margin: 10px;
 }
 /*footer redes sociales*/
 .redes-sociales{

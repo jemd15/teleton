@@ -281,8 +281,7 @@
     $.fn.autocomplete = function (options) {
       // Defaults
       var defaults = {
-        data: {}
-      };
+        data: { };
 
       options = $.extend(defaults, options);
 

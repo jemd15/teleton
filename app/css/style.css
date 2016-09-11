@@ -84,10 +84,8 @@ iframe{
     color: white;
     background: #3b5998;
 }
-
 .imagen-registro{
     width: 100%;
-    
 }
 
 /*************************/
@@ -95,5 +93,9 @@ iframe{
 
 .imagen-logo{
     width: 100%;
+}
+footer{
+    background-image: url('../images/pattern-blanco.svg');
+    background-size: 10%;
 }
  

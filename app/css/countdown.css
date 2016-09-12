@@ -2,11 +2,10 @@ div#countdown{
     position: absolute;
     width: 50%;
     left: 25%;
-    margin: 11% auto;
-    TOP: 0;
+    margin: 17% auto;
+    top: 0;
     z-index: 100;
 }
-
 #clock span{
     float: left;
     text-align: center;
@@ -18,7 +17,6 @@ div#countdown{
     border-radius: 20px;
     box-sizing: border-box;
 }
-
 #clock span:nth-child(1){
     background: #fa5559;
 }
@@ -31,13 +29,11 @@ div#countdown{
 #clock span:nth-child(4){
     background: #2dcb74;
 }
-/*обтекание элемента с двух сторон*/
 #clock:after{
     content: "";
     display: block;
     clear: both; 
 }
-
 #units span{
     float: left;
     width: 25%;

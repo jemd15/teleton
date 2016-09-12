@@ -55,7 +55,7 @@ angular.module('ideaton',
                 templateUrl: 'app/views/registro.html'
             })
             .state('detalle-proyecto',{
-                url: '/detalle-proyecto/:ideaID',
+                url: '/detalle-proyecto',
                 templateUrl: 'app/views/detalle-proyecto.html',
                 controller: 'detalleProyectoCtrl'
             });

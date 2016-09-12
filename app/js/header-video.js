@@ -1,8 +1,20 @@
 $( document ).ready(function() {
-    $(".button-collapse").sideNav();
-    $("#texto-categorias").css('height', $("#card-categoria").height());
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .poster img');
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
+
 });
 
+function scaleVideoContainer() {
 
     var height = $(window).height() + 5;
     var unitHeight = parseInt(height) + 'px';
@@ -50,5 +62,3 @@ function scaleBannerVideoSize(element){
 $(window).resize(function () {
     $('#video').reload()
 });
-
-  

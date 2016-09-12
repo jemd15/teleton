@@ -1,20 +1,28 @@
-header{
-
-}
-nav{
-
-}
-#bases{
+.bases{
     border: 2px solid;
     border-color: #4caf50;
 }
-
+ul#categorias{
+    margin-top: 64px;
+    width: 130px !important;
+}
+.dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 #guardar{
     position: center;
 }
+iframe{
+    width: 98.4%;
+    height: 650px;
+    margin-left: 10px;
+}
+.titulo{
+    margin: 10px;
+}
 /*footer redes sociales*/
 .redes-sociales{
-    font-size: 300%;
+    font-size: 200%;
 }
 .follow_us i{
     color: white;
@@ -23,11 +31,14 @@ nav{
     color: #ffb300;
 }
 /**********************/
-.nav {
-    transition-duration: 50ms;
+.brand-logo img{
+    width: 150px;
+    margin: 1px;
 }
-.card.ex-large {
-    height: 650px;
+/*ventana modal*/
+.modal{
+    width: 70%;
+    max-width: 500px;
 }
 .logo-modal {
     width: 100%;
@@ -53,7 +64,6 @@ nav{
 .center, .center-align {
     text-align: center;
 }
-
 .create-list-connect-btn a {
     width: 100%;
     max-width: 300px;
@@ -66,20 +76,16 @@ nav{
     color: white;
     background: #dd4b39;
 }
-
 .button-twitter {
     color: white;
     background: #00bcf2;
 }
-
 .button-facebook {
     color: white;
     background: #3b5998;
 }
-
 .imagen-registro{
     width: 100%;
-    
 }
 
 /*************************/
@@ -87,5 +93,9 @@ nav{
 
 .imagen-logo{
     width: 100%;
+}
+footer{
+    background-image: url('../images/pattern-blanco.svg');
+    background-size: 10%;
 }
  

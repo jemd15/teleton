@@ -63,6 +63,3 @@ angular.module('ideaton',
         $urlRouterProvider.otherwise('/inicio')
     });
 
-  $(document).ready(function(){
-      $('.carousel').carousel();
-    });

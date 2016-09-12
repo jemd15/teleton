@@ -3,7 +3,7 @@
     border-color: #4caf50;
 }
 ul#categorias{
-    margin-top: 64px;
+    margin-top: 80px;
     width: 130px !important;
 }
 .dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
@@ -19,6 +19,12 @@ iframe{
 }
 .titulo{
     margin: 10px;
+}
+nav{
+    height: 80px;
+}
+nav ul a {
+    padding: 8px 18px;
 }
 /*footer redes sociales*/
 .redes-sociales{

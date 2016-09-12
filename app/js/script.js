@@ -3,12 +3,10 @@ $( document ).ready(function() {
     $("#texto-categorias").css('height', $("#card-categoria").height());
 });
 
-
     var height = $(window).height() + 5;
     var unitHeight = parseInt(height) + 'px';
     $('.homepage-hero-module').css('height',unitHeight);
 
-}
 
 function initBannerVideoSize(element){
 

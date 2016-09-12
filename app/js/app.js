@@ -63,3 +63,10 @@ angular.module('ideaton',
         $urlRouterProvider.otherwise('/inicio')
     });
 
+
+var app = angular.module('App', ['circle.countdown']);
+app.controller('AppController', ['$scope', function($scope){
+    $scope.finished = function(){
+        // Finish callback
+    };
+}])

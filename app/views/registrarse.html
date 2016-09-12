@@ -15,15 +15,10 @@
                         <p class="flow-text">Selecciona una cuenta para iniciar sesión y registrarte.</p>
                         <br>
                         <br>
-                        <div>                          
-                            <a href="#" class="button-google btn" ><i class="fa fa-google-plus" aria-hidden="true"></i>  Google</a>
+                        <div class="imagen-registro">                       
+                            <img src="app/images/idea.jpg" width="400px" height="400px">
                         </div>
-                        <div>
-                            <a href="#" class="button-twitter btn" ><i class="fa fa-twitter" aria-hidden="true"></i>  Twitter</a>
-                        </div>
-                        <div>
-                            <a href="#" class="button-facebook btn" ><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</a>
-                        </div>
+
                         <div>
                             Tienes una cuenta creada? <a href="#">Entra aquí.</a>
                         </div>
@@ -41,30 +36,55 @@
                                 <p class="flow-text">Registrate con tus Datos.</p>
                             </div>
                             <div class="row">
-                                <div class="col s12 input-field">
+                                <div class="col s6 input-field">
                                     <input id="new-your-name" name="new-your-name" type="text">
                                     <label for="new-your-name">Nombre</label>
                                 </div>
-                                <div class="col s12 input-field">
+                                <div class="col s6 input-field">
                                     <input id="new-your-name" name="new-your-name" type="text">
                                     <label for="new-your-name">Apellido</label>
                                 </div>
-                                <div class="col s5 input-field">
-                                    <input id="new-your-name" name="new-your-name" type="text">
-                                    <label for="new-your-name">Edad</label>
+                                <div class="col s6 input-field">
+                                    <label for="inputCreated">Fecha de Nacimiento</label>
+                                    <input input-date
+                                            type="text"
+                                            name="created"
+                                            id="inputCreated"
+                                            ng-model="currentTime"
+                                            container=""
+                                            format="dd/mm/yyyy"
+                                            months-full="{{ month }}"
+                                            months-short="{{ monthShort }}"
+                                            weekdays-full="{{ weekdaysFull }}"
+                                            weekdays-short="{{ weekdaysShort }}"
+                                            weekdays-letter="{{ weekdaysLetter }}"
+                                            disable="disable"
+                                            min="{{ 1977 }}"
+                                            max="{{ 2017 }}"
+                                            today="today"
+                                            first-day="1"
+                                            clear="clear"
+                                            close="close"
+                                            select-years="40"
+                                            on-start="onStart()"
+                                            on-render="onRender()"
+                                            on-open="onOpen()"
+                                            on-close="onClose()"
+                                            on-set="onSet()"
+                                            on-stop="onStop()" />
                                 </div>
-                                <div class="col s7 input-field">
+                                <div class="col s6 input-field">
                                     <input id="new-your-name" name="new-your-name" type="text">
                                     <label for="new-your-name">Telefono</label>
+                                </div>
+                                <div class="col s16 input-field">
+                                    <input type="text" id="autocomplete-input" class="autocomplete">
+                                    <label for="autocomplete-input">Comuna</label>
                                 </div>
                                 <div class="col s12 input-field">
                                     <input id="new-your-email" name="new-your-email" type="email">
                                     <label for="new-your-email">Email</label>
                                 </div>                      
-                                <div class="col s12 input-field">
-                                    <input id="new-your-email" name="new-your-email" type="email">
-                                    <label for="new-your-email">Verifica tu Email</label>
-                                </div>
                                 <div class="col s6 input-field">
                                     <input id="new-your-password" name="new-your-password" type="password">
                                     <label for="new-your-password">Contraseña</label>
@@ -73,11 +93,23 @@
                                     <input id="new-your-password" name="new-your-password" type="password">
                                     <label for="new-your-password">Repita Contraseña</label>
                                 </div>
-                                <div class="col s12">                                   
-                                        <input class="with-gap" name="ocupacion" type="radio" id="universitario"  />
-                                        <label for="universitario">Universitario.</label>
+                                <div class="col s6">
+                                     <p>
+                                      <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                      <label for="filled-in-box">¿Eres Universitario?</label>
+                                    </p>
+                                    
                                 </div>
-                            </div>
+                                <div class="col s12 input-field">
+                                    <input id="new-your-name" name="new-your-name" type="text" disabled select>
+                                    <label for="new-your-name">Universidad o Instituto Profesional</label>
+                                </div>
+                                <div class="col s12 input-field">
+                                    <input id="new-your-email" name="new-your-email" type="email" disabled select>
+                                    <label for="new-your-email">Carrera</label>
+                                </div>
+                              </div>
+                              </div>
                             <div class="row center">
                                 <button class="btn" id="create-account-and-list">Guardar</button>
                                 
@@ -100,3 +132,5 @@
         <div class="divider"></div>
         <br>
         <br>
+
+

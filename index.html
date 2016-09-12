@@ -26,7 +26,8 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="color-scroll" ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
                     <li class="color-scroll" ui-sref-active="active"><a ui-sref="ideas">Ideas</a></li>
-                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="registrar-usuario">Bases</a></li>
+                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="registro">Bases</a></li>
+                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="registrarse">Registro</a></li>
                     <li class="color-scroll hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
                     <li class="color-scroll" ><a href='#login-modal' modal>Sube tu Idea</a></li>
                 </ul>
@@ -47,32 +48,26 @@
 
     <!--estructura del modal/login-->
     <div id="login-modal" class="modal container">
-        <div class="modal-content">
-            <div class="center">
-                <img id="logo-modal" src="app/images/ideaton-logo.png" alt="">
-                <h6>Inicia sesión con tu cuenta.</h6>
-                <button class="btn light-blue darken-4">Facebook</button>
-                <button class="btn light-blue darken-1">Twitter</button>
-                <h6>ó</h6>
-            </div>
-            <form class="col s12 m12 l12">
-                <div class="row">
-                    <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+        <div class="modal-content" class="modal-responsive">
+           <div class="row">
+                <div class="section center">
+                    <img class="logo-modal" src="app/images/ideaton.png" alt="">
+                  </div>
+               
+                <div class="create-list-login-registro center create-list-connect-btn">
+                        <h3 class="thin">Sube tu <strong class="bold">Idea</strong></h3>
+                        <p class="flow-text">Selecciona una cuenta y Registrate para subir tu Idea.</p>
+                        
+                        <div>                          
+                            <a href="#" class="button-google btn" ><i class="fa fa-google-plus" aria-hidden="true"></i>  Google</a>
+                    
+                     
+                            <a href="#" class="button-facebook btn" ><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</a>
+                        </div>
+                        <div>
+                            No tienes una cuenta creada? <a href="#">Registrate aquí.</a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="center"><a class="btn green accent-4 modal-close">Ingresar</a></div>
-            </form>
-            <br>
-            <div class="center">
-                <a class="green-text text-accent-4 modal-close" href="#/registrar-usuario">Regístrate</a>
             </div>
         </div>
     </div>
@@ -108,6 +103,7 @@
         </footer>
     </div>
 
+    
     <script src="app/lib/jquery/dist/jquery.js"></script>
     <script src="app/lib/materialize/dist/js/materialize.js"></script>
     <script src="app/lib/angular/angular.js"></script>
@@ -117,5 +113,6 @@
     <script src="app/js/script.js"></script>
     <script src="app/js/countdown.js"></script>
     <script src="app/js/navbar.js"></script>
+    
 </body>
 </html>

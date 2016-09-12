@@ -63,3 +63,17 @@ function scaleBannerVideoSize(element){
 $(window).resize(function () {
     $('#video').reload()
 });
+
+$('input.autocomplete').autocomplete({
+    data: {
+      "Apple": null,
+      "Microsoft": null,
+      "Google": 'http://placehold.it/250x250'
+    }
+  });
+        
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+            

@@ -29,7 +29,21 @@ nav{
 .card.ex-large {
     height: 650px;
 }
+.logo-modal {
+    width: 100%;
+    max-width: 294px;
+    max-height: 121px;
+}
+.logo-responsive{
+    width: 100%;
+}
 /**********************/
+.create-list-login-registro {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px;
+}
 .create-list-login-panel {
     max-width: 500px;
     margin-left: auto;
@@ -62,3 +76,16 @@ nav{
     color: white;
     background: #3b5998;
 }
+
+.imagen-registro{
+    width: 100%;
+    
+}
+
+/*************************/
+/*Auspiciadores*/
+
+.imagen-logo{
+    width: 100%;
+}
+ 

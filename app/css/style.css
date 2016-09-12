@@ -33,7 +33,13 @@ iframe{
 /**********************/
 .brand-logo img{
     width: 150px;
-    margin: 1px;
+    margin: 8px;
+}
+@media(max-width: 600px){
+    .brand-logo img{
+        width: 50%;
+        margin: 8px;
+    }
 }
 /*ventana modal*/
 .modal{

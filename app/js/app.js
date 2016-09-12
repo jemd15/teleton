@@ -53,10 +53,6 @@ angular.module('ideaton',
                 url: '/registrarse',
                 templateUrl: 'app/views/registrarse.html'
             })
-            .state('registro', {
-                url: '/registro',
-                templateUrl: 'app/views/registro.html'
-            })
             .state('detalle-proyecto',{
                 url: '/detalle-proyecto',
                 templateUrl: 'app/views/detalle-proyecto.html',

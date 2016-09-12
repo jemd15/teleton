@@ -56,35 +56,25 @@
     </ul>
 
     <!--estructura del modal/login-->
-    <div class="container">
-        <div id="login-modal" class="modal col s6 container">
-            <div class="modal-content">
-                <div class="center">
-                    <img id="logo-modal" src="app/images/Ideatón-Logo.png" alt="">
-                    <h6>Inicia sesión con tu cuenta.</h6>
-                    <a href="#" class="button-facebook btn large"><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</a>
-                    <a href="#" class="button-google btn large"><i class="fa fa-google-plus" aria-hidden="true"></i>  Google</a>
-                    <h6>ó</h6>
-                </div>
-                <form class="container">
-                        <div class="input-field col s10 m8 offset-s1 offset-m2">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+     <div id="login-modal" class="modal container">
+        <div class="modal-content" class="modal-responsive">
+           <div class="row">
+                <div class="section center">
+                    <img class="logo-modal" src="app/images/ideaton.png" alt="">
+                  </div>
+               
+                <div class="create-list-login-registro center create-list-connect-btn">
+                        <h3 class="thin">Sube tu <strong class="bold">Idea</strong></h3>
+                        <p class="flow-text">Selecciona una cuenta y Registrate para subir tu Idea.</p>
+                        
+                        <div>                          
+                            <a href="#" class="button-google btn" ><i class="fa fa-google-plus" aria-hidden="true"></i>  Google</a>
+                            <a href="#" class="button-facebook btn" ><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</a>
                         </div>
-                    <div>
-                        <div class="input-field col s10 m8 offset-s1 offset-m2">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
+                        <div>
+                            No tienes una cuenta creada? <a href="#">Registrate aquí.</a>
                         </div>
                     </div>
-                    <div class="center">
-                        <a class="btn green accent-4 modal-close">Ingresar</a>
-                    </div>
-                </form>
-                <br>
-                <div class="center">
-                    <a class="green-text text-accent-4 modal-close" href="#/registrar-usuario">Regístrate</a>
-                </div>
             </div>
         </div>
     </div>

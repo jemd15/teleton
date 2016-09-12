@@ -25,6 +25,10 @@ nav{
 }
 nav ul a {
     padding: 8px 18px;
+    font-size: 15px;
+}
+nav i.material-icons{
+    margin-top: 12px;
 }
 /*footer redes sociales*/
 .redes-sociales{
@@ -43,7 +47,7 @@ nav ul a {
 }
 @media(max-width: 600px){
     .brand-logo img{
-        width: 50%;
+        width: 75%;
         margin: 8px;
     }
 }
@@ -116,11 +120,9 @@ nav ul a {
     font-size: 13px;
     line-height: 20px;
 }
-
 .idea-header{
     background-image: url("../images/ideaheader.png");
 }
-
 .circular {
     width: 200px;
     height: 200px;
@@ -128,7 +130,6 @@ nav ul a {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
 }
-
 .button {
     border: none;
     font-family: inherit;
@@ -211,9 +212,6 @@ nav ul a {
 .button-5a:hover>.fa {
     top: 0;
 }
-
-
-
 footer{
     background-image: url('../images/patternbnb.svg');
     background-size: 30%;

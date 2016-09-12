@@ -60,5 +60,5 @@ function scaleBannerVideoSize(element){
     });
 }
 $(window).resize(function () {
-    $('#video').reload()
+    $('#video').reload();
 });

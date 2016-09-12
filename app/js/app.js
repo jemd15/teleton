@@ -27,6 +27,9 @@ angular.module('ideaton',
     .controller('subeTuIdeaCtrl', function () {
 
     })
+    .controller('detalleCategoriaCtrl', function () {
+
+    })
 
     //vistas
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -58,6 +61,11 @@ angular.module('ideaton',
                 url: '/detalle-proyecto',
                 templateUrl: 'app/views/detalle-proyecto.html',
                 controller: 'detalleProyectoCtrl'
+            })
+            .state('detalle-categoria',{
+                url: '/detalle-categoria',
+                templateUrl: 'app/views/detalle-categoria.html',
+                controller: 'detalleCategoriaCtrl'
             });
 
         $urlRouterProvider.otherwise('/inicio')

@@ -9,16 +9,13 @@
     </div>
     <br>
     <br class="hide-on-med-and-up">
-    <div id="countdown">
-        <h4 class="center white-text">Termina en</h4>
-        <div id="clock"></div>
-        <div id="units">
-            <span>Días</span>
-            <span>Hrs</span>
-            <span>Min</span>
-            <span>Seg</span>
-        </div>
+    <div style="">
+        <countdown time="100" finish-callback="finished()"></countdown>
     </div>
+    <div style="">
+        <countdown autostart="true" time="5000" colors="flat-colors" callback="finished()"></countdown>
+    </div>
+
     <br>
 </header>
 
@@ -193,6 +190,8 @@
     
 <!--Auspisiadores -->
 <section class="row imagen-logo">
+    <br>
+    <br>
     <div class="col s6 m3 l3">
         <img src="app/images/teleton.png">
     </div>
@@ -205,4 +204,5 @@
     <div class="col s6 m3 l3">
         <img src="app/images/corfo.png">
     </div>
+    <br>
 </section>

@@ -41,5 +41,5 @@
     width: 100%;
 }
 #video.homepage-hero-module{
-    height: 600px !important;
+    max-height: 600px !important;
 }

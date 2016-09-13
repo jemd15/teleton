@@ -1,3 +1,6 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Baloo Paaji', cursive;
+}
 .bases{
     border: 2px solid;
     border-color: #4caf50;
@@ -29,6 +32,12 @@ nav{
 nav ul a {
     padding: 8px 18px;
     font-size: 15px;
+}
+nav ul a:hover{
+    color: #4caf50;
+}
+.dropdown-content li > a:hover{
+    color: #4caf50 !important;
 }
 nav i.material-icons{
     margin-top: 12px;
@@ -77,13 +86,13 @@ nav i.material-icons{
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 .create-list-login-panel {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 .center, .center-align {
     text-align: center;
@@ -93,7 +102,7 @@ nav i.material-icons{
     max-width: 300px;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    padding: 0.8rem 0rem;
+    padding: 0.8rem 0;
     height: auto;
 }
 .button-google {
@@ -214,5 +223,23 @@ nav i.material-icons{
 footer{
     background-image: url('../images/patternbnb.svg');
     background-size: 30%;
+}
+.img-blanco-negro{
+
+    filter: grayscale(100%);
+
+    -webkit-filter: grayscale(100%);
+
+    transition:filter 0.4s;
+
+    -webkit-transition:-webkit-filter 1s;
+
+}
+.img-blanco-negro:hover {
+
+    filter: grayscale(0);
+
+    -webkit-filter: grayscale(0);
+
 }
  

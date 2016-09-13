@@ -63,7 +63,8 @@ nav i.material-icons{
     }
 }
 #logo-nav-bar{
-    margin: 8px;
+    margin: 8px 0 0 8px;
+    width: 50%;
 }
 /*ventana modal*/
 .modal{
@@ -248,4 +249,19 @@ i.fa p{
     font-family: "Roboto", sans-serif;
     font-size: 15px;
 }
- 
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+}
+.powered-by-logo{
+    width: 0;
+}

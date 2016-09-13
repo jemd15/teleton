@@ -50,7 +50,7 @@ nav i.material-icons{
 }
 @media(max-width: 600px){
     .brand-logo img{
-        width: 75%;
+        width: 65%;
         margin: 8px;
     }
 }
@@ -112,13 +112,6 @@ nav i.material-icons{
     width: 100%;
 }
 
-/*************************/
-/*Auspiciadores*/
-
-.imagen-logo{
-    width: 100%;
-}
-/**************************/
 /*detalle-proyecto*/
 .letra-detproy{
     font-family: "Roboto";

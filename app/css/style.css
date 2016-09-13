@@ -2,6 +2,9 @@
     border: 2px solid;
     border-color: #4caf50;
 }
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header{
+    padding: 0;
+}
 ul#categorias{
     margin-top: 80px;
     width: 130px !important;
@@ -50,6 +53,9 @@ nav i.material-icons{
         width: 75%;
         margin: 8px;
     }
+}
+#logo-nav-bar{
+    margin: 8px;
 }
 /*ventana modal*/
 .modal{

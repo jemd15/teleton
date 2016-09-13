@@ -40,3 +40,6 @@
 .video-container video.fillWidth {
     width: 100%;
 }
+#video.homepage-hero-module{
+    height: 600px !important;
+}

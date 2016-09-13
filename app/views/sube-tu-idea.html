@@ -1,23 +1,59 @@
- <div class="row">
-            <div class="card col s12 m8 l8 offset-m2 offset-l2 grey lighten-1">
-                
-                    <form class="col s12 m12 l12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="titulo" type="text" class="validate">
-                                <label for="titulo">Título del Proyecto</label>
+<div class="row" id="create-row">
+            <span id="create" class="scrollspy"></span>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="section center imagen-registro">
+                    <h3 class="thin">Comienza a subir tu <img src="app/images/ampolleta.svg" width="45px" height="45px"><strong class="bold"></strong> </h3>
+                </div>
+            </div>
+
+
+            <div id="create-list-login-container" class="row create-list-button disabled">
+                <div class="col s12 m6 l6">
+                    <div class="create-list-login-panel center create-list-connect-btn">
+                    <form> 
+                    <div class="create-list-login-panel center">
+                        <div>
+                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
+                            <div class="center">
+                                <p class="flow-text">Registra tu idea.</p>
                             </div>
-                            <div class="input-field col s12">
-                                <input id="youtube" type="text" class="validate">
-                                <label for="youtube">Link Video (youtube)</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <textarea id="descripcion" type="text" class="validate materialize-textarea"></textarea>
-                                <label for="descripcion">Descripción del Proyecto</label>
-                            </div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <input id="titulo" type="text" class="validate">
+                                    <label for="titulo">Nombre</label>
+                                </div>
+                                <div class="col s12 input-field">
+                                    <input id="youtube" type="text" class="validate">
+                                    <label for="youtube">Link Video (youtube)</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="descripcion" type="text" class="validate materialize-textarea"></textarea>
+                                    <label for="descripcion">Descripción del Proyecto</label>
+                                </div>
+                              </div>
+                              </div>
                         </div>
-                        <div class="row">
-                            <div class="file-field input-field col m3 l3">
+                   
+                 </form>
+                    </div>
+                </div>
+                <div class="col s12 hide-on-med-and-up or-divider">
+            
+                </div>
+                <form> 
+                <div class="col s12 m6 l6 create-list-login-right">
+                  
+                    <div class="create-list-login-panel center">
+                        <div>
+                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="file-field input-field col m12 l12">
                                 <div class="btn grey darken-1">
                                     <span>Foto 1</span>
                                     <input type="file">
@@ -26,7 +62,7 @@
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                            <div class="file-field input-field col m3 l3">
+                            <div class="file-field input-field col m12 l12">
                                 <div class="btn grey darken-1">
                                     <span>Foto 2</span>
                                     <input type="file">
@@ -35,7 +71,7 @@
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                            <div class="file-field input-field col m3 l3">
+                            <div class="file-field input-field col m12 l12">
                                 <div class="btn grey darken-1">
                                     <span>Foto 3</span>
                                     <input type="file">
@@ -44,22 +80,26 @@
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                            <div class="file-field input-field col m3 l3">
+                            <div class="file-field input-field col m12 l12">
                                 <div class="btn grey darken-1">
                                     <span>Foto 4</span>
                                     <input type="file">
                                 </div>
-                                <div class="file-path-wrapper hide">
-                                    <input class="file-path validate" type="text">
-                                </div>
-                            </div>
+                              </div>
+                              </div>
+                            
                         </div>
-                        <div class="card-action">
-                            <a class="white-text" href="#!">Enviar</a>
-                        </div>
-
-                    </form>
-                
+                    </div>
+                 </form>
+                </div>
             </div>
+            <div class="row center">
+                                <button class="btn" id="create-account-and-list">Subir</button>
+                                
+                                <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
+
+                            </div>
         </div>
-    </div>
+        <div class="divider"></div>
+        <br>
+        <br>

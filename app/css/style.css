@@ -220,6 +220,9 @@ nav i.material-icons{
 .button-5a:hover>.fa {
     top: 0;
 }
+.side-nav li{
+    line-height: 0;
+}
 footer{
     background-image: url('../images/patternbnb.svg');
     background-size: 30%;

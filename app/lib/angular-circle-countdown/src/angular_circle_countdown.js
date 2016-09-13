@@ -158,7 +158,7 @@ angular.module('circle.countdown', [])
                 HoursLeft = Math.floor((secondsLeft % 86400) / 3600);
                 MinutesLeft = Math.floor(((secondsLeft % 86400) % 3600) / 60);
                 SecondsLeft = Math.floor((((secondsLeft % 86400) % 3600) % 60) % 60);
-            }
+            };
 
             $scope.doTick = function() {
                 secondsLeft--;
@@ -185,7 +185,7 @@ angular.module('circle.countdown', [])
                 el.find('.ClassyCountdown-minutes .ClassyCountdown-value > div').html(MinutesLeft);
                 el.find('.ClassyCountdown-seconds .ClassyCountdown-value > div').html(SecondsLeft);
 
-            }
+            };
 
 
             $scope.$on('timer-start', function() {
@@ -247,7 +247,7 @@ angular.module('circle.countdown', [])
                 el.find('.ClassyCountdown-hours input').val(HoursLeft).knob( angular.extend($scope.knob.hours.options, {width: $('.ClassyCountdown-hours').width()}) );
                 el.find('.ClassyCountdown-minutes input').val(MinutesLeft).knob( angular.extend($scope.knob.minutes.options, {width: $('.ClassyCountdown-minutes').width()}) );
                 el.find('.ClassyCountdown-seconds input').val(SecondsLeft).knob( angular.extend($scope.knob.seconds.options, {width: $('.ClassyCountdown-seconds').width()}) );
-            }
+            };
 
 
             $scope.start = function()
@@ -255,17 +255,17 @@ angular.module('circle.countdown', [])
                 this.timerInterval = $interval(function() {
                     $scope.doTick();
                 }, 1000);
-            }
+            };
 
             $scope.pause = function()
             {
                 $interval.cancel(this.timerInterval);
-            }
+            };
 
             $scope.resume = function()
             {
                 $scope.start();
-            }
+            };
 
             $scope.stop = function()
             {
@@ -281,17 +281,17 @@ angular.module('circle.countdown', [])
                 el.find('.ClassyCountdown-hours input').val(HoursLeft).change();
                 el.find('.ClassyCountdown-minutes input').val(MinutesLeft).change();
                 el.find('.ClassyCountdown-seconds input').val(SecondsLeft).change();
-            }
+            };
 
             $scope.addSeconds = function(seconds)
             {
                 secondsLeft += seconds;
-            }
+            };
 
             $scope.setSeconds = function(seconds)
             {
                 secondsLeft = seconds;
-            }
+            };
 
             $scope.init();
             doResponsive();

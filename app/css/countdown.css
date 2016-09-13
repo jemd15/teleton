@@ -2,9 +2,25 @@ div#countdown{
     position: absolute;
     width: 50%;
     left: 25%;
-    margin: 17% auto;
+    margin: 10% auto;
     top: 0;
-    z-index: 100;
+    z-index: 98;
+}
+@media (max-width: 600px){
+    div#countdown{
+        margin: 10% auto;
+    }
+    div.video-container{
+        top: 8px;
+    }
+    nav{
+        height: 64px;
+    }
+}
+@media (max-width: 992px){
+    div#countdown{
+        margin: 8% auto 0 auto;
+    }
 }
 #clock span{
     float: left;
@@ -18,16 +34,20 @@ div#countdown{
     box-sizing: border-box;
 }
 #clock span:nth-child(1){
-    background: #fa5559;
+    border: solid 5px;
+    border-color: #fa5559;
 }
 #clock span:nth-child(2){
-    background: #26c2b9;
+    border: solid 5px;
+    border-color: #26c2b9;
 }
 #clock span:nth-child(3){
-    background: #f6bc58;
+    border: solid 5px;
+    border-color: #f6bc58;
 }
 #clock span:nth-child(4){
-    background: #2dcb74;
+    border: solid 5px;
+    border-color: #2dcb74;
 }
 #clock:after{
     content: "";
@@ -44,9 +64,6 @@ div#countdown{
     font-size: 13px;
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px rgba(10,10,10, 0.7);
-}
-span.turn{
-    animation: turn 0.7s ease forwards;
 }
 /*animation*/
 @keyframes turn{

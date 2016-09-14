@@ -20,15 +20,15 @@
                 </div>
                 <div class="row">
                   <div class="col s12 input-field">
-                    <input id="titulo" type="text" class="validate" ng-model="nombre">
-                    <label for="titulo">Nombre</label>
+                    <input id="titulo" type="text" ng-model="nombre">
+                    <label for="titulo">Titulo</label>
                   </div>
                   <div class="col s12 input-field">
-                    <input id="youtube" type="text" class="validate" ng-model="url_vid">
+                    <input id="youtube" type="text" ng-model="url_vid">
                     <label for="youtube">Link Video (youtube)</label>
                   </div>
                   <div class="input-field col s12">
-                    <textarea id="descripcion" type="text" class="validate materialize-textarea" length="120" ng-model="descripcion"></textarea>
+                    <textarea id="descripcion" type="text" class="materialize-textarea" length="120" ng-model="descripcion"></textarea>
                     <label for="descripcion">Descripción del Proyecto</label>
                   </div>
                   <div class="col s12">
@@ -38,16 +38,7 @@
                       <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>
                     </select>
                   </div>
-                  <div class="col s12 file-field input-field">
-                    <div class="btn grey darken-1">
-                      <span>Foto 1</span>
-                      <input type="file" ng-model="img_prin" base-sixty-four-input >
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text" placeholder="Sube tu imagen Principal">
-                    </div>
                   </div>
-                </div>
               </div>
             </div>
             
@@ -67,6 +58,15 @@
               <br>
               <br>
               <div class="row">
+                <div class="file-field input-field">
+                    <div class="btn grey darken-1">
+                      <span>Foto 1</span>
+                      <input type="file" ng-model="img_prin" base-sixty-four-input >
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" placeholder="Sube tu imagen Principal">
+                    </div>
+                  </div>
                 
                 <div class="file-field input-field">
                   <div class="btn grey darken-1">

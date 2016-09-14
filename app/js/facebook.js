@@ -43,15 +43,15 @@
              * Watch for Facebook to be ready.
              * There's also the event that could be used
              */
-            $scope.$watch(
-                function() {
-                    return Facebook.isReady();
-                },
-                function(newVal) {
-                    if (newVal)
-                        $scope.facebookReady = true;
-                }
-            );
+            // $scope.$watch(
+            //     function() {
+            //         return Facebook.isReady();
+            //     },
+            //     function(newVal) {
+            //         if (newVal)
+            //             $scope.facebookReady = true;
+            //     }
+            // );
 
             var userIsConnected = false;
 
@@ -73,11 +73,14 @@
             /**
              * Login
              */
-            $scope.login = function() {
+            $scope.login = function($location) {
                 Facebook.login(function(response) {
                     if (response.status == 'connected') {
                         $scope.logged = true;
                         $scope.me();
+                        $scope.logout();
+                         setTimeout(location.reload.bind(location), 6000);
+
                     }
 
                 });
@@ -93,6 +96,7 @@
                      */
                     $scope.$apply(function() {
                         $scope.user = response;
+                        $sessionStorage.emailface=response.email;
                     });
 
                 });
@@ -106,7 +110,6 @@
                     $scope.$apply(function() {
                         $scope.user = {};
                         $scope.logged = false;
-                        location.reload();
                     });
                 });
             }
@@ -128,14 +131,13 @@
                             'code': data.authResponse.signedRequest
 
                         }
-                        console.log(obj);
 
                         //POST EN API DJANGO-------
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
-                                console.log(data);
+                        
                                 $sessionStorage.tokenface = data.key;
-                                $sessionStorage.idloginface = 1;
+                                $sessionStorage.isloginface = 1;
                             })
                             .error(function(data, status, header) {
                                 console.log(data);

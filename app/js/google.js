@@ -13,12 +13,11 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
 
     function($scope,
         GoogleSignin, $http, $sessionStorage) {
-        $scope.islogin = false;
-        $scope.googleLogin = function() {
+        $scope.googleLogin = function($location) {
             GoogleSignin.signIn().then(function(user) {
-                    $scope.islogin = true;
-                    console.log(user);
-                    console.log(user.w3.U3);
+                  
+                   
+                    $sessionStorage.emailgoogle=user.w3.U3;
                     var obj = {
 
                         'email': user.w3.U3,
@@ -30,10 +29,10 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
 
                     $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/registration/", obj)
                         .success(function(data, status, headers) {
-                            console.log(data);
+                            
                         })
                         .error(function(data, status, headers) {
-                            console.log(status);
+                        
 
                             // // IF {"email":["A user is already registered with this e-mail address."]}
                             if (status == 400) {
@@ -44,9 +43,9 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
                                 }
                                 $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/login/", obj2)
                                     .success(function(data, status, headers, config) {
-                                        console.log(data);
+                                      
                                             $sessionStorage.tokengoogle = data.key;
-                                            $sessionStorage.idlogingoogle = 1;
+                                            $sessionStorage.islogingoogle = 1;
                                     })
                                     .error(function(data, status, header, config) {
                                         console.log(data);
@@ -65,7 +64,7 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
 
 
 
-
+                setTimeout(location.reload.bind(location), 3500);
 
                 },
                 function(err) {

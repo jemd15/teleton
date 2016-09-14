@@ -1,2 +1,2 @@
-angular.module('ideaton',['rutas','AppFace', 'AppGoogle',]);
+angular.module('ideaton',['rutas','AppFace', 'AppGoogle','validacion','registro','SubirIdea']);
 

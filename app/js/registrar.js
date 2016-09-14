@@ -45,6 +45,7 @@ angular.module('registro',['ngStorage'])
        	  $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/editusers/'+ $scope.id+'/',obj,config)
             .success(function (data, status, headers,config) {
                 console.log(data);
+                location.reload();
             })
             .error(function (data, status, header, config) {
                 console.log(data);
@@ -75,6 +76,7 @@ angular.module('registro',['ngStorage'])
        	  $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/editusers/'+ $scope.id+'/',obj,config)
             .success(function (data, status, headers,config) {
                 console.log(data);
+                location.reload();
             })
             .error(function (data, status, header, config) {
                 console.log(data);
@@ -84,6 +86,6 @@ angular.module('registro',['ngStorage'])
       
        }
 
-         setTimeout(location.reload.bind(location), 5000);  
+         // setTimeout(location.reload.bind(location), 5000);  
         };
 }]);

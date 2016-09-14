@@ -77,6 +77,7 @@ angular.module('SubirIdea',['naif.base64'])
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img3, config)
             .success(function (data, status, headers, config) {
                   console.log(data);
+                  location.reload();
             })
             .error(function (data, status, header, config) {
                console.log(data);
@@ -92,7 +93,7 @@ angular.module('SubirIdea',['naif.base64'])
                console.log(data);
             });
 
-             setTimeout(location.reload.bind(location), 5000); 
+             // setTimeout(location.reload.bind(location), 5000); 
 
 
 	}

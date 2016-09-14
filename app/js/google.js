@@ -29,7 +29,7 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
 
                     $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/registration/", obj)
                         .success(function(data, status, headers) {
-                            
+                            location.reload();
                         })
                         .error(function(data, status, headers) {
                         
@@ -46,6 +46,7 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
                                       
                                             $sessionStorage.tokengoogle = data.key;
                                             $sessionStorage.islogingoogle = 1;
+                                            location.reload();
                                     })
                                     .error(function(data, status, header, config) {
                                         console.log(data);
@@ -64,7 +65,7 @@ angular.module('AppGoogle', ['google-signin','ngStorage',])
 
 
 
-                setTimeout(location.reload.bind(location), 3500);
+                // setTimeout(location.reload.bind(location), 3500);
 
                 },
                 function(err) {

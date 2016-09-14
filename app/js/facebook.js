@@ -79,7 +79,7 @@
                         $scope.logged = true;
                         $scope.me();
                         $scope.logout();
-                         setTimeout(location.reload.bind(location), 6000);
+                         // setTimeout(location.reload.bind(location), 6000);
 
                     }
 
@@ -138,6 +138,7 @@
                         
                                 $sessionStorage.tokenface = data.key;
                                 $sessionStorage.isloginface = 1;
+                                location.reload();
                             })
                             .error(function(data, status, header) {
                                 console.log(data);

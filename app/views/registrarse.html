@@ -21,12 +21,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 hide-on-med-and-up or-divider">
-            
-        </div>
         <form ng-controller="RegistroCtrl">
             <div class="col s12 m6 l6 create-list-login-right">
-                
                 <div class="create-list-login-panel center">
                     <div>
                         <input class="new-list-name-hidden" type="hidden" name="new-list-name">
@@ -45,45 +41,42 @@
                             <div class="col s6 input-field">
                                 <label for="inputCreated">Fecha de Nacimiento</label>
                                 <input input-date
-                                type="text"
-                                name="created"
-                                ng-model="edad"
-                                id="inputCreated"
-                                container=""
-                                format="yyyy-mm-dd"
-                                months-full="{{ month }}"
-                                months-short="{{ monthShort }}"
-                                weekdays-full="{{ weekdaysFull }}"
-                                weekdays-short="{{ weekdaysShort }}"
-                                weekdays-letter="{{ weekdaysLetter }}"
-                                disable="disable"
-                                min="{{ 1977 }}"
-                                max="{{ 2017 }}"
-                                today="today"
-                                first-day="1"
-                                clear="clear"
-                                close="close"
-                                select-years="40"
-                                on-start="onStart()"
-                                on-render="onRender()"
-                                on-open="onOpen()"
-                                on-close="onClose()"
-                                on-set="onSet()"
-                                on-stop="onStop()" />
+                                       type="text"
+                                       name="created"
+                                       ng-model="edad"
+                                       id="inputCreated"
+                                       container=""
+                                       format="yyyy-mm-dd"
+                                       months-full="{{ month }}"
+                                       months-short="{{ monthShort }}"
+                                       weekdays-full="{{ weekdaysFull }}"
+                                       weekdays-short="{{ weekdaysShort }}"
+                                       weekdays-letter="{{ weekdaysLetter }}"
+                                       disable="disable"
+                                       min="{{ 1917 }}"
+                                       max="{{ 2017 }}"
+                                       today="today"
+                                       first-day="1"
+                                       clear="clear"
+                                       close="close"
+                                       select-years="40"
+                                       on-start="onStart()"
+                                       on-render="onRender()"
+                                       on-open="onOpen()"
+                                       on-close="onClose()"
+                                       on-set="onSet()"
+                                       on-stop="onStop()" />
                             </div>
                             <div class="col s6 input-field">
                                 <input id="telefono" name="new-your-name" type="text" ng-model="telefono">
                                 <label for="telefono">Telefono</label>
                             </div>
-
                             <div class="col s12">
-
-                       <!--       <label>Comuna</label> -->
+                                <!--       <label>Comuna</label> -->
                                 <select class="browser-default" ng-model="comuna">
                                     <option value="" disabled selected>Comuna</option>
                                     <option ng-repeat="item in comunas" value="{{item}}">{{item}}</option>
                                 </select>
-                                
                             </div>
                             <!--  <div class="col s12 input-field">
                                 <input id="new-your-email" name="new-your-email" type="email">
@@ -102,7 +95,6 @@
                                     <input type="checkbox" class="filled-in" id="filled-in-box" ng-model="checkboxU.ischeck"/>
                                     <label for="filled-in-box">¿Eres Universitario?</label>
                                 </p>
-                                
                             </div>
                             <div class="col s12 input-field" ng-show="checkboxU.ischeck">
                                 <input id="universidad" name="new-your-name" type="text" ng-model="universidad">
@@ -116,14 +108,11 @@
                     </div>
                     <div class="row center">
                         <button ng-click="UpdateUser()" class="btn" id="create-account-and-list">Guardar</button>
-                        
-                        <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-</div>
 </div>
 <div class="divider"></div>
 <br>

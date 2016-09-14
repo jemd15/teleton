@@ -71,4 +71,4 @@ app.controller('AppController', ['$scope', function($scope){
     $scope.finished = function(){
         // Finish callback
     };
-}])
+}]);

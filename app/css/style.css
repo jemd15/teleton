@@ -67,7 +67,7 @@ nav i.material-icons{
     width: 50%;
 }
 /*ventana modal*/
-.modal{
+#login-modal{
     width: 100%;
     max-width: 800px;
     height: 100%;

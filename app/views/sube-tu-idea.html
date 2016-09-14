@@ -50,16 +50,15 @@
                 </div>
               </div>
             </div>
-            
+
           </form>
         </div>
       </div>
       <div class="col s12 hide-on-med-and-up or-divider">
-        
+
       </div>
       <form>
         <div class="col s12 m6 l6 create-list-login-right">
-          
           <div class="create-list-login-panel center">
             <div>
               <input class="new-list-name-hidden" type="hidden" name="new-list-name">
@@ -67,7 +66,7 @@
               <br>
               <br>
               <div class="row">
-                
+
                 <div class="file-field input-field">
                   <div class="btn grey darken-1">
                     <span>Foto 2</span>
@@ -96,19 +95,29 @@
                   </div>
                 </div>
               </div>
-              
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="row center">
-      <button ng-click="UpIdea()" class="btn" id="create-account-and-list">Subir</button>
-      
-      <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="divider"></div>
-  <br>
-  <br>
+  <div class="row center">
+    <button ng-click="UpIdea()" href='#alerta-modal' class="btn" id="create-account-and-list" modal>Subir</button>
+
+    <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
+  </div>
+</div>
+<div class="divider"></div>
+<br>
+<br>
+
+<!--estructura del modal/idea en moderacion-->
+<div id="alerta-modal" class="modal">
+    <div class="modal-content">
+        <h4>Idea Recibida</h4>
+        <p>Hemos recibido tu idea con éxito y dentro de las proxímas 2 horas será revisada por nuestro equipo para ser aprovada</p>
+    </div>
+    <div class="modal-footer">
+        <a ui-sref="inicio" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
 </div>

@@ -138,7 +138,7 @@
                         
                                 $sessionStorage.tokenface = data.key;
                                 $sessionStorage.isloginface = 1;
-                                location.reload();
+                                // location.reload();
                             })
                             .error(function(data, status, header) {
                                 console.log(data);

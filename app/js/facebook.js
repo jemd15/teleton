@@ -138,7 +138,16 @@
                         
                                 $sessionStorage.tokenface = data.key;
                                 $sessionStorage.isloginface = 1;
-                                // location.reload();
+                                swal({
+                                        title: "Bienvenido!\n"+$sessionStorage.emailface,
+                                        type: "success",
+                                        confirmButtonColor: "#DD6B55",
+                                        confirmButtonText: "Aceptar",
+                                        closeOnConfirm: true},
+                                    function(){
+                                        location.reload();
+
+                                    });
                             })
                             .error(function(data, status, header) {
                                 console.log(data);

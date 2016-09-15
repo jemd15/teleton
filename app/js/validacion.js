@@ -25,7 +25,7 @@ angular.module('validacion',['ngStorage',])
 
        if($sessionStorage.islogingoogle === 1)
        {
-       	$scope.islogin= true; 
+       	 $scope.islogin= true;
        	 $scope.isReg= false;
            console.log($scope.isReg);
          $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.emailgoogle)

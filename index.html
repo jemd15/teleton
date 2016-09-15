@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="app/css/video%20header.css">
     <link rel="stylesheet" href="app/css/style.css">
     <link rel="stylesheet" href="app/css/countdown.css">
+    <link rel="stylesheet" href="app/lib/sweetalert/dist/sweetalert.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
     <title>Ideatón: Ideas Inclusivas</title>
 </head>
@@ -18,7 +19,7 @@
     <!--navbar-->
     <div class="navbar-fixed">
         <nav class="grey darken-4">
-            <div class="nav-wrapper">
+            <div class="nav-wrapper" ng-controller="ValidarReg">
                 <a href="#" class="button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
                 <a ui-sref="inicio" class="brand-logo"><img class="hide-on-small-only" src="app/images/Ideatón-Logo.svg" alt=""><img class="hide-on-med-and-up" src="app/images/ampolleta.svg" alt=""></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -26,8 +27,9 @@
                     <li class="color-scroll" ui-sref-active="active"><a ui-sref="detalle-proyecto">BETAIDEA</a></li>
                     <li class="color-scroll" ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
                     <li class="color-scroll" ui-sref-active="active"><a ui-sref="registrar-usuario">Bases</a></li>
-                    <!--<li class="color-scroll hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>-->
-                    <li class="color-scroll" ><a href='#login-modal' modal>Sube tu Idea</a></li>
+                    <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
+                    <li class="color-scroll" ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+                    <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
                 </ul>
             </div>
         </nav>
@@ -145,6 +147,8 @@
     <script src="app/lib/ng-google-signin/dist/ng-google-signin.js"></script>
     <script src="app/lib/ngstorage/ngStorage.js"></script>
     <script src="app/lib/angular-base64-upload/dist/angular-base64-upload.js"></script>
+    <script src="app/lib/ngSweetAlert/SweetAlert.js"></script>
+    <script src="app/lib/sweetalert/dist/sweetalert.min.js"></script>
     <script src="app/js/app.js"></script>
     <script src="app/js/facebook.js"></script>
     <script src="app/js/google.js"></script>

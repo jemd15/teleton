@@ -137,7 +137,7 @@
 
 
                         //POST EN API DJANGO-------
-                        var postface = function(){$http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
+                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
                                 $scope.logout();
                                 $sessionStorage.tokenface = data.key;
@@ -156,8 +156,8 @@
                             })
                             .error(function(data, status, header) {
                                 console.log(data);
-                            });}
-                        $timeout(postface, 5000);
+                            });
+
                     });
                 } else {
                     $scope.$apply(function() {

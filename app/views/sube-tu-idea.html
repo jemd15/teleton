@@ -36,6 +36,11 @@
                 <option value="" disabled selected>Categoría</option>
                 <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>
             </select>
+            <br>
+            <select class="browser-default" ng-model="beneficiario">
+                <option value="" disabled selected>a Quien Beneficia</option>
+                <option ng-repeat="x in beneficiarios" value="{{x.val}}">{{x.name}}</option>
+            </select>
         </div>
 
         <!--columna derecha-->

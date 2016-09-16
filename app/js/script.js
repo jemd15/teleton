@@ -45,9 +45,6 @@ function scaleBannerVideoSize(element){
 
     });
 }
-$(window).resize(function () {
-    $('#video').reload()
-});
 
 $(document).ready(function() {
     $('input#input_text, textarea#descripcion').characterCounter();

@@ -21,6 +21,7 @@ angular.module('SubirIdea', ['naif.base64'])
 
         $scope.UpIdea = function ($location) {
             var config;
+            console.log($scope.nombre);
             var obj = {
                 title: $scope.nombre,
                 short_description: $scope.descripcion_corta,

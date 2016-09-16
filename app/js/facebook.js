@@ -78,7 +78,7 @@
                     if (response.status == 'connected') {
                         $scope.logged = true;
                         $scope.me();
-                        $scope.logout();
+
                          // setTimeout(location.reload.bind(location), 6000);
 
                     }
@@ -132,10 +132,12 @@
 
                         }
 
+                        console.log("login"+obj);
+
                         //POST EN API DJANGO-------
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
-                        
+                                $scope.logout();
                                 $sessionStorage.tokenface = data.key;
                                 $sessionStorage.isloginface = 1;
                                 swal({
@@ -145,6 +147,7 @@
                                         confirmButtonText: "Aceptar",
                                         closeOnConfirm: true},
                                     function(){
+
                                         location.reload();
 
                                     });

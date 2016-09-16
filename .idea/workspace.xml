@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="950f07b9-0e45-4ec3-ba10-d2b5ce8539e1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular-knob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/lib/angular-circle-countdown/src/jquery.ba-throttle-debounce.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/style.css" afterPath="$PROJECT_DIR$/app/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
+    <list default="true" id="950f07b9-0e45-4ec3-ba10-d2b5ce8539e1" name="Default" comment="elimine el modal">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/detalle-idea.js" afterPath="$PROJECT_DIR$/app/js/detalle-idea.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/detalle-proyecto.html" afterPath="$PROJECT_DIR$/app/views/detalle-proyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/inicio.html" afterPath="$PROJECT_DIR$/app/views/inicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
+    <list id="09e13691-4732-4bd2-88c9-bf047810feb7" name="Rejected commit: Default" comment="elimine el modal" />
     <ignored path="teleton.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,32 +27,104 @@
     <favorites_list name="teleton" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+            <state relative-caret-position="2826">
+              <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detalle-proyecto.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="facebook.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2538">
+              <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1710">
+              <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subir_idea.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sube-tu-idea.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2088">
+              <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detalle-idea.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/js/detalle-idea.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#42#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detalle-proyecto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+            <state relative-caret-position="-486">
+              <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/css/style.css">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="200" column="0" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/google.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="89" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rutas.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="972">
+              <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -65,17 +132,31 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/views/inicio.html" />
         <option value="$PROJECT_DIR$/app/css/style.css" />
+        <option value="$PROJECT_DIR$/app/js/validacion.js" />
+        <option value="$PROJECT_DIR$/app/js/google.js" />
+        <option value="$PROJECT_DIR$/app/js/facebook.js" />
+        <option value="$PROJECT_DIR$/app/js/registrar.js" />
+        <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/js/subir_idea.js" />
+        <option value="$PROJECT_DIR$/app/views/sube-tu-idea.html" />
         <option value="$PROJECT_DIR$/app/views/detalle-proyecto.html" />
+        <option value="$PROJECT_DIR$/app/js/detalle-idea.js" />
       </list>
     </option>
   </component>
@@ -86,9 +167,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1339" />
-    <option name="height" value="706" />
+    <option name="x" value="-1" />
+    <option name="width" value="1368" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -115,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,27 +279,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/lib/angular-circle-countdown/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/teleton/index.html">
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -243,6 +331,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -265,9 +359,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -277,33 +382,65 @@
       <option name="presentableId" value="Default" />
       <updated>1473662160891</updated>
       <workItem from="1473662162033" duration="18338000" />
+      <workItem from="1473965254513" duration="13753000" />
+      <workItem from="1473980223313" duration="162000" />
+      <workItem from="1473980510367" duration="4415000" />
+      <workItem from="1473985670845" duration="1510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18338000" />
+    <option name="totallyTimeSpent" value="38178000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1339" height="706" extended-state="0" />
-    <editor active="false" />
+    <frame x="-1" y="0" width="1368" height="742" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2723824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20178704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32419354" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -316,71 +453,117 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="elimine el modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="elimine el modal" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.css">
+    <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/detalle-idea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.js">
+    <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="80" selection-start-line="143" selection-start-column="80" selection-end-line="143" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular-knob.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/jquery.ba-throttle-debounce.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ideas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/materialize/dist/css/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/materialize/bin/materialize.css">
+    <entry file="file://$PROJECT_DIR$/app/js/google.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <caret line="4251" column="0" selection-start-line="4251" selection-start-column="0" selection-end-line="4256" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="89" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="97" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="77" column="33" selection-start-line="77" selection-start-column="32" selection-end-line="86" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -393,11 +576,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/app/js/google.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="89" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/validacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="77" column="33" selection-start-line="77" selection-start-column="32" selection-end-line="86" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/google.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="89" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/validacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1818">
+          <caret line="101" column="23" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3600">
+          <caret line="200" column="0" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.css" />
+    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular_circle_countdown.js" />
+    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/angular-knob.js" />
+    <entry file="file://$PROJECT_DIR$/app/lib/angular-circle-countdown/src/jquery.ba-throttle-debounce.min.js" />
+    <entry file="file://$PROJECT_DIR$/app/views/ideas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/materialize/dist/css/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/materialize/bin/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-422">
+          <caret line="4251" column="0" selection-start-line="4251" selection-start-column="0" selection-end-line="4256" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -405,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="165" column="32" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -413,39 +727,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registro.html" />
     <entry file="file://$PROJECT_DIR$/app/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="200" column="0" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/validacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/google.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="89" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+        <state relative-caret-position="2826">
+          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+        <state relative-caret-position="-486">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/detalle-idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

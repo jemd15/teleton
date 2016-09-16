@@ -93,7 +93,7 @@ angular.module('SubirIdea', ['naif.base64'])
                                 },
                                 function () {
 
-                                    location.href = '/#/detalle-proyecto';
+                                    location.href = '/#/detalle-proyecto?id='+data.idea;
                                 });
                         })
                         .error(function (data, status, header, config) {

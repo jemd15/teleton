@@ -73,46 +73,47 @@
             /**
              * Login
              */
-            $scope.login = function($location) {
-                Facebook.login(function(response) {
+            $scope.login = function () {
+                Facebook.login(function (response) {
                     if (response.status == 'connected') {
                         $scope.logged = true;
                         $scope.me();
-
-                         // setTimeout(location.reload.bind(location), 6000);
-
                     }
 
-                });
+                },{scope: 'email'});
             };
 
             /**
              * me
              */
-            $scope.me = function() {
-                Facebook.api('/me?fields=name,email', function(response) {
+            $scope.me = function () {
+                Facebook.api('/me?fields=email', {fields: 'email,name'}, function (response) {
                     /**
                      * Using $scope.$apply since this happens outside angular framework.
                      */
-                    $scope.$apply(function() {
+                    $scope.$apply(function () {
+                        $scope.user = response;
                         $scope.user = response;
                         $sessionStorage.emailface=response.email;
+                        console.log($scope.user);
+
                     });
 
                 });
             };
 
+
             /**
              * Logout
              */
-            $scope.logout = function($location) {
+            $scope.logout = function($location,$timeout) {
                 Facebook.logout(function() {
                     $scope.$apply(function() {
                         $scope.user = {};
                         $scope.logged = false;
                     });
                 });
-            }
+            };
 
             /**
              * Taking approach of Events :D
@@ -134,8 +135,9 @@
 
                         console.log("login"+obj);
 
+
                         //POST EN API DJANGO-------
-                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
+                        var postface = function(){$http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
                                 $scope.logout();
                                 $sessionStorage.tokenface = data.key;
@@ -154,8 +156,8 @@
                             })
                             .error(function(data, status, header) {
                                 console.log(data);
-                            });
-
+                            });}
+                        $timeout(postface, 5000);
                     });
                 } else {
                     $scope.$apply(function() {

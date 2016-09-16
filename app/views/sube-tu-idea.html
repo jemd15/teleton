@@ -1,13 +1,13 @@
 <!--estructura del modal/idea en moderacion-->
-<div id="alerta-modal" class="modal">
-    <div class="modal-content">
-        <h4>Idea Recibida</h4>
-        <p>Hemos recibido tu idea con éxito y dentro de las proxímas <strong>X</strong> horas será revisada por nuestro equipo para ser aprobada</p>
-    </div>
-    <div class="modal-footer">
-        <a ui-sref="inicio" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-    </div>
-</div>
+<!--<div id="alerta-modal" class="modal">-->
+    <!--<div class="modal-content">-->
+        <!--<h4>Idea Recibida</h4>-->
+        <!--<p>Hemos recibido tu idea con éxito y dentro de las proxímas <strong>X</strong> horas será revisada por nuestro equipo para ser aprobada</p>-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+        <!--<a ui-sref="inicio" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>-->
+    <!--</div>-->
+<!--</div>-->
 
 <section ng-controller="UpIdeaCtrl">
     <div class="section center imagen-registro">
@@ -20,18 +20,21 @@
 
         <!--columna izquierda-->
         <div class="col s12 m4 offset-m1">
-            <div input-field>
-                <input type="text" ng-model="nombre" length="20">
-                <label>Título de la Idea</label>
-            </div>
-            <div input-field>
-                <textarea ng-model="descripcion_corta" class="materialize-textarea"></textarea>
-                <label>Breve Descripción del Proyecto</label>
-            </div>
-            <div input-field>
-                <textarea ng-model="descripcion" class="materialize-textarea"></textarea>
-                <label>Descripción del Proyecto</label>
-            </div>
+            <input type="text" ng-model="nombre">
+            <textarea name="" id="" cols="30" rows="10" ng-model="descripcion_corta"></textarea>
+            <textarea name="" id="" cols="30" rows="10" ng-model="descripcion"></textarea>
+            <!--<div input-field>-->
+                <!--<input type="text" ng-model="nombre" length="20">-->
+                <!--<label>Título de la Idea</label>-->
+            <!--</div>-->
+            <!--<div input-field>-->
+                <!--<textarea ng-model="descripcion_corta" class="materialize-textarea"></textarea>-->
+                <!--<label>Breve Descripción del Proyecto</label>-->
+            <!--</div>-->
+            <!--<div input-field>-->
+                <!--<textarea ng-model="descripcion" class="materialize-textarea"></textarea>-->
+                <!--<label>Descripción del Proyecto</label>-->
+            <!--</div>-->
             <select class="browser-default" ng-model="categoria">
                 <option value="" disabled selected>Categoría</option>
                 <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>
@@ -88,7 +91,7 @@
         </div>
     </form>
     <div class="row center">
-        <button ng-click="UpIdea()"  class="btn" id="create-account-and-list" modal>Sube tu idea</button>
+        <button ng-click="UpIdea()"  class="btn" id="create-account-and-list">Sube tu idea</button>
     </div>
 </section>
 <div class="divider"></div>

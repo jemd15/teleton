@@ -35,7 +35,7 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                             .success(function (data, status, headers,config) {
                                 console.log(data);
                                 swal({
-                                        title: "Datos Registrados\n"+$sessionStorage.emailgoogle,
+                                        title: "Datos Registrados\n"+$sessionStorage.emailface,
                                         type: "success",
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "Subir Idea",

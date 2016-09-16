@@ -1,125 +1,91 @@
-<div ng-controller="UpIdeaCtrl">
-    <div class="row" id="create-row">
-        <span id="create" class="scrollspy"></span>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="row">
-            <div class="section center imagen-registro">
-                <h3 class="thin">Sube tu <img src="app/images/logo-negro.png" width="45px" height="45px"><strong
-                        class="bold"></strong></h3>
-            </div>
-        </div>
-        <div id="create-list-login-container" class="row create-list-button disabled">
-            <div class="col s12 m6 l6">
-                <div class="create-list-login-panel center create-list-connect-btn">
-                    <form>
-                        <div class="create-list-login-panel center">
-                            <div>
-                                <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                                <div class="center">
-                                    <p class="flow-text">Registra tu idea.</p>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12 input-field">
-                                        <input id="titulo" type="text" ng-model="nombre">
-                                        <label for="titulo">Titulo</label>
-                                    </div>
-                                    <div class="col s12 input-field">
-                                        <input id="youtube" type="text" ng-model="url_vid">
-                                        <label for="youtube">Link Video (youtube)</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="descripcion_corta" type="text" class="materialize-textarea"
-                                                  length="120" ng-model="descripcion_corta"></textarea>
-                                        <label for="descripcion_corta">Descripción en 140 caracteres</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="descripcion" type="text" class="materialize-textarea" length="120"
-                                                  ng-model="descripcion"></textarea>
-                                        <label for="descripcion">Descripción del Proyecto</label>
-                                    </div>
-                                    <div class="col s12">
-                                        <select class="browser-default" ng-model="categoria">
-                                            <option value="" disabled selected>Categoría</option>
-                                            <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="col s12">
-                                        <select class="browser-default" ng-model="beneficiario">
-                                            <option value="" disabled selected>a Quien Beneficia</option>
-                                            <option ng-repeat="x in beneficiarios" value="{{x.val}}">{{x.name}}</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="col s12 hide-on-med-and-up or-divider">
-            </div>
-            <form>
-                <div class="col s12 m6 l6 create-list-login-right">
-                    <div class="create-list-login-panel center">
-                        <div>
-                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            <br>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="file-field input-field">
-                                    <div class="btn grey darken-1">
-                                        <span>Foto 1</span>
-                                        <input type="file" ng-model="img_prin" base-sixty-four-input>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text"
-                                               placeholder="Sube tu imagen Principal">
-                                    </div>
-                                </div>
-
-                                <div class="file-field input-field">
-                                    <div class="btn grey darken-1">
-                                        <span>Foto 2</span>
-                                        <input type="file" ng-model="img_2" base-sixty-four-input>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text"
-                                               placeholder="Sube tu segunda imagen">
-                                    </div>
-                                </div>
-                                <div class="file-field input-field">
-                                    <div class="btn grey darken-1">
-                                        <span>Foto 3</span>
-                                        <input type="file" ng-model="img_3" base-sixty-four-input>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text"
-                                               placeholder="Sube tu tercera imagen">
-                                    </div>
-                                </div>
-                                <div class="file-field input-field">
-                                    <div class="btn grey darken-1">
-                                        <span>Foto 4</span>
-                                        <input type="file" ng-model="img_4" base-sixty-four-input>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text"
-                                               placeholder="Sube tu cuarta imagen">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+<!--estructura del modal/idea en moderacion-->
+<div id="alerta-modal" class="modal">
+    <div class="modal-content">
+        <h4>Idea Recibida</h4>
+        <p>Hemos recibido tu idea con éxito y dentro de las proxímas <strong>X</strong> horas será revisada por nuestro equipo para ser aprobada</p>
     </div>
-    <div class="row center">
-        <button ng-click="UpIdea()" class="btn">Subir</button>
+    <div class="modal-footer">
+        <a ui-sref="inicio" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
-<!--<div class="divider"></div>-->
 
+<section ng-controller="UpIdeaCtrl">
+    <div class="section center imagen-registro">
+        <h3 class="thin">Sube tu <img src="app/images/logo-negro.png" width="45px" height="45px"><strong class="bold"></strong> </h3>
+    </div>
+    <form class="row">
+        <div class="center col s12 m10 offset-m1">
+            <p class="flow-text">Registra tu idea.</p>
+        </div>
+
+        <!--columna izquierda-->
+        <div class="col s12 m4 offset-m1">
+            <div input-field>
+                <input type="text" ng-model="nombre" length="20">
+                <label>Título de la Idea</label>
+            </div>
+            <div input-field>
+                <textarea ng-model="descripcion_corta" class="materialize-textarea"></textarea>
+                <label>Breve Descripción del Proyecto</label>
+            </div>
+            <div input-field>
+                <textarea ng-model="descripcion" class="materialize-textarea"></textarea>
+                <label>Descripción del Proyecto</label>
+            </div>
+            <select class="browser-default" ng-model="categoria">
+                <option value="" disabled selected>Categoría</option>
+                <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>
+            </select>
+        </div>
+
+        <!--columna derecha-->
+        <div class="col s12 m4 offset-m2">
+            <div class="input-field">
+                <input id="youtube" type="text" ng-model="url_vid">
+                <label class="left-align" for="youtube">Link Video (youtube)</label>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn grey darken-1">
+                    <span>Foto 1</span>
+                    <input type="file" ng-model="img_prin" base-sixty-four-input >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Sube tu imagen Principal">
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn grey darken-1">
+                    <span>Foto 2</span>
+                    <input type="file" ng-model="img_2" base-sixty-four-input >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Sube tu segunda imagen">
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn grey darken-1">
+                    <span>Foto 3</span>
+                    <input type="file" ng-model="img_3" base-sixty-four-input >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Sube tu tercera imagen"  >
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn grey darken-1">
+                    <span>Foto 4</span>
+                    <input type="file" ng-model="img_4" base-sixty-four-input >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Sube tu cuarta imagen"  >
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row center">
+        <button ng-click="UpIdea()" href='#alerta-modal' class="btn" id="create-account-and-list" modal>Vista Previa</button>
+    </div>
+</section>
+<div class="divider"></div>
+<br>
+<br>

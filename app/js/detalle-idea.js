@@ -3,9 +3,9 @@
  */
 angular.module('detalle-idea',[])
 
-    .controller('IdeaCtrl', ['$scope', function ($scope,$location) {
-        var ideaId = $location.search().id;
-        console.log(ideaId);
+    .controller('IdeaCtrl', ['$scope','$location', function ($scope,$location) {
+          console.log("hola");
+        console.log("id:"+$location.search().id);
     }]);
 
 

@@ -4,14 +4,14 @@
         <br>
         <br>
         <div class="center">
-            <h3 class="white-text">Título de la idea</h3>
+            <h3 class="white-text">{{nombre}}</h3>
         </div>
         <br>
         <br>
     </div>
     <div class="center">
         <br>
-        <img class="responsive-img" style="width: 60%;" src="app/images/header.jpg">
+        <img class="responsive-img" style="width: 60%;" ng-src="{{img_prin}}">
     </div>
     <br>
     <div class="container">
@@ -20,17 +20,16 @@
                 <div class="col s12 m8">
                     <div class="card-panel">
                         <h5>Descripción de la Idea</h5>
-                        <p class="letra-detproy">Lorem Ipsum Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
-                        <p class="letra-detproy">Lorem Ipsum Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
-                        <p class="letra-detproy">Lorem Ipsum Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
+                        <p class="letra-detproy">{{descripcion}}.</p>
+
                     </div>
                 </div>
                 <div class="white">
                     <div class="col s12 m4">
                         <div class="center">
                             <div class="card-panel">
-                                <p>Nombre Autor</p>
-                                <p class="letra-detproy">Ubicación: Metropolitana,Santiago</p>
+                                <p>{{autor}}</p>
+                                <p class="letra-detproy">Ubicación: {{comuna}}</p>
                                 <p class="letra-detproy">Categoría: Entretenimiento</p>
                                 <p class="letra-detproy">Votos: 666</p>
                                 <p class="letra-detproy">Comentarios: 666</p>
@@ -51,14 +50,8 @@
         <br>
         <h4 class="titulo">Imágenes</h4>
         <div class="row">
-            <div class="col s12 m4">
-                <img materialboxed class="materialboxed" data-caption="" src="app/images/dibujo.jpg">
-            </div>
-            <div class="col s12 m4">
-                <img materialboxed class="materialboxed" data-caption="" src="app/images/header.jpg">
-            </div>
-            <div class="col s12 m4">
-                <img materialboxed class="materialboxed" data-caption="" src="app/images/dibujo.jpg">
+            <div class="col s12 m4" ng-repeat="img in imagenes">
+                <img materialboxed class="materialboxed" data-caption="" ng-src="{{img.image}}">
             </div>
         </div>
     </div>

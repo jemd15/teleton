@@ -10,13 +10,13 @@ angular.module('SubirIdea', ['naif.base64'])
             {val: '5', name: 'Comunicación'},
             {val: '6', name: 'Entretención'}
 
-        ]
+        ];
 
         $scope.beneficiarios = [
             {val: '1', name: 'Sordo-Mudo'}
 
 
-        ]
+        ];
 
 
         $scope.UpIdea = function ($location) {
@@ -31,7 +31,7 @@ angular.module('SubirIdea', ['naif.base64'])
                 category: $scope.categoria,
                 main_image: $scope.img_prin.base64
 
-            }
+            };
 
 
             console.log(obj);
@@ -57,24 +57,17 @@ angular.module('SubirIdea', ['naif.base64'])
                     var img2 = {
                         image: $scope.img_2.base64,
                         idea: data.id
-                    }
+                    };
                     var img3 = {
                         image: $scope.img_3.base64,
                         idea: data.id
-                    }
-                    var img2 = {
+                    };
+                    var img4 = {
                         image: $scope.img_4.base64,
                         idea: data.id
-                    }
+                    };
 
 
-                    $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img2, config)
-                        .success(function (data, status, headers, config) {
-                            console.log(data);
-                        })
-                        .error(function (data, status, header, config) {
-                            console.log(data);
-                        });
                     $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img2, config)
                         .success(function (data, status, headers, config) {
                             console.log(data);
@@ -83,6 +76,13 @@ angular.module('SubirIdea', ['naif.base64'])
                             console.log(data);
                         });
                     $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img3, config)
+                        .success(function (data, status, headers, config) {
+                            console.log(data);
+                        })
+                        .error(function (data, status, header, config) {
+                            console.log(data);
+                        });
+                    $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img4, config)
                         .success(function (data, status, headers, config) {
                             console.log(data);
                             swal({

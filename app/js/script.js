@@ -62,4 +62,4 @@ function irArriba(){
             controlArriba.fadeOut(500);
         }
     });
-};
+}

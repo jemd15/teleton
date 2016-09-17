@@ -267,3 +267,12 @@ i.fa p{
 img.materialboxed{
     width: 60%;
 }
+img.circle.responsive-img{
+    border: solid 4px;
+    border-color: #4caf50;
+}
+
+/*letras de color con contorno de otro color*/
+.stroke {
+    -webkit-text-stroke: 1.5px black;
+}

@@ -64,6 +64,9 @@ nav i.material-icons{
         width: 65%;
         margin: 8px;
     }
+    nav{
+        height: 64px;
+    }
 }
 #logo-nav-bar{
     margin: 8px 0 0 8px;

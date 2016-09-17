@@ -1,20 +1,12 @@
 div#countdown{
     position: absolute;
-    width: 50%;
-    left: 25%;
-    margin: 10% auto;
-    top: 0;
+    top: 200px;
     z-index: 98;
 }
 @media (max-width: 600px){
     div#countdown{
         margin: 10% auto;
-    }
-    div.video-container{
-        top: 8px;
-    }
-    nav{
-        height: 64px;
+        top: 10%;
     }
 }
 @media (max-width: 992px){
@@ -25,10 +17,10 @@ div#countdown{
 #clock span{
     float: left;
     text-align: center;
-    font-size: 50px;
+    font-size: 200%;
     margin: 0 2.5%;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     width: 20%;
     border-radius: 20px;
     box-sizing: border-box;

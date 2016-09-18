@@ -2,12 +2,14 @@ div#countdown{
     position: absolute;
     top: 200px;
     z-index: 98;
+    left: 20%;
+    right: 20%;
 }
 #clock span{
     float: left;
     text-align: center;
     font-size: 200%;
-    /*margin: 0 2.5%;*/
+    margin: 0 2.5%;
     color: #fff;
     padding: 15px;
     width: 20%;
@@ -58,6 +60,30 @@ div#countdown{
     #units span{
         margin-top: 10px;
         padding: 1px;
+    }
+}
+@media (max-width: 970px){
+    div#countdown{
+        top: 150px;
+    }
+}
+@media (max-width: 660px){
+    div#countdown{
+        top: 100px;
+    }
+}
+@media (max-width: 550px){
+    div#countdown{
+        top: 50px;
+        left: 10%;
+        right: 10%;
+    }
+}
+@media (max-width: 440px){
+    div#countdown{
+        top: 50px;
+        left: 0;
+        right: 0;
     }
 }
 

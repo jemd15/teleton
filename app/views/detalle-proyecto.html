@@ -39,7 +39,7 @@
                                     <p class="letra-detproy">Ubicación:{{comuna}}</p>
                                     <p class="letra-detproy">Categoría: {{categoria}}</p>
                                     <p class="letra-detproy">Beneficiario: {{beneficiario}}</p>
-                                    <p class="letra-detproy">Votos: 666</p>
+                                    <p class="letra-detproy">Votos: {{votos}}</p>
                                     <button class="button button-5 button-5a icon-remove"><i class="fa fa-heart"></i><span>Apoyar</span></button>
                                     <br>
                                     <h6>Compartelo en tus Redes Sociales</h6>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <br>
-                        <img class="responsive-img" src="app/images/ideatonidea.svg">
+                        <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
 
                     </div>
                 </div>
@@ -60,8 +60,14 @@
             <h5 class="titulo">Imágenes</h5>
             <div class="card-panel">
                 <div class="row">
-                    <div class="col s12 m4" ng-repeat="img in imagenes">
-                        <img materialboxed class="materialboxed" data-caption="" ng-src="{{img.image}}">
+                    <div class="col s12 m4" >
+                        <img materialboxed class="materialboxed" data-caption="" ng-src="{{img1}}">
+                    </div>
+                    <div class="col s12 m4" >
+                        <img materialboxed class="materialboxed" data-caption="" ng-src="{{img2}}">
+                    </div>
+                    <div class="col s12 m4" >
+                        <img materialboxed class="materialboxed" data-caption="" ng-src="{{img3}}">
                     </div>
                 </div>
             </div>
@@ -72,29 +78,31 @@
 
 <!--Cajon de comentarios-->
 
-<div class="container">
+<div class="container" ng-controller="CommentCtrl">
     <div class="row">
         <h5 class="titulo">Comentarios</h5>
-        <div ng-repeat="">
+        <div>
             <div class="col s12 m12 l12">
-                <div class="card-panel ">
+                <div class="card-panel " ng-repeat="comentario in comentarios">
                     <!--usuario que comenta-->
                     <div class="chip col s7 m3 l2">
-                        <img src="../images/usuario.svg" alt="Contact Person">
-                        {{""}}
+                        <!--<img src="../images/usuario.svg" alt="Contact Person">-->
+                        {{comentario.user.first_name}}  {{comentario.user.last_name}}
                     </div>
                     <br>
                     <br class="hide-on-large-only">
-                    <p class="white-text">{{com.comentario}}
+                    <p class="text">
+                        {{comentario.commentary}}
                     </p>
                 </div>
+
             </div>
         </div>
         <form class="col s12 m12 l12">
             <div class="card-panel">
                 <!--usuario que comenta-->
                 <div class="chip col s7 m3 l2">
-                    <img src="app/images/usuario.svg" alt="Contact Person">
+                    <!--<img src="app/images/usuario.svg" alt="Contact Person">-->
                     Nombre Usuario
                 </div>
                 <br>

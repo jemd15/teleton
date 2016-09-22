@@ -57,7 +57,7 @@ angular.module('detalle-idea',['youtube-embed'])
 
           $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
               .success(function (data, status, headers, config) {
-                $scope.votos = data.num_vote + 1;
+                  $scope.votos = data.num_vote;
                   var config = {
                       headers: {
                           'Authorization': 'token ' + $sessionStorage.token
@@ -65,6 +65,7 @@ angular.module('detalle-idea',['youtube-embed'])
                   }
                   $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_voto/', vote, config)
                       .success(function (data, status, headers, config) {
+                         $scope.votos=$scope.votos +1 ;
                                var obj = {
                                    num_vote : $scope.votos
                                }
@@ -155,15 +156,24 @@ angular.module('detalle-idea',['youtube-embed'])
     }])
 
     .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?user__email='+$sessionStorage.email)
+        var id_idea = $location.search().id;
+        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?idea__id='+id_idea)
             .success(function (data, status, headers, config) {
+                console.log("ideas a votar:");
                 console.log(data.results);
-                if (typeof data.results[0] !== 'undefined') {
-                    $scope.isvote = true;
+                var data = data.results;
+                var x;
+                for (x=0;x<data.length;x++){
+                    console.log(data[x].user.email);
+                    if(data[x].user.email == $sessionStorage.email){
+                        $scope.isvote=true;
+                    }
+                    else{
+                        $scope.isvote=false;
+                    }
                 }
-                else {
-                    $scope.isvote = false;
-                }
+
+
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);

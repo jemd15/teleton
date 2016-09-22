@@ -35,20 +35,12 @@ angular.module('SubirIdea', ['naif.base64'])
 
 
             console.log(obj);
-            if ($sessionStorage.isloginface === 1) {
                 config = {
                     headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokenface
+                        'Authorization': 'token ' + $sessionStorage.token
                     }
                 }
-            }
-            if ($sessionStorage.islogingoogle === 1) {
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokengoogle
-                    }
-                }
-            }
+
 
 
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_idea/', obj, config)

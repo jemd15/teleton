@@ -16,7 +16,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                 GoogleSignin.signIn().then(function (user) {
                     $scope.nombreuser =user.w3.ig;
                     $sessionStorage.nombre = user.w3.ig;
-                    $sessionStorage.emailgoogle = user.w3.U3;
+                    $sessionStorage.email = user.w3.U3;
                         var obj = {
 
                             'email': user.w3.U3,
@@ -29,8 +29,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
 
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/registration/", obj)
                             .success(function (data, status, headers) {
-                                $sessionStorage.tokengoogle = data.key;
-                                $sessionStorage.islogingoogle = 1;
+                                $sessionStorage.token = data.key;
+                                $sessionStorage.islogin = 1;
                                 swal({
                                         title: "Bienvenido!\n"+$scope.nombreuser,
                                         type: "success",
@@ -52,8 +52,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
 
                                 $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/login/", obj2)
                                         .success(function (data, status, headers, config) {
-                                                $sessionStorage.tokengoogle = data.key;
-                                                $sessionStorage.islogingoogle = 1;
+                                                $sessionStorage.token = data.key;
+                                                $sessionStorage.islogin = 1;
                                             swal({
                                                     title: "Bienvenido!\n"+$scope.nombreuser,
                                                     type: "success",

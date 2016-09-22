@@ -48,59 +48,64 @@ angular.module('detalle-idea',[])
     }])
 
 
-    .controller('VotosCtrl', ['$scope','$location','$http', function ($scope,$location,$http) {
-
-      $scope.votar = function () {
+    .controller('VotosCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http,$sessionStorage) {
+        var id_idea = $location.search().id;
+      $scope.Votar = function () {
           var vote = {
-              idea: $scope.id_idea
+              idea: id_idea
           }
 
-          if ($sessionStorage.isloginface === 1) {
-              config = {
-                  headers: {
-                      'Authorization': 'token ' + $sessionStorage.tokenface
-                  }
-              }
-          }
-          if ($sessionStorage.islogingoogle === 1) {
-              config = {
-                  headers: {
-                      'Authorization': 'token ' + $sessionStorage.tokengoogle
-                  }
-              }
-          }
-
-          $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_voto/', vote, config)
+          $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
               .success(function (data, status, headers, config) {
-                  $scope.votos = $scope.votos + 1;
+                $scope.votos = data.num_vote + 1;
+                  var config = {
+                      headers: {
+                          'Authorization': 'token ' + $sessionStorage.token
+                      }
+                  }
+                  $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_voto/', vote, config)
+                      .success(function (data, status, headers, config) {
+                               var obj = {
+                                   num_vote : $scope.votos
+                               }
+                          var config = {
+                              headers: {
+                                  'Authorization': 'token ' + $sessionStorage.token
+                              }
+                          }
+                          $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/",obj,config)
+                              .success(function (data, status, headers,config) {
+                                  console.log(data);
+                                  swal({
+                                          title: "Has Votado!\n"+$sessionStorage.nombre,
+                                          type: "success",
+                                          confirmButtonColor: "#DD6B55",
+                                          confirmButtonText: "Aceptar",
+                                          closeOnConfirm: true},
+                                      function(){
 
-                  $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+$scope.id_idea+"/",obj,config)
-                      .success(function (data, status, headers,config) {
-                          console.log(data);
-                          swal({
-                                  title: "Datos Registrados\n"+$sessionStorage.emailface,
-                                  type: "success",
-                                  confirmButtonColor: "#DD6B55",
-                                  confirmButtonText: "Subir Idea",
-                                  closeOnConfirm: true},
-                              function(){
+                                          location.reload();
+                                      });
 
-                                  location.href = '/#/sube-tu-idea';
+
+                              })
+                              .error(function (data, status, header, config) {
+                                  console.log(data);
                               });
-
-
                       })
                       .error(function (data, status, header, config) {
                           console.log(data);
                       });
               })
               .error(function (data, status, header, config) {
-                  console.log(data);
+                  console.log("FALLO:"+data);
               });
 
 
 
-      }
+
+
+      }//funcion votar()
 
 
     }])
@@ -152,6 +157,18 @@ angular.module('detalle-idea',[])
         }
 
 
+
+    }])
+
+    .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
+        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
+            .success(function (data, status, headers, config) {
+                console.log(data.results);
+                $scope.comentarios = data.results;
+            })
+            .error(function (data, status, header, config) {
+                console.log("FALLO:"+data);
+            });
 
     }]);
 

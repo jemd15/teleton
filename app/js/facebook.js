@@ -94,7 +94,7 @@
                     $scope.$apply(function () {
                         $scope.user = response;
                         $scope.user = response;
-                        $sessionStorage.emailface=response.email;
+                        $sessionStorage.email=response.email;
                         $sessionStorage.nombre=response.name;
                         $scope.nombre =response.name;
                         console.log($scope.user);
@@ -142,8 +142,8 @@
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
                                 $scope.logout();
-                                $sessionStorage.tokenface = data.key;
-                                $sessionStorage.isloginface = 1;
+                                $sessionStorage.token = data.key;
+                                $sessionStorage.islogin = 1;
                                 swal({
                                         title: "Bienvenido!\n"+$scope.nombre,
                                         type: "success",

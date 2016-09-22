@@ -1,7 +1,7 @@
 /**
  * Created by juliogf on 15-09-16.
  */
-angular.module('detalle-idea',[])
+angular.module('detalle-idea',['youtube-embed'])
 
     .controller('IdeaCtrl', ['$scope','$location','$http', function ($scope,$location,$http) {
         var id_idea = $location.search().id;
@@ -161,10 +161,15 @@ angular.module('detalle-idea',[])
     }])
 
     .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
+        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?user__email='+$sessionStorage.email)
             .success(function (data, status, headers, config) {
                 console.log(data.results);
-                $scope.comentarios = data.results;
+                if (typeof data.results[0] !== 'undefined') {
+                    $scope.isvote = true;
+                }
+                else {
+                    $scope.isvote = false;
+                }
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);

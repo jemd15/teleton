@@ -131,20 +131,14 @@ angular.module('detalle-idea',['youtube-embed'])
                 commentary:$scope.postcomentario
             }
 
-            if ($sessionStorage.isloginface === 1) {
+            if ($sessionStorage.islogin === 1) {
                 config = {
                     headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokenface
+                        'Authorization': 'token ' + $sessionStorage.token
                     }
                 }
             }
-            if ($sessionStorage.islogingoogle === 1) {
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokengoogle
-                    }
-                }
-            }
+
 
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_comentario/', obj, config)
                 .success(function (data, status, headers, config) {

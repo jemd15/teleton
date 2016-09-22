@@ -78,7 +78,7 @@ angular.module('SubirIdea', ['naif.base64'])
                         .success(function (data, status, headers, config) {
                             console.log(data);
                             swal({
-                                    title: "Noticia Subida con exito!",
+                                    title: "Idea Subida con exito!",
                                     type: "success",
                                     confirmButtonColor: "#DD6B55",
                                     confirmButtonText: "Ver Idea",

@@ -96,6 +96,7 @@
                         $scope.user = response;
                         $sessionStorage.emailface=response.email;
                         $sessionStorage.nombre=response.name;
+                        $scope.nombre =response.name;
                         console.log($scope.user);
 
                     });
@@ -144,7 +145,7 @@
                                 $sessionStorage.tokenface = data.key;
                                 $sessionStorage.isloginface = 1;
                                 swal({
-                                        title: "Bienvenido!\n"+$sessionStorage.nombre,
+                                        title: "Bienvenido!\n"+$scope.nombre,
                                         type: "success",
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "Aceptar",

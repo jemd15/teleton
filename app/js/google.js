@@ -14,6 +14,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
             $scope.googleLogin = function ($location) {
 
                 GoogleSignin.signIn().then(function (user) {
+                        $('#cargando-modal').openModal();
                     $scope.nombreuser =user.w3.ig;
                     $sessionStorage.nombre = user.w3.ig;
                     $sessionStorage.email = user.w3.U3;
@@ -31,6 +32,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                             .success(function (data, status, headers) {
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
+                                $('#cargando-modal').closeModal();
                                 swal({
                                         title: "Bienvenido!\n"+$scope.nombreuser,
                                         type: "success",
@@ -54,6 +56,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         .success(function (data, status, headers, config) {
                                                 $sessionStorage.token = data.key;
                                                 $sessionStorage.islogin = 1;
+                                            $('#cargando-modal').closeModal();
                                             swal({
                                                     title: "Bienvenido!\n"+$scope.nombreuser,
                                                     type: "success",

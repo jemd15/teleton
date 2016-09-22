@@ -1,7 +1,7 @@
 /**
  * Created by juliogf on 15-09-16.
  */
-angular.module('detalle-idea',[])
+angular.module('detalle-idea',['youtube-embed'])
 
     .controller('IdeaCtrl', ['$scope','$location','$http', function ($scope,$location,$http) {
         var id_idea = $location.search().id;
@@ -57,7 +57,7 @@ angular.module('detalle-idea',[])
 
           $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
               .success(function (data, status, headers, config) {
-                $scope.votos = data.num_vote + 1;
+                  $scope.votos = data.num_vote;
                   var config = {
                       headers: {
                           'Authorization': 'token ' + $sessionStorage.token
@@ -65,6 +65,7 @@ angular.module('detalle-idea',[])
                   }
                   $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_voto/', vote, config)
                       .success(function (data, status, headers, config) {
+                         $scope.votos=$scope.votos +1 ;
                                var obj = {
                                    num_vote : $scope.votos
                                }
@@ -131,20 +132,14 @@ angular.module('detalle-idea',[])
                 commentary:$scope.postcomentario
             }
 
-            if ($sessionStorage.isloginface === 1) {
+            if ($sessionStorage.islogin === 1) {
                 config = {
                     headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokenface
+                        'Authorization': 'token ' + $sessionStorage.token
                     }
                 }
             }
-            if ($sessionStorage.islogingoogle === 1) {
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.tokengoogle
-                    }
-                }
-            }
+
 
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_comentario/', obj, config)
                 .success(function (data, status, headers, config) {
@@ -161,10 +156,22 @@ angular.module('detalle-idea',[])
     }])
 
     .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
+        var id_idea = $location.search().id;
+        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?idea__id='+id_idea)
             .success(function (data, status, headers, config) {
-                console.log(data.results);
-                $scope.comentarios = data.results;
+                var data = data.results;
+                var x;
+                for (x=0;x<data.length;x++){
+
+                    if(data[x].user.email == $sessionStorage.email){
+                        $scope.isvote=true;
+                    }
+                    else{
+                        $scope.isvote=false;
+                    }
+                }
+
+
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);

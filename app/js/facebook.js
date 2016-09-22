@@ -76,6 +76,7 @@
             $scope.login = function () {
                 Facebook.login(function (response) {
                     if (response.status == 'connected') {
+                        $('#cargando-modal').openModal();
                         $scope.logged = true;
                         $scope.me();
                     }
@@ -92,12 +93,11 @@
                      * Using $scope.$apply since this happens outside angular framework.
                      */
                     $scope.$apply(function () {
-                        $scope.user = response;
+                        $scope.nombre =response.name;
                         $scope.user = response;
                         $sessionStorage.email=response.email;
                         $sessionStorage.nombre=response.name;
                         $scope.nombre =response.name;
-                        console.log($scope.user);
 
                     });
 
@@ -142,10 +142,12 @@
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
                                 $scope.logout();
+                                var nombre= $sessionStorage.nombre
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
+                                $('#cargando-modal').closeModal();
                                 swal({
-                                        title: "Bienvenido!\n"+$scope.nombre,
+                                        title: "Bienvenido!\n"+nombre,
                                         type: "success",
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "Aceptar",

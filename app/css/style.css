@@ -88,29 +88,6 @@ nav i.material-icons{
     width: 100%;
 }
 /**********************/
-.create-list-login-registro {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
-}
-.create-list-login-panel {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
-}
-.center, .center-align {
-    text-align: center;
-}
-.create-list-connect-btn a {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    padding: 0.8rem 0;
-    height: auto;
-}
 .button-google {
     color: white;
     background: #dd4b39;
@@ -128,20 +105,8 @@ nav i.material-icons{
 }
 
 /*detalle-proyecto*/
-.letra-detproy{
-    text-align: justify;
-    font-size: 13px;
-    line-height: 20px;
-}
 .idea-header{
     background-image: url("../images/ideaheader.png");
-}
-.circular {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
 }
 .button {
     border: none;
@@ -170,7 +135,6 @@ nav i.material-icons{
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 .button-5 {
     background: #165F8E;
     color: #fff;
@@ -251,21 +215,7 @@ footer{
     margin-right: 15px;
 }
 i.fa p{
-    font-family: "Roboto", sans-serif;
     font-size: 15px;
-}
-.embed-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-.embed-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 60%;
 }
 img.materialboxed{
     width: 60%;

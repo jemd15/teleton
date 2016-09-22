@@ -76,6 +76,7 @@
             $scope.login = function () {
                 Facebook.login(function (response) {
                     if (response.status == 'connected') {
+                        $('#cargando-modal').openModal();
                         $scope.logged = true;
                         $scope.me();
                     }
@@ -144,6 +145,7 @@
                                 var nombre= $sessionStorage.nombre
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
+                                $('#cargando-modal').closeModal();
                                 swal({
                                         title: "Bienvenido!\n"+nombre,
                                         type: "success",

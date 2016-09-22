@@ -159,12 +159,10 @@ angular.module('detalle-idea',['youtube-embed'])
         var id_idea = $location.search().id;
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?idea__id='+id_idea)
             .success(function (data, status, headers, config) {
-                console.log("ideas a votar:");
-                console.log(data.results);
                 var data = data.results;
                 var x;
                 for (x=0;x<data.length;x++){
-                    console.log(data[x].user.email);
+
                     if(data[x].user.email == $sessionStorage.email){
                         $scope.isvote=true;
                     }

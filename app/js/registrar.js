@@ -20,14 +20,14 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                 university:$scope.universidad
             };
             console.log(obj.age);
-            if($sessionStorage.isloginface === 1)
+            if($sessionStorage.islogin === 1)
             {
                 var config = {
                     headers : {
-                        'Authorization': 'token '+$sessionStorage.tokenface
+                        'Authorization': 'token '+$sessionStorage.token
                     }
                 };
-                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.emailface)
+                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
                     .success(function (data, status, headers) {
                         console.log(data.results[0].id);
                         $scope.id= data.results[0].id;
@@ -35,7 +35,7 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                             .success(function (data, status, headers,config) {
                                 console.log(data);
                                 swal({
-                                        title: "Datos Registrados\n"+$sessionStorage.emailface,
+                                        title: "Datos Registrados\n"+$sessionStorage.email,
                                         type: "success",
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "Subir Idea",
@@ -60,41 +60,6 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
 
             }
 
-
-            if($sessionStorage.islogingoogle === 1)
-            {
-                config = {
-                    headers : {
-                        'Authorization': 'token '+$sessionStorage.tokengoogle
-                    }
-                };
-                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.emailgoogle)
-                    .success(function (data, status, headers) {
-                        console.log(data.results[0].id);
-                        $scope.id= data.results[0].id;
-                        $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/editusers/'+ $scope.id+'/',obj,config)
-                            .success(function (data, status, headers,config) {
-                                console.log(data);
-                                swal({
-                                        title: "Datos Registrados\n"+$sessionStorage.emailgoogle,
-                                        type: "success",
-                                        confirmButtonColor: "#DD6B55",
-                                        confirmButtonText: "Subir Idea",
-                                        closeOnConfirm: true},
-                                    function(){
-
-                                        location.href = '/#/sube-tu-idea';
-                                    });
-
-                            })
-                            .error(function (data, status, header, config) {
-                                console.log(data);
-                            });
-                    })
-                    .error(function (data, status, header) {
-                        console.log(data);
-                    });
-                            }
             // setTimeout(location.reload.bind(location), 5000);
         };
     }]);

@@ -229,3 +229,18 @@ img.circle.responsive-img{
 .stroke {
     -webkit-text-stroke: 1.5px black;
 }
+
+/*Don Fran Toasty*/
+#donfran{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-delay: 0.5s;
+    /*-webkit-animation-iteration-count: infinite;*/
+
+    -moz-animation-duration: 0.3s;
+    -moz-animation-delay: 0.5s;
+    /*-moz-animation-iteration-count: infinite;*/
+}

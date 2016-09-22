@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="app/lib/materialize/dist/css/materialize.css">
     <link rel="stylesheet" href="app/lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="app/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" href="app/lib/animate.css/animate.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="app/css/video%20header.css">
     <link rel="stylesheet" href="app/css/style.css">
@@ -109,7 +109,9 @@
             <i class="fa fa-arrow-up"></i>
         </a>
     </div>
-
+    
+    <!--EasterEgg Don Fran Toasty-->
+    <img src="app/images/easteregg/toasty.png" alt="" id="donfran" class="animated hide">
     <!--footer-->
     <footer class="page-footer white-text light-green z-depth-1">
         <div class="container center">
@@ -131,11 +133,15 @@
             <div class="container">
                 <div class="row">
                     <a class="col s12 m6 white-text">© 2016 Copyright IDEATON. Todos los derechos reservados.</a>
-                    <a ng-click="toasty()" class="col s12 m4 offset-m2 white-text right-align">Web App Developers #TeamUSS</a>
+                    <a id="team" class="col s12 m4 offset-m2 white-text right-align">Web App Developers #TeamUSS</a>
                 </div>
             </div>
         </div>
     </footer>
+    <audio id="sound" preload="auto">
+        <source src="app/images/easteregg/toasty-sound.ogg" type="audio/ogg">
+        <source src="app/images/easteregg/toasty-sound.mp3" type="audio/wav">
+    </audio>
 
 
     <script src="app/lib/jquery/dist/jquery.js"></script>
@@ -159,8 +165,8 @@
     <script src="app/js/detalle-idea.js"></script>
     <script src="app/js/script.js"></script>
     <script src="app/js/countdown.js"></script>
+    <script src="app/js/toasty.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57de621f528e964c"></script>
-
 
 </body>
 </html>

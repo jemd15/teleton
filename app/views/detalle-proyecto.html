@@ -98,12 +98,13 @@
 
             </div>
         </div>
-        <form class="col s12 m12 l12">
+        <div ng-controller="ValidarReg">
+        <form class="col s12 m12 l12" ng-show="islogin" ng-controller="CommentCtrl">
             <div class="card-panel">
                 <!--usuario que comenta-->
                 <div class="chip col s7 m3 l2">
                     <!--<img src="app/images/usuario.svg" alt="Contact Person">-->
-                    Nombre Usuario
+                    {{nombre_user}}
                 </div>
                 <br>
                 <br class="hide-on-large-only">
@@ -112,5 +113,35 @@
                 <a href=""  ng-click=""  class="btn">Comentar</a>
             </div>
         </form>
+            <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
+        </div>
+    </div>
+</div>
+
+
+<!--estructura del modal/login-->
+<div id="login-modal" class="modal container">
+    <div class="modal-content modal-responsive">
+        <div class="row">
+            <div class="section center">
+                <img class="logo-modal" src="app/images/ideaton.png" alt="">
+            </div>
+            <div class="create-list-login-registro center create-list-connect-btn" ng-controller="ValidarReg">
+                <h3 class="thin">Sube tu <strong class="bold">Idea</strong></h3>
+                <p data-ng-show="!islogin" class="flow-text">Selecciona una cuenta para iniciar sesión.</p>
+                <div class="row">
+                    <div ng-controller="LoginGoogleCtrl" class="col s6">
+                        <button class="button-google btn col s8 offset-s4" ng-click="googleLogin()" data-ng-show="!islogin"><i class="fa fa-google-plus" aria-hidden="true"></i>  Google</button>
+                    </div>
+                    <div ng-controller="LoginFaceCtrl" class="col s6">
+                        <button class="button-facebook btn col s8" data-ng-show="!islogin" data-ng-click="IntentLogin()" ><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</button>
+                    </div>
+                </div>
+                <div>
+                    <a ng-show="!isReg" ng-hide="!islogin" ui-sref="registrarse">Rellena tus Datos, para Continuar</a>
+                    <a ng-show="isReg" ui-sref="sube-tu-idea">Sube tu Idea</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

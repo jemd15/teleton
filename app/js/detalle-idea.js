@@ -105,8 +105,9 @@ angular.module('detalle-idea',[])
 
     }])
 
-    .controller('CommentCtrl', ['$scope','$location','$http', function ($scope,$location,$http) {
+    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
         var id_idea = $location.search().id;
+        $scope.nombre_user = $sessionStorage.nombre;
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
             .success(function (data, status, headers, config) {
                 console.log(data.results);

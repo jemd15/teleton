@@ -108,9 +108,9 @@
                 </div>
                 <br>
                 <br class="hide-on-large-only">
-                <textarea ng-model="comentario" id="comentario" type="text" class="validate white"></textarea>
+                <textarea ng-model="postcomentario" id="comentario" type="text" class="validate white"></textarea>
                 <label for="comentario"></label>
-                <a href=""  ng-click=""  class="btn">Comentar</a>
+                <button  ng-click="PostComentario()"  class="btn">Comentar</button>
             </div>
         </form>
             <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
@@ -139,7 +139,7 @@
                 </div>
                 <div>
                     <a ng-show="!isReg" ng-hide="!islogin" ui-sref="registrarse">Rellena tus Datos, para Continuar</a>
-                    <a ng-show="isReg" ui-sref="sube-tu-idea">Sube tu Idea</a>
+                    <a ng-show="isReg" ui-sref="sube-tu-idea">Logeate para comentar!</a>
                 </div>
             </div>
         </div>

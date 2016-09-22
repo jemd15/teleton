@@ -161,14 +161,16 @@ angular.module('detalle-idea',['youtube-embed'])
             .success(function (data, status, headers, config) {
                 var data = data.results;
                 var x;
+                $scope.isvote=false;
                 for (x=0;x<data.length;x++){
 
                     if(data[x].user.email == $sessionStorage.email){
                         $scope.isvote=true;
+                        break;
                     }
-                    else{
-                        $scope.isvote=false;
-                    }
+                    //else{
+                    //    $scope.isvote=false;
+                    //}
                 }
 
 

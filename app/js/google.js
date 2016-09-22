@@ -14,6 +14,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
             $scope.googleLogin = function ($location) {
 
                 GoogleSignin.signIn().then(function (user) {
+                    $scope.nombreuser =user.w3.ig;
+                    $sessionStorage.nombre = user.w3.ig;
                     $sessionStorage.emailgoogle = user.w3.U3;
                         var obj = {
 
@@ -30,7 +32,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                 $sessionStorage.tokengoogle = data.key;
                                 $sessionStorage.islogingoogle = 1;
                                 swal({
-                                        title: "Bienvenido!\n"+$sessionStorage.emailgoogle,
+                                        title: "Bienvenido!\n"+$scope.nombreuser,
                                         type: "success",
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "Aceptar",
@@ -53,7 +55,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                 $sessionStorage.tokengoogle = data.key;
                                                 $sessionStorage.islogingoogle = 1;
                                             swal({
-                                                    title: "Bienvenido!\n"+$sessionStorage.emailgoogle,
+                                                    title: "Bienvenido!\n"+$scope.nombreuser,
                                                     type: "success",
                                                     confirmButtonColor: "#DD6B55",
                                                     confirmButtonText: "Aceptar",

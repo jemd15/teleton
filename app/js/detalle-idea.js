@@ -12,8 +12,8 @@ angular.module('detalle-idea',[])
                 $scope.descripcion_corta=data.short_description;
                 $scope.descripcion= data.description;
                 $scope.url_vid = data.url_video;
-                $scope.img_prin=    data.main_image;
-                $scope.autor=    data.user.email;
+                $scope.img_prin= data.main_image;
+                $scope.autor=    data.user.first_name+" "+data.user.last_name;
                 $scope.comuna = data.user.commune;
                 $scope.votos = data.num_vote;
 
@@ -36,6 +36,9 @@ angular.module('detalle-idea',[])
             .success(function (data, status, headers, config) {
                console.log(data.results);
                 $scope.imagenes =data.results;
+                $scope.img1 = data.results[0].image;
+                $scope.img2 = data.results[1].image;
+                $scope.img3 = data.results[2].image;
 
             })
             .error(function (data, status, header, config) {
@@ -98,6 +101,56 @@ angular.module('detalle-idea',[])
 
 
       }
+
+
+    }])
+
+    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage', function ($scope,$location,$http, $sessionStorage) {
+        var id_idea = $location.search().id;
+        $scope.nombre_user = $sessionStorage.nombre;
+
+            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
+                .success(function (data, status, headers, config) {
+                    console.log(data.results);
+                    $scope.comentarios = data.results;
+                })
+                .error(function (data, status, header, config) {
+                    console.log("FALLO:"+data);
+                });
+
+
+        $scope.PostComentario = function () {
+
+            var obj = {
+                idea:id_idea,
+                commentary:$scope.postcomentario
+            }
+
+            if ($sessionStorage.isloginface === 1) {
+                config = {
+                    headers: {
+                        'Authorization': 'token ' + $sessionStorage.tokenface
+                    }
+                }
+            }
+            if ($sessionStorage.islogingoogle === 1) {
+                config = {
+                    headers: {
+                        'Authorization': 'token ' + $sessionStorage.tokengoogle
+                    }
+                }
+            }
+
+            $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_comentario/', obj, config)
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                    location.reload();
+                })
+                .error(function (data, status, header, config) {
+                    console.log(data);
+                });
+        }
+
 
 
     }]);

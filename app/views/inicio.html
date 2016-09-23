@@ -188,8 +188,10 @@
 <!--noticias-->
 <section ng-controller="NoticiasCtrl">
     <h4 class="titulo">Noticias</h4>
-    <div class="row"></div>
-    <article class="row">
+    <article class="row grey darken-4 z-depth-1">
+        <div class="row">
+            <a ui-sref="noticias" class="btn right col m2 green">Ver Todas</a>
+        </div>
         <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
             <div class="card hoverable">
                 <div class="card-image">
@@ -204,12 +206,14 @@
                 </div>
             </div>
         </div>
-
+        <div class="row"></div>
     </article>
 </section>
 
 <!--redes sociales-->
+<section>
 
+</section>
     
 <!--Auspisiadores -->
 <section class="row center">

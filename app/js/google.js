@@ -42,27 +42,26 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         confirmButtonText: "Aceptar",
                                         closeOnConfirm: true},
                                     function(){
-
                                         var url = $location.path();
                                         console.log(url);
-                                        if(url=="/inicio"){
+                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                        }
+                                        else{
+
                                             $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
                                                 .success(function (data, status, headers) {
                                                     if(data.results[0].commune !=""){
-
-                                                        $location.path("/sube-tu-idea");
+                                                        $location.path("/sube-tu-idea")
 
                                                     }
                                                     else{
-
-                                                        $location.path("/registrarse");
-                                                       }
+                                                        $location.path("/registrarse")
+                                                    }
                                                 })
                                                 .error(function (data, status, header) {
                                                     console.log(data);
-                                                });}
-                                        else{
-                                            location.reload();
+                                                });
+
                                         }
                                     });
 
@@ -89,21 +88,24 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                 function(){
                                                     var url = $location.path();
                                                     console.log(url);
-                                                    if(url=="/inicio"){
+                                                    if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                                    }
+                                                    else{
+
                                                         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
                                                             .success(function (data, status, headers) {
                                                                 if(data.results[0].commune !=""){
                                                                     $location.path("/sube-tu-idea")
 
                                                                 }
-                                                                else{ $location.path("/registrarse")
-                                                                    }
+                                                                else{
+                                                                    $location.path("/registrarse")
+                                                                }
                                                             })
                                                             .error(function (data, status, header) {
                                                                 console.log(data);
-                                                            });}
-                                                    else{
-                                                        location.reload();
+                                                            });
+
                                                     }
 
                                                 });

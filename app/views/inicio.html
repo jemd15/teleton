@@ -130,99 +130,41 @@
 </section>
 
 <!--Jurado-->
-<section>
+<section ng-controller="JuradosCtrl">
     <h4 class="titulo col s12">Jurado</h4>
     <div class="row white z-depth-1">
         <br>
         <div class="center">
-            <div class="col s12 m2 offset-m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2 offset-m3">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
+            <div class="col s12 m2 offset-m2" ng-repeat="jurado in jurados | orderBy:'-id'">
+                <img ng-src="{{jurado.imagen}}" class="circle responsive-img hoverable z-depth-1" alt="">
+                <h5>{{jurado.nombre}}</h5>
+                <p>Cargo:{{jurado.cargo}}</p>
+                <p>{{jurado.presentacion}}</p>
             </div>
         </div>
     </div>
 </section>
 
 <!--noticias-->
-<section>
+<section ng-controller="NoticiasCtrl">
     <h4 class="titulo">Noticias</h4>
+    <div class="row"></div>
     <article class="row">
-        <div class="col s12 m4 l4">
+        <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
             <div class="card hoverable">
                 <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
+                    <img ng-src="{{noticia.imagen}}">
+                    <span class="card-title">{{noticia.titulo}}</span>
                 </div>
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <p>{{noticia.texto_breve}}</p>
                 </div>
                 <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
+                    <a class="btn green accent-4" href="#">Ver más</a>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
-                </div>
-            </div>
-        </div>
+
     </article>
 </section>
 

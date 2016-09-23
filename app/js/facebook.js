@@ -1,4 +1,4 @@
-    angular.module('AppFace', ['facebook','ngStorage',])
+angular.module('AppFace', ['facebook','ngStorage',])
 
 
 
@@ -43,15 +43,15 @@
              * Watch for Facebook to be ready.
              * There's also the event that could be used
              */
-            // $scope.$watch(
-            //     function() {
-            //         return Facebook.isReady();
-            //     },
-            //     function(newVal) {
-            //         if (newVal)
-            //             $scope.facebookReady = true;
-            //     }
-            // );
+                // $scope.$watch(
+                //     function() {
+                //         return Facebook.isReady();
+                //     },
+                //     function(newVal) {
+                //         if (newVal)
+                //             $scope.facebookReady = true;
+                //     }
+                // );
 
             var userIsConnected = false;
 
@@ -156,25 +156,27 @@
                                         confirmButtonText: "Aceptar",
                                         closeOnConfirm: true},
                                     function(){
-                                            var url = $location.path();
+                                        var url = $location.path();
                                         console.log(url);
-                                            if(url=="/inicio"){
-                                        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
-                                            .success(function (data, status, headers) {
-                                                if(data.results[0].commune !=""){
-                                                    $location.path("/sube-tu-idea")
+                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                        }
+                                        else{
 
-                                                }
-                                                else{
-                                                    $location.path("/registrarse")
+                                            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                                .success(function (data, status, headers) {
+                                                    if(data.results[0].commune !=""){
+                                                        $location.path("/sube-tu-idea")
+
                                                     }
-                                            })
-                                            .error(function (data, status, header) {
-                                                console.log(data);
-                                            });}
-                                            else{
-                                                location.reload();
-                                            }
+                                                    else{
+                                                        $location.path("/registrarse")
+                                                    }
+                                                })
+                                                .error(function (data, status, header) {
+                                                    console.log(data);
+                                                });
+
+                                        }
 
 
                                     });
@@ -224,4 +226,4 @@
         }
     })
 
-    ;
+;

@@ -6,7 +6,7 @@ angular.module('inicio',[])
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/noticias/')
             .success(function (data, status, headers, config) {
                 $scope.noticias = data.results;
-                console.log($scope.noticias);
+
 
             })
             .error(function (data, status, header, config) {
@@ -19,7 +19,7 @@ angular.module('inicio',[])
     $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/jurados/')
         .success(function (data, status, headers, config) {
             $scope.jurados = data.results;
-            console.log($scope.jurados);
+
 
         })
         .error(function (data, status, header, config) {

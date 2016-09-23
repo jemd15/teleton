@@ -37,7 +37,7 @@ angular.module('detalle-idea',['youtube-embed'])
 
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/imagenes/?idea__id='+id_idea)
             .success(function (data, status, headers, config) {
-               console.log(data.results);
+
                 $scope.imagenes =data.results;
                 $scope.img1 = data.results[0].image;
                 $scope.img2 = data.results[1].image;
@@ -79,7 +79,7 @@ angular.module('detalle-idea',['youtube-embed'])
                           }
                           $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/",obj,config)
                               .success(function (data, status, headers,config) {
-                                  console.log(data);
+
                                   swal({
                                           title: "Has Votado!\n"+$sessionStorage.nombre,
                                           type: "success",
@@ -94,11 +94,11 @@ angular.module('detalle-idea',['youtube-embed'])
 
                               })
                               .error(function (data, status, header, config) {
-                                  console.log(data);
+                                  console.log("FALLO"+data);
                               });
                       })
                       .error(function (data, status, header, config) {
-                          console.log(data);
+                          console.log("FALLO"+data);
                           swal({
                                   title: "Ya votaste!",
                                   type: "success",
@@ -126,7 +126,7 @@ angular.module('detalle-idea',['youtube-embed'])
 
             $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
                 .success(function (data, status, headers, config) {
-                    console.log(data.results);
+
                     $scope.comentarios = data.results;
                 })
                 .error(function (data, status, header, config) {
@@ -152,11 +152,11 @@ angular.module('detalle-idea',['youtube-embed'])
 
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_comentario/', obj, config)
                 .success(function (data, status, headers, config) {
-                    console.log(data);
+
                     location.reload();
                 })
                 .error(function (data, status, header, config) {
-                    console.log(data);
+                    console.log("FALLO"+data);
                 });
         }
 

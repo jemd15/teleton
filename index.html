@@ -59,21 +59,24 @@
                         <a class="white-text">Ideas</a>
                     </div>
                     <div class="collapsible-body grey darken-3">
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">Vida Diaria</a></li>
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">Eduación</a></li>
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">Trabajo</a></li>
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">Transporte</a></li>
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
-                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
+                        <ul>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">Vida Diaria</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">Eduación</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">Trabajo</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">Transporte</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
+                            <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'todas'})">Todas</a></li>
+                        </ul>
                     </div>
                 </li>
             </ul>
         </li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="bases">Bases</a></li>
         <!--<li class="white-text hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>-->
-        <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
-        <li class="color-scroll" ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
-        <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
+        <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a class="white-text" ui-sref="registrarse">Sube tu Idea</a></li>
+        <li class="color-scroll" ng-show="isReg"  ui-sref-active="active"><a class="white-text" ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+        <li class="color-scroll" ng-hide="islogin"><a class="white-text" href='#login-modal' modal>Sube tu Idea</a></li>
     </ul>
 
     <!--estructura del modal/login-->

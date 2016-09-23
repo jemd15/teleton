@@ -43,6 +43,7 @@
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">Transporte</a></li>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
+        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'todas'})">Todas</a></li>
     </ul>
 
     <!--menu lateral version movil-->
@@ -55,15 +56,15 @@
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header">
-                        <a class="white-text" href="#!">Ideas</a>
+                        <a class="white-text">Ideas</a>
                     </div>
                     <div class="collapsible-body grey darken-3">
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">Vida Diaria</a></li>
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">Eduación</a></li>
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">Trabajo</a></li>
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">Transporte</a></li>
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
-                <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">Vida Diaria</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">Eduación</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">Trabajo</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">Transporte</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
+                        <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
                     </div>
                 </li>
             </ul>
@@ -108,19 +109,19 @@
         <div class="modal-content modal-responsive">
             <div class="row">
                 <div class="section center">
-    <div class="preloader-wrapper big active">
-        <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div><div class="gap-patch">
-            <div class="circle"></div>
-        </div><div class="circle-clipper right">
-            <div class="circle"></div>
-        </div>
-        </div>
-    </div>
-    </div>
-    </div>
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -155,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <a class="col s12 m6 white-text">© 2016 Copyright IDEATON. Todos los derechos reservados.</a>
-                    <a ng-click="toasty()" class="col s12 m4 offset-m2 white-text right-align">Web App Developers #TeamUSS</a>
+                    <a class="col s12 m4 offset-m2 white-text right-align">Web App Developers #TeamUSS</a>
                 </div>
             </div>
         </div>
@@ -174,10 +175,12 @@
     <script src="app/lib/angular-youtube-mb/src/angular-youtube-embed.js"></script>
     <script src="app/lib/ngSweetAlert/SweetAlert.js"></script>
     <script src="app/lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="app/lib/angular-sanitize/angular-sanitize.js"></script>
     <script src="app/js/app.js"></script>
     <script src="app/js/facebook.js"></script>
     <script src="app/js/google.js"></script>
     <script src="app/js/rutas.js"></script>
+    <script src="app/js/countdown.js"></script>
     <script src="app/js/validacion.js"></script>
     <script src="app/js/registrar.js"></script>
     <script src="app/js/subir_idea.js"></script>

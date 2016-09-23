@@ -11,9 +11,10 @@
     <br class="hide-on-med-and-up">
 
     <!--contador-->
-    <div id="countdown">
+    <div id="countdown" ng-controller="ContadorCtrl">
+        {{loadcount()}}
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock"></div>
+        <div id="clock" ng-bind-html="clock"></div>
         <div id="units">
             <span class="white-text">Días</span>
             <span class="white-text">Hrs</span>
@@ -130,16 +131,56 @@
 </section>
 
 <!--Jurado-->
-<section ng-controller="JuradosCtrl">
+<section id="jurado" ng-controller="JuradosCtrl">
     <h4 class="titulo col s12">Jurado</h4>
-    <div class="row white z-depth-1">
+    <div class="white z-depth-1">
         <br>
         <div class="center">
-            <div class="col s12 m2 offset-m2" ng-repeat="jurado in jurados | orderBy:'-id'">
-                <img ng-src="{{jurado.imagen}}" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>{{jurado.nombre}}</h5>
-                <p>Cargo:{{jurado.cargo}}</p>
-                <p>{{jurado.presentacion}}</p>
+            <div class="row">
+                <div class="col s12 m2 offset-m2">
+                    <img ng-src='{{jurados[0].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[0].nombre}}</h5>
+                    <p>{{jurados[0].cargo}}</p>
+                    <p>{{jurados[0].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[1].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[1].nombre}}</h5>
+                    <p>{{jurados[1].cargo}}</p>
+                    <p>{{jurados[1].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[2].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[2].nombre}}</h5>
+                    <p>{{jurados[2].cargo}}</p>
+                    <p>{{jurados[2].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[3].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[3].nombre}}</h5>
+                    <p>{{jurados[3].cargo}}</p>
+                    <p>{{jurados[3].presentacion}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m2 offset-m3">
+                    <img ng-src='{{jurados[4].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[4].nombre}}</h5>
+                    <p>{{jurados[4].cargo}}</p>
+                    <p>{{jurados[4].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[5].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[5].nombre}}</h5>
+                    <p>{{jurados[5].cargo}}</p>
+                    <p>{{jurados[5].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[6].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[6].nombre}}</h5>
+                    <p>{{jurados[6].cargo}}</p>
+                    <p>{{jurados[6].presentacion}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -148,8 +189,10 @@
 <!--noticias-->
 <section ng-controller="NoticiasCtrl">
     <h4 class="titulo">Noticias</h4>
-    <div class="row"></div>
-    <article class="row">
+    <article class="row grey darken-4 z-depth-1">
+        <div class="row">
+            <a ui-sref="noticias" class="btn right col m2 green">Ver Todas</a>
+        </div>
         <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
             <div class="card hoverable">
                 <div class="card-image">
@@ -164,12 +207,14 @@
                 </div>
             </div>
         </div>
-
+        <div class="row"></div>
     </article>
 </section>
 
 <!--redes sociales-->
+<section>
 
+</section>
     
 <!--Auspisiadores -->
 <section class="row center">
@@ -189,5 +234,4 @@
 </section>
 
 
-<script src="app/js/countdown.js"></script>
 

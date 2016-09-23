@@ -44,6 +44,10 @@ angular.module('rutas',['ui.materialize','ui.router'])
                 templateUrl: 'app/views/detalle-proyecto.html',
                 controller: 'detalleProyectoCtrl'
             })
+            .state('noticias',{
+                url: '/noticias',
+                templateUrl: 'app/views/noticias.html'
+            })
             .state('detalle-categoria', {
                 url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',

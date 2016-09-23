@@ -20,7 +20,6 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                 career:$scope.carrera,
                 university:$scope.universidad
             };
-            console.log(obj.age);
             if($sessionStorage.islogin === 1)
             {
                 var config = {
@@ -30,11 +29,10 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                 };
                 $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
                     .success(function (data, status, headers) {
-                        console.log(data.results[0].id);
                         $scope.id= data.results[0].id;
                         $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/editusers/'+ $scope.id+'/',obj,config)
                             .success(function (data, status, headers,config) {
-                                console.log(data);
+
                                 swal({
                                         title: "Datos Registrados\n"+$sessionStorage.nombre,
                                         type: "success",
@@ -49,12 +47,12 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
 
                             })
                             .error(function (data, status, header, config) {
-                                console.log(data);
+                                console.log("FALLO"+data);
                             });
 
                     })
                     .error(function (data, status, header) {
-                        console.log(data);
+                        console.log("FALLO"+data);
                     });
 
 

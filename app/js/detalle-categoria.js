@@ -36,7 +36,7 @@ angular.module('detalle-categoria',['rutas'])
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?category__id='+id_categoria+'&state=1')
             .success(function (data, status, headers, config) {
                $scope.ideas = data.results;
-                console.log($scope.ideas);
+
 
             })
             .error(function (data, status, header, config) {
@@ -47,7 +47,7 @@ angular.module('detalle-categoria',['rutas'])
             $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?state=1')
                 .success(function (data, status, headers, config) {
                     $scope.ideas = data.results;
-                    console.log($scope.ideas);
+
 
                 })
                 .error(function (data, status, header, config) {

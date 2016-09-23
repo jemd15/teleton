@@ -1,6 +1,7 @@
-angular.module('validacion',['ngStorage',])
+angular.module('validacion',['ngStorage'])
 
-.controller('ValidarReg', ['$scope','$http','$sessionStorage', function ($scope,$http,$sessionStorage) {
+.controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location', function ($scope,$http,$sessionStorage,$state,$location) {
+    console.log("donde estoy?"+$location.path());
      $scope.islogin = false;
 	 if($sessionStorage.islogin === 1)
 	 {

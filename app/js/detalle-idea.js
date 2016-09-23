@@ -96,6 +96,12 @@ angular.module('detalle-idea',['youtube-embed'])
                       })
                       .error(function (data, status, header, config) {
                           console.log(data);
+                          swal({
+                                  title: "Ya votaste!",
+                                  type: "success",
+                                  confirmButtonColor: "#DD6B55",
+                                  confirmButtonText: "Aceptar",
+                                  closeOnConfirm: true});
                       });
               })
               .error(function (data, status, header, config) {

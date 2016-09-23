@@ -36,11 +36,11 @@ angular.module('SubirIdea', ['naif.base64'])
 
 
             console.log(obj);
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.token
-                    }
+            config = {
+                headers: {
+                    'Authorization': 'token ' + $sessionStorage.token
                 }
+            }
 
 
 

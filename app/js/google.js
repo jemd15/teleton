@@ -8,12 +8,13 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
         }
     ])
 
-    .controller('LoginGoogleCtrl', ['$scope', 'GoogleSignin', '$http', '$sessionStorage','$state','$rootScope',
+    .controller('LoginGoogleCtrl', ['$scope', 'GoogleSignin', '$http', '$sessionStorage','$rootScope','$location',
 
-        function ($scope, GoogleSignin, $http, $sessionStorage,$state,$rootScope) {
-            $scope.googleLogin = function ($location) {
+        function ($scope, GoogleSignin, $http, $sessionStorage,$rootScope,$location) {
+            $scope.googleLogin = function () {
 
                 GoogleSignin.signIn().then(function (user) {
+                        $('#login-modal').closeModal();
                         $('#cargando-modal').openModal();
                     $scope.nombreuser =user.w3.ig;
                     $sessionStorage.nombre = user.w3.ig;
@@ -32,6 +33,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                             .success(function (data, status, headers) {
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
+
                                 $('#cargando-modal').closeModal();
                                 swal({
                                         title: "Bienvenido!\n"+$scope.nombreuser,
@@ -41,7 +43,27 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         closeOnConfirm: true},
                                     function(){
 
-                                        location.reload();
+                                        var url = $location.path();
+                                        console.log(url);
+                                        if(url=="/inicio"){
+                                            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                                .success(function (data, status, headers) {
+                                                    if(data.results[0].commune !=""){
+
+                                                        $location.path("/sube-tu-idea");
+
+                                                    }
+                                                    else{
+
+                                                        $location.path("/registrarse");
+                                                       }
+                                                })
+                                                .error(function (data, status, header) {
+                                                    console.log(data);
+                                                });}
+                                        else{
+                                            location.reload();
+                                        }
                                     });
 
                             })
@@ -56,6 +78,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         .success(function (data, status, headers, config) {
                                                 $sessionStorage.token = data.key;
                                                 $sessionStorage.islogin = 1;
+
                                             $('#cargando-modal').closeModal();
                                             swal({
                                                     title: "Bienvenido!\n"+$scope.nombreuser,
@@ -64,7 +87,24 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                     confirmButtonText: "Aceptar",
                                                     closeOnConfirm: true},
                                                 function(){
-                                                  location.reload();
+                                                    var url = $location.path();
+                                                    console.log(url);
+                                                    if(url=="/inicio"){
+                                                        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                                            .success(function (data, status, headers) {
+                                                                if(data.results[0].commune !=""){
+                                                                    $location.path("/sube-tu-idea")
+
+                                                                }
+                                                                else{ $location.path("/registrarse")
+                                                                    }
+                                                            })
+                                                            .error(function (data, status, header) {
+                                                                console.log(data);
+                                                            });}
+                                                    else{
+                                                        location.reload();
+                                                    }
 
                                                 });
 

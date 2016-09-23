@@ -26,8 +26,8 @@
     // })
 
 
-    .controller('LoginFaceCtrl', ['$scope', '$timeout', 'Facebook', '$http','$sessionStorage',
-        function($scope, $timeout, Facebook, $http, $sessionStorage) {
+    .controller('LoginFaceCtrl', ['$scope', '$timeout', 'Facebook', '$http','$sessionStorage','$location',
+        function($scope, $timeout, Facebook, $http, $sessionStorage,$location) {
 
             // Define user empty data :/
             $scope.user = {};
@@ -76,6 +76,7 @@
             $scope.login = function () {
                 Facebook.login(function (response) {
                     if (response.status == 'connected') {
+                        $('#login-modal').closeModal();
                         $('#cargando-modal').openModal();
                         $scope.logged = true;
                         $scope.me();
@@ -97,7 +98,7 @@
                         $scope.user = response;
                         $sessionStorage.email=response.email;
                         $sessionStorage.nombre=response.name;
-                        $scope.nombre =response.name;
+
 
                     });
 
@@ -108,7 +109,7 @@
             /**
              * Logout
              */
-            $scope.logout = function($location,$timeout) {
+            $scope.logout = function() {
                 Facebook.logout(function() {
                     $scope.$apply(function() {
                         $scope.user = {};
@@ -141,11 +142,13 @@
                         //POST EN API DJANGO-------
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
+                                var nombre= $sessionStorage.nombre;
                                 $scope.logout();
-                                var nombre= $sessionStorage.nombre
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
+
                                 $('#cargando-modal').closeModal();
+
                                 swal({
                                         title: "Bienvenido!\n"+nombre,
                                         type: "success",
@@ -153,8 +156,26 @@
                                         confirmButtonText: "Aceptar",
                                         closeOnConfirm: true},
                                     function(){
+                                            var url = $location.path();
+                                        console.log(url);
+                                            if(url=="/inicio"){
+                                        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                            .success(function (data, status, headers) {
+                                                if(data.results[0].commune !=""){
+                                                    $location.path("/sube-tu-idea")
 
-                                        location.reload();
+                                                }
+                                                else{
+                                                    $location.path("/registrarse")
+                                                    }
+                                            })
+                                            .error(function (data, status, header) {
+                                                console.log(data);
+                                            });}
+                                            else{
+                                                location.reload();
+                                            }
+
 
                                     });
                             })

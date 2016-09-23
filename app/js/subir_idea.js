@@ -13,7 +13,10 @@ angular.module('SubirIdea', ['naif.base64'])
         ];
 
         $scope.beneficiarios = [
-            {val: '1', name: 'Sordo-Mudo'}
+            {val: '1', name: 'Visual'},
+            {val: '2', name: 'Auditiva'},
+            {val: '3', name: 'Cognitiva'},
+            {val: '4', name: 'Física'}
 
 
         ];
@@ -35,11 +38,11 @@ angular.module('SubirIdea', ['naif.base64'])
 
 
             console.log(obj);
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.token
-                    }
+            config = {
+                headers: {
+                    'Authorization': 'token ' + $sessionStorage.token
                 }
+            }
 
 
 

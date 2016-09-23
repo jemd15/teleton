@@ -130,16 +130,26 @@
 </section>
 
 <!--Jurado-->
-<section ng-controller="JuradosCtrl">
+<section id="jurado" ng-controller="JuradosCtrl">
     <h4 class="titulo col s12">Jurado</h4>
-    <div class="row white z-depth-1">
+    <div class="white z-depth-1">
         <br>
         <div class="center">
-            <div class="col s12 m2 offset-m2" ng-repeat="jurado in jurados | orderBy:'-id'">
-                <img ng-src="{{jurado.imagen}}" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>{{jurado.nombre}}</h5>
-                <p>Cargo:{{jurado.cargo}}</p>
-                <p>{{jurado.presentacion}}</p>
+            <div class="row">
+                <div class="col s12 m2" ng-repeat="jurado in jurados | orderBy:'-id' | limitTo:'4'">
+                    <img ng-src="{{jurado.imagen}}" class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurado.nombre}}</h5>
+                    <p>Cargo:{{jurado.cargo}}</p>
+                    <p>{{jurado.presentacion}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m2" ng-repeat="jurado in jurados | orderBy:'id' | limitTo:'3'">
+                    <img ng-src="{{jurado.imagen}}" class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurado.nombre}}</h5>
+                    <p>Cargo:{{jurado.cargo}}</p>
+                    <p>{{jurado.presentacion}}</p>
+                </div>
             </div>
         </div>
     </div>

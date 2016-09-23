@@ -251,3 +251,7 @@ img.circle.responsive-img{
     height: 100%;
     border: 0;
 }
+section#jurado img.circle{
+    width: 200px;
+    height: 200px;
+}

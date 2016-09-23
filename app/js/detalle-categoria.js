@@ -1,10 +1,10 @@
 /**
  * Created by juliogf on 23-09-16.
  */
-angular.module('detalle-categoria',[])
+angular.module('detalle-categoria',['rutas'])
 
-    .controller('IdeasCtrl', ['$scope', '$sessionStorage', '$http','$StateParams', function ($scope, $sessionStorage, $http,$StateParams) {
-        var categoria = $StateParams.categoriaName;
+    .controller('IdeasCtrl', ['$scope', '$sessionStorage', '$http','$stateParams', function ($scope, $sessionStorage, $http,$stateParams) {
+        var categoria = $stateParams.categoriaName;
         var id_categoria;
         switch (categoria){
             case 'educacion':
@@ -36,12 +36,25 @@ angular.module('detalle-categoria',[])
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?category__id='+id_categoria+'&state=1')
             .success(function (data, status, headers, config) {
                $scope.ideas = data.results;
-
+                console.log($scope.ideas);
 
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);
             });
+
+        if( categoria == "todas"){
+            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?state=1')
+                .success(function (data, status, headers, config) {
+                    $scope.ideas = data.results;
+                    console.log($scope.ideas);
+
+                })
+                .error(function (data, status, header, config) {
+                    console.log("FALLO:"+data);
+                });
+
+        }
 
 
 

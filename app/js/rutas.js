@@ -44,28 +44,10 @@ angular.module('rutas',['ui.materialize','ui.router'])
                 templateUrl: 'app/views/detalle-proyecto.html',
                 controller: 'detalleProyectoCtrl'
             })
-            .state('detalle-categoriae',{
-                url: '/detalle-categoria',
-                templateUrl: 'app/views/detalle-categoria.html',
-                controller: 'detalleCategoriaCtrl'
-            })
             .state('detalle-categoria', {
                 url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',
-                controller: function($scope, $stateParams) {
-                    // get the id
-                    switch ($stateParams.categoriaName){
-                        case 'educacion':
-                            $scope.id = 1;
-                            break;
-                        case 'vida-diaria':
-                            $scope.id = 2;
-                            break;
-                        case 'trabajo':
-                            $scope.id = 3;
-                            break;
-                    }
-                }
+                controller: 'IdeasCtrl'
             });
 
         $urlRouterProvider.otherwise('/inicio')

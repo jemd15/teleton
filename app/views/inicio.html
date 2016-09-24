@@ -191,10 +191,10 @@
     <h4 class="titulo">Noticias</h4>
     <article class="row grey darken-4 z-depth-1">
         <div class="row">
-            <a ui-sref="noticias" class="btn right col m2 green">Ver Todas</a>
+            <a ui-sref="noticias" class="btn right col m1 green">Más</a>
         </div>
         <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
-            <div class="card hoverable">
+            <div class="card hoverable small">
                 <div class="card-image">
                     <img ng-src="{{noticia.imagen}}">
                     <span class="card-title">{{noticia.titulo}}</span>
@@ -203,7 +203,7 @@
                     <p>{{noticia.texto_breve}}</p>
                 </div>
                 <div class="card-action center">
-                    <a class="btn green accent-4" ui-sref="detalle-noticia({ noticiaID: noticia.id})">Ver más</a>
+                    <a class="btn green accent-4" ui-sref="detalle-noticia({ noticiaID: noticia.id})">Ver Noticia</a>
                 </div>
             </div>
         </div>

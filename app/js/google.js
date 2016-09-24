@@ -16,9 +16,9 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                 GoogleSignin.signIn().then(function (user) {
                         $('#login-modal').closeModal();
                         $('#cargando-modal').openModal();
-                    $scope.nombreuser =user.w3.ig;
-                    $sessionStorage.nombre = user.w3.ig;
-                    $sessionStorage.email = user.w3.U3;
+                        $scope.nombreuser =user.w3.ig;
+                        $sessionStorage.nombre = user.w3.ig;
+                        $sessionStorage.email = user.w3.U3;
                         var password = Math.random().toString(36).slice(-8);
                         console.log(password);
                         var obj = {
@@ -70,53 +70,56 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                             })
                             .error(function (data, status, headers) {
 
-                                 var obj2 = {
-                                        'email': user.w3.U3,
-                                        'password': "default123456"
-                                            }
+                                var obj2 = {
+                                    'email': user.w3.U3,
+                                    'password': "default123456"
+                                }
 
                                 $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/login/", obj2)
-                                        .success(function (data, status, headers, config) {
-                                                $sessionStorage.token = data.key;
-                                                $sessionStorage.islogin = 1;
+                                    .success(function (data, status, headers, config) {
+                                        $sessionStorage.token = data.key;
+                                        $sessionStorage.islogin = 1;
+                                        var url = $location.path();
+                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                        }
+                                        else{
 
-                                            $('#cargando-modal').closeModal();
-                                            swal({
-                                                    title: "Bienvenido!\n"+$scope.nombreuser,
-                                                    type: "success",
-                                                    confirmButtonColor: "#DD6B55",
-                                                    confirmButtonText: "Aceptar",
-                                                    closeOnConfirm: true},
-                                                function(){
-                                                    var url = $location.path();
+                                            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                                .success(function (data, status, headers) {
+                                                    if(data.results[0].commune !=""){
+                                                        $scope.bandera=true;
 
-                                                    if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+
                                                     }
                                                     else{
-
-                                                        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
-                                                            .success(function (data, status, headers) {
-                                                                if(data.results[0].commune !=""){
-                                                                    $location.path("/sube-tu-idea")
-
-                                                                }
-                                                                else{
-                                                                    $location.path("/registrarse")
-                                                                }
-                                                            })
-                                                            .error(function (data, status, header) {
-                                                                console.log("FALLO"+data);
-                                                            });
+                                                        $scope.bandera=false;
 
                                                     }
-
+                                                })
+                                                .error(function (data, status, header) {
+                                                    console.log("FALLO"+data);
                                                 });
 
+                                        }
 
-                                        })
-                                        .error(function (data, status, header, config) {
-                                            console.log("FALLO"+data);
-                                        });
+                                        $('#cargando-modal').closeModal();
+                                        swal({
+                                                title: "Bienvenido!\n"+$scope.nombreuser,
+                                                type: "success",
+                                                confirmButtonColor: "#DD6B55",
+                                                confirmButtonText: "Aceptar",
+                                                closeOnConfirm: true},
+                                            function(){
+                                                if($scope.bandera){ $location.path("/sube-tu-idea")}
+                                                else{  $location.path("/registrarse")}
+
+                                            });
+
+
+                                    })
+                                    .error(function (data, status, header, config) {
+                                        console.log("FALLO"+data);
+                                    });
 
                             });
 

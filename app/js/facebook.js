@@ -43,15 +43,15 @@ angular.module('AppFace', ['facebook','ngStorage',])
              * Watch for Facebook to be ready.
              * There's also the event that could be used
              */
-                // $scope.$watch(
-                //     function() {
-                //         return Facebook.isReady();
-                //     },
-                //     function(newVal) {
-                //         if (newVal)
-                //             $scope.facebookReady = true;
-                //     }
-                // );
+            $scope.$watch(
+                function() {
+                    return Facebook.isReady();
+                },
+                function(newVal) {
+                    if (newVal)
+                        $scope.facebookReady = true;
+                }
+            );
 
             var userIsConnected = false;
 
@@ -74,10 +74,10 @@ angular.module('AppFace', ['facebook','ngStorage',])
              * Login
              */
             $scope.login = function () {
+                $('#login-modal').closeModal();
                 Facebook.login(function (response) {
+                    $('#cargando-modal').openModal();
                     if (response.status == 'connected') {
-                        $('#login-modal').closeModal();
-                        $('#cargando-modal').openModal();
                         $scope.logged = true;
                         $scope.me();
                     }
@@ -90,17 +90,11 @@ angular.module('AppFace', ['facebook','ngStorage',])
              */
             $scope.me = function () {
                 Facebook.api('/me?fields=email', {fields: 'email,name'}, function (response) {
-                    /**
-                     * Using $scope.$apply since this happens outside angular framework.
-                     */
-                    $scope.$apply(function () {
+
                         $scope.nombre =response.name;
                         $scope.user = response;
                         $sessionStorage.email=response.email;
                         $sessionStorage.nombre=response.name;
-
-
-                    });
 
                 });
             };
@@ -123,32 +117,51 @@ angular.module('AppFace', ['facebook','ngStorage',])
              */
             $scope.$on('Facebook:statusChange', function(ev, data) {
                 console.log('Status: ', data);
+                $scope.obj = {
+                    'access_token': data.authResponse.accessToken,
+                    'code': data.authResponse.signedRequest
+
+                }
                 if (data.status == 'connected') {
-                    $scope.$apply(function() {
                         $scope.salutation = true;
                         $scope.logged = true;
                         $scope.byebye = false;
                         $scope.me();
 
-                        var obj = {
-                            'access_token': data.authResponse.accessToken,
-                            'code': data.authResponse.signedRequest
 
-                        }
 
-                        console.log("login"+obj);
+                        console.log($scope.obj);
 
-                        $scope.logout();
+
+                        $timeout(function(){
                         //POST EN API DJANGO-------
-                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
+                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", $scope.obj)
                             .success(function(data, status, headers) {
                                 var nombre= $sessionStorage.nombre;
-
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
 
+                                var url = $location.path();
+                                console.log(url);
+                                if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                }
+                                else{
+                                    $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                        .success(function (data, status, headers) {
+                                            if(data.results[0].commune !=""){
+                                                $scope.bandera=true;
 
-                                $timeout(function(){
+
+                                            }
+                                            else{
+                                                $scope.bandera=false
+                                            }
+                                        })
+                                        .error(function (data, status, header) {
+                                            console.log(data);
+                                        });
+                                }
+
                                     $('#cargando-modal').closeModal();
                                     swal({
                                             title: "Bienvenido!\n"+nombre,
@@ -157,33 +170,18 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                             confirmButtonText: "Aceptar",
                                             closeOnConfirm: true},
                                         function(){
-                                            var url = $location.path();
-                                            console.log(url);
-                                            if (url.indexOf('/detalle-idea')!=-1) {location.reload();
-                                            }
-                                            else{
-                                                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
-                                                    .success(function (data, status, headers) {
-                                                        if(data.results[0].commune !=""){
-                                                            $location.path("/sube-tu-idea")
-
-                                                        }
-                                                        else{
-                                                            $location.path("/registrarse")
-                                                        }
-                                                    })
-                                                    .error(function (data, status, header) {
-                                                        console.log(data);
-                                                    });
-                                            }
+                                            $scope.logout();
+                                            if($scope.bandera){ $location.path("/sube-tu-idea")}
+                                            else{  $location.path("/registrarse")}
                                         });
-                                }, 1000);
-                                })
+
+                            })
                             .error(function(data, status, header) {
                                 console.log(data);
                             });
+                         }, 1000);
 
-                    });
+
                 } else {
                     $scope.$apply(function() {
                         $scope.salutation = false;

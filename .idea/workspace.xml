@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="950f07b9-0e45-4ec3-ba10-d2b5ce8539e1" name="Default" comment="elimine el modal">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/countdown.js" afterPath="$PROJECT_DIR$/app/js/countdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/detalle-categoria.js" afterPath="$PROJECT_DIR$/app/js/detalle-categoria.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/detalle-idea.js" afterPath="$PROJECT_DIR$/app/js/detalle-idea.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/facebook.js" afterPath="$PROJECT_DIR$/app/js/facebook.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/google.js" afterPath="$PROJECT_DIR$/app/js/google.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/inicio.js" afterPath="$PROJECT_DIR$/app/js/inicio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/registrar.js" afterPath="$PROJECT_DIR$/app/js/registrar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/script.js" afterPath="$PROJECT_DIR$/app/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/subir_idea.js" afterPath="$PROJECT_DIR$/app/js/subir_idea.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/validacion.js" afterPath="$PROJECT_DIR$/app/js/validacion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/inicio.html" afterPath="$PROJECT_DIR$/app/views/inicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <list id="09e13691-4732-4bd2-88c9-bf047810feb7" name="Rejected commit: Default" comment="elimine el modal" />
     <ignored path="teleton.iws" />
@@ -39,20 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="google.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/google.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1402">
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
+            <state relative-caret-position="1656">
               <caret line="92" column="121" selection-start-line="92" selection-start-column="121" selection-end-line="92" selection-end-column="121" />
               <folding>
                 <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -61,11 +40,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="google.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/google.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1674">
+              <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="facebook.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="178" column="43" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
+            <state relative-caret-position="331">
+              <caret line="172" column="60" selection-start-line="172" selection-start-column="60" selection-end-line="172" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -102,8 +91,8 @@
         <option value="$PROJECT_DIR$/app/js/subir_idea.js" />
         <option value="$PROJECT_DIR$/app/js/validacion.js" />
         <option value="$PROJECT_DIR$/app/js/detalle-idea.js" />
-        <option value="$PROJECT_DIR$/app/js/google.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/js/google.js" />
         <option value="$PROJECT_DIR$/app/js/facebook.js" />
       </list>
     </option>
@@ -144,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,6 +221,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -343,11 +332,12 @@
       <workItem from="1474571108847" duration="2726000" />
       <workItem from="1474636000300" duration="10896000" />
       <workItem from="1474658707219" duration="4520000" />
+      <workItem from="1474680287638" duration="405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105702000" />
+    <option name="totallyTimeSpent" value="108640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +350,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16232316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -442,7 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -457,9 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
           <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <marker date="1474649370191" expanded="true" signature="1616:1635" ph="{&quot;url&quot;: '/detalle-categoria'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -520,9 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
           <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <marker date="1474649370191" expanded="true" signature="1616:1635" ph="{&quot;url&quot;: '/detalle-categoria'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -554,7 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -583,9 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
           <caret line="54" column="39" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <marker date="1474649370191" expanded="true" signature="1616:1635" ph="{&quot;url&quot;: '/detalle-categoria'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="39" column="85" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="42" column="27" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="49" column="43" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,9 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="8" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <marker date="1474649370191" expanded="true" signature="1616:1635" ph="{&quot;url&quot;: '/detalle-categoria'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -744,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="93" column="38" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,9 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="187" column="23" selection-start-line="187" selection-start-column="16" selection-end-line="187" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,21 +740,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/google.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1402">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
+        <state relative-caret-position="1656">
           <caret line="92" column="121" selection-start-line="92" selection-start-column="121" selection-end-line="92" selection-end-column="121" />
           <folding>
             <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -800,10 +753,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/google.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="178" column="43" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
+        <state relative-caret-position="331">
+          <caret line="172" column="60" selection-start-line="172" selection-start-column="60" selection-end-line="172" selection-end-column="60" />
           <folding />
         </state>
       </provider>

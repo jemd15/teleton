@@ -23,13 +23,13 @@
                 <a href="#" class="button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
                 <a ui-sref="inicio" class="brand-logo"><img class="hide-on-small-only" src="app/images/Ideatón-Logo.svg" alt=""><img class="hide-on-med-and-up" src="app/images/ampolleta.svg" alt=""></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
-                    <li class="color-scroll" ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
-                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
-                    <li class="color-scroll" ui-sref-active="active"><a ui-sref="registrar-usuario">Bases</a></li>
-                    <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
-                    <li class="color-scroll" ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
-                    <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
+                    <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
+                    <li ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
+                    <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
+                    <li ui-sref-active="active"><a ui-sref="bases">Bases</a></li>
+                    <li ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
+                    <li ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
+                    <li ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>
                 </ul>
             </div>
         </nav>
@@ -72,6 +72,7 @@
                 </li>
             </ul>
         </li>
+        <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="noticias">Noticias</a></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="bases">Bases</a></li>
         <!--<li class="white-text hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>-->
         <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a class="white-text" ui-sref="registrarse">Sube tu Idea</a></li>
@@ -105,7 +106,6 @@
             </div>
         </div>
     </div>
-
 
     <!--PreLOADER-->
     <div id="cargando-modal" class="modal container">

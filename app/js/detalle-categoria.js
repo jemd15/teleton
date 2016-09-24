@@ -31,6 +31,10 @@ angular.module('detalle-categoria',['rutas'])
                 $scope.nombre_cat="Entretención";
                 id_categoria=6;
                 break;
+            case 'todas':
+                $scope.nombre_cat="Todas";
+                id_categoria=6;
+                break;
         }
 
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?category__id='+id_categoria+'&state=1')

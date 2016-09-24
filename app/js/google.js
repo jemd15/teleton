@@ -19,15 +19,17 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                     $scope.nombreuser =user.w3.ig;
                     $sessionStorage.nombre = user.w3.ig;
                     $sessionStorage.email = user.w3.U3;
+                        var password = Math.random().toString(36).slice(-8);
+                        console.log(password);
                         var obj = {
 
                             'email': user.w3.U3,
-                            'password1': "default123456",
-                            'password2': "default123456"
+                            'password1': password,
+                            'password2': password
 
                         }
 
-                        console.log(obj);
+
 
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/registration/", obj)
                             .success(function (data, status, headers) {
@@ -87,7 +89,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                     closeOnConfirm: true},
                                                 function(){
                                                     var url = $location.path();
-                                                    console.log(url);
+
                                                     if (url.indexOf('/detalle-idea')!=-1) {location.reload();
                                                     }
                                                     else{
@@ -103,7 +105,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                                 }
                                                             })
                                                             .error(function (data, status, header) {
-                                                                console.log(data);
+                                                                console.log("FALLO"+data);
                                                             });
 
                                                     }
@@ -113,7 +115,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
 
                                         })
                                         .error(function (data, status, header, config) {
-                                            console.log(data);
+                                            console.log("FALLO"+data);
                                         });
 
                             });

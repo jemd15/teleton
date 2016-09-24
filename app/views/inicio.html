@@ -11,9 +11,10 @@
     <br class="hide-on-med-and-up">
 
     <!--contador-->
-    <div id="countdown">
+    <div id="countdown" ng-controller="ContadorCtrl">
+        {{loadcount()}}
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock"></div>
+        <div id="clock" ng-bind-html="clock"></div>
         <div id="units">
             <span class="white-text">Días</span>
             <span class="white-text">Hrs</span>
@@ -189,5 +190,4 @@
 </section>
 
 
-<script src="app/js/countdown.js"></script>
 

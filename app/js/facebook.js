@@ -138,49 +138,47 @@ angular.module('AppFace', ['facebook','ngStorage',])
 
                         console.log("login"+obj);
 
-
+                        $scope.logout();
                         //POST EN API DJANGO-------
                         $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", obj)
                             .success(function(data, status, headers) {
                                 var nombre= $sessionStorage.nombre;
-                                $scope.logout();
+
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
 
-                                $('#cargando-modal').closeModal();
 
-                                swal({
-                                        title: "Bienvenido!\n"+nombre,
-                                        type: "success",
-                                        confirmButtonColor: "#DD6B55",
-                                        confirmButtonText: "Aceptar",
-                                        closeOnConfirm: true},
-                                    function(){
-                                        var url = $location.path();
-                                        console.log(url);
-                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
-                                        }
-                                        else{
+                                $timeout(function(){
+                                    $('#cargando-modal').closeModal();
+                                    swal({
+                                            title: "Bienvenido!\n"+nombre,
+                                            type: "success",
+                                            confirmButtonColor: "#DD6B55",
+                                            confirmButtonText: "Aceptar",
+                                            closeOnConfirm: true},
+                                        function(){
+                                            var url = $location.path();
+                                            console.log(url);
+                                            if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                            }
+                                            else{
+                                                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                                    .success(function (data, status, headers) {
+                                                        if(data.results[0].commune !=""){
+                                                            $location.path("/sube-tu-idea")
 
-                                            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
-                                                .success(function (data, status, headers) {
-                                                    if(data.results[0].commune !=""){
-                                                        $location.path("/sube-tu-idea")
-
-                                                    }
-                                                    else{
-                                                        $location.path("/registrarse")
-                                                    }
-                                                })
-                                                .error(function (data, status, header) {
-                                                    console.log(data);
-                                                });
-
-                                        }
-
-
-                                    });
-                            })
+                                                        }
+                                                        else{
+                                                            $location.path("/registrarse")
+                                                        }
+                                                    })
+                                                    .error(function (data, status, header) {
+                                                        console.log(data);
+                                                    });
+                                            }
+                                        });
+                                }, 1000);
+                                })
                             .error(function(data, status, header) {
                                 console.log(data);
                             });

@@ -11,16 +11,8 @@ angular.module('rutas',['ui.materialize','ui.router'])
             choices: ["carrera a", "carrera b"]
         };
     }])
-    .controller('detalleProyectoCtrl', function ($http, $stateParams) {
-        var vm = this;
-
-        $http({
-            url: "https://ideatonapi.herokuapp.com/ideas",
-            method: 'get',
-            params: {ideaID: $stateParams.ideaID}
-        }).then(function (response) {
-            vm.idea = response.data;
-        });
+    .controller('detalleProyectoCtrl', function ($scope, $stateParams) {
+        $scope.id = $stateParams.ideaID;
     })
     .controller('subeTuIdeaCtrl', function () {
 
@@ -39,10 +31,6 @@ angular.module('rutas',['ui.materialize','ui.router'])
                 templateUrl: 'app/views/inicio.html',
                 controller: 'inicioCtrl'
             })
-            .state('ideas', {
-                url: '/ideas',
-                templateUrl: 'app/views/ideas.html'
-            })
             .state('sube-tu-idea', {
                 url: '/sube-tu-idea',
                 templateUrl: 'app/views/sube-tu-idea.html'
@@ -52,14 +40,22 @@ angular.module('rutas',['ui.materialize','ui.router'])
                 templateUrl: 'app/views/registrarse.html'
             })
             .state('detalle-proyecto',{
-                url: '/detalle-proyecto',
+                url: '/detalle-idea/:ideaID',
                 templateUrl: 'app/views/detalle-proyecto.html',
                 controller: 'detalleProyectoCtrl'
             })
-            .state('detalle-categoria',{
-                url: '/detalle-categoria',
+            .state('noticias',{
+                url: '/noticias',
+                templateUrl: 'app/views/noticias.html'
+            })
+            .state('detalle-noticia',{
+                url: '/detalle-noticia/:noticiaID',
+                templateUrl: 'app/views/detalle-noticia.html'
+            })
+            .state('detalle-categoria', {
+                url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',
-                controller: 'detalleCategoriaCtrl'
+                controller: 'IdeasCtrl'
             });
 
         $urlRouterProvider.otherwise('/inicio')

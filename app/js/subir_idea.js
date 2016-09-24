@@ -13,15 +13,16 @@ angular.module('SubirIdea', ['naif.base64'])
         ];
 
         $scope.beneficiarios = [
-            {val: '1', name: 'Sordo-Mudo'}
-
-
+            {val: '1', name: 'Visual'},
+            {val: '2', name: 'Auditiva'},
+            {val: '3', name: 'Cognitiva'},
+            {val: '4', name: 'Física'}
         ];
 
 
         $scope.UpIdea = function ($location) {
             var config;
-            console.log($scope.nombre);
+
             var obj = {
                 title: $scope.nombre,
                 short_description: $scope.descripcion_corta,
@@ -34,18 +35,18 @@ angular.module('SubirIdea', ['naif.base64'])
             };
 
 
-            console.log(obj);
-                config = {
-                    headers: {
-                        'Authorization': 'token ' + $sessionStorage.token
-                    }
+
+            config = {
+                headers: {
+                    'Authorization': 'token ' + $sessionStorage.token
                 }
+            }
 
 
 
             $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_idea/', obj, config)
                 .success(function (data, status, headers, config) {
-                    console.log(data);
+
                     var img2 = {
                         image: $scope.img_2.base64,
                         idea: data.id
@@ -62,23 +63,23 @@ angular.module('SubirIdea', ['naif.base64'])
 
                     $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img2, config)
                         .success(function (data, status, headers, config) {
-                            console.log(data);
+
                         })
                         .error(function (data, status, header, config) {
-                            console.log(data);
+                            console.log("FALLO"+data);
                         });
                     $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img3, config)
                         .success(function (data, status, headers, config) {
-                            console.log(data);
+
                         })
                         .error(function (data, status, header, config) {
-                            console.log(data);
+                            console.log("FALLO"+data);
                         });
                     $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img4, config)
                         .success(function (data, status, headers, config) {
-                            console.log(data);
+
                             swal({
-                                    title: "Noticia Subida con exito!",
+                                    title: "Idea Subida con exito!",
                                     type: "success",
                                     confirmButtonColor: "#DD6B55",
                                     confirmButtonText: "Ver Idea",
@@ -90,13 +91,13 @@ angular.module('SubirIdea', ['naif.base64'])
                                 });
                         })
                         .error(function (data, status, header, config) {
-                            console.log(data);
+                            console.log("FALLO"+data);
                         });
 
 
                 })
                 .error(function (data, status, header, config) {
-                    console.log(data);
+                    console.log("FALLO"+data);
                 });
 
             // setTimeout(location.reload.bind(location), 5000);

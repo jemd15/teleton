@@ -20,21 +20,24 @@
 
         <!--columna izquierda-->
         <div class="col s12 m4 offset-m1">
-            <input type="text" ng-model="nombre">
-            <textarea name="" id="" cols="30" rows="10" ng-model="descripcion_corta"></textarea>
-            <textarea name="" id="" cols="30" rows="10" ng-model="descripcion"></textarea>
-            <!--<div input-field>-->
-                <!--<input type="text" ng-model="nombre" length="20">-->
-                <!--<label>Título de la Idea</label>-->
-            <!--</div>-->
-            <!--<div input-field>-->
-                <!--<textarea ng-model="descripcion_corta" class="materialize-textarea"></textarea>-->
-                <!--<label>Breve Descripción del Proyecto</label>-->
-            <!--</div>-->
-            <!--<div input-field>-->
-                <!--<textarea ng-model="descripcion" class="materialize-textarea"></textarea>-->
-                <!--<label>Descripción del Proyecto</label>-->
-            <!--</div>-->
+            <!--<label for="">Título de la Idea</label>-->
+            <!--<input type="text" ng-model="nombre">-->
+            <!--<label for="">Breve Descripción del Proyecto</label>-->
+            <!--<textarea name="" id="" cols="30" rows="10" ng-model="descripcion_corta"></textarea>-->
+            <!--<label for="">Descripción del Proyecto</label>-->
+            <!--<textarea name="" id="" cols="30" rows="10" ng-model="descripcion"></textarea>-->
+            <span class="input-field">
+                <input type="text" ng-model="nombre" length="20">
+                <label>Título de la Idea</label>
+            </span>
+            <div class="input-field">
+                <textarea ng-model="descripcion_corta" class="materialize-textarea"></textarea>
+                <label>Breve Descripción del Proyecto</label>
+            </div>
+            <div class="input-field">
+                <textarea ng-model="descripcion" class="materialize-textarea"></textarea>
+                <label>Descripción del Proyecto</label>
+            </div>
             <select class="browser-default" ng-model="categoria">
                 <option value="" disabled selected>Categoría</option>
                 <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>

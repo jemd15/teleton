@@ -25,8 +25,11 @@
                         </div>
                         <div class="card-panel">
                             <h5>Video</h5>
-                            <div class="video-container">
-                                <iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>
+                            <!--<div class="video-container">-->
+                                <!--<iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>-->
+                            <!--</div>-->
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <youtube-video class="embed-responsive-item" video-url="url_vid"></youtube-video>
                             </div>
                         </div>
 
@@ -38,17 +41,19 @@
                                     <p>{{autor}} {{autor_last}}</p>
                                     <p class="letra-detproy">Ubicación:{{comuna}}</p>
                                     <p class="letra-detproy">Categoría: {{categoria}}</p>
-                                    <p class="letra-detproy">Beneficiario: {{beneficiario}}</p>
+                                    <p class="letra-detproy">Patología: {{beneficiario}}</p>
                                     <p class="letra-detproy">Votos: {{votos}}</p>
 
                                     <div ng-controller="ValidarReg">
+                                        <div ng-controller="ValidarVotoCtrl">
                                         <li class="color-scroll" ng-hide="islogin"><a href='#login-modal' modal>Logeate para Votar!</a></li>
-                                    <div  ng-show="islogin" ng-controller="VotosCtrl">
-                                    <button class="button button-5 button-5a icon-remove" ng-click="Votar()"><i class="fa fa-heart"></i><span>Apoyar</span></button>
-                                    </div>
+                                          <div  ng-show="islogin" ng-controller="VotosCtrl">
+                                           <button ng-hide="isvote" class="button button-5 button-5a icon-remove" ng-click="Votar()"><i class="fa fa-heart"></i><span>Apoyar</span></button>
+                                          </div>
+                                       </div>
                                     </div>
                                     <br>
-                                    <h6>Compartelo en tus Redes Sociales</h6>
+                                    <h6>Compártelo en tus Redes Sociales</h6>
                                     <div class="addthis_inline_share_toolbox"></div>
                                 </div>
                             </div>

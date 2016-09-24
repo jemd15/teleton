@@ -11,9 +11,10 @@
     <br class="hide-on-med-and-up">
 
     <!--contador-->
-    <div id="countdown">
+    <div id="countdown" ng-controller="ContadorCtrl">
+        {{loadcount()}}
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock"></div>
+        <div id="clock" ng-bind-html="clock"></div>
         <div id="units">
             <span class="white-text">Días</span>
             <span class="white-text">Hrs</span>
@@ -47,7 +48,7 @@
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card purple hoverable">
+            <div class="card purple hoverable" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">
                 <div class="card-image">
                     <img id="card-categoria" src="app/images/entretencion.png">
                     <span class="card-title"><strong>Entretención</strong></span>
@@ -55,7 +56,7 @@
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card amber hoverable">
+            <div class="card amber hoverable" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">
                 <div class="card-image">
                     <img src="app/images/vida-diaria.png">
                     <span class="card-title"><strong>Vida Diaria</strong></span>
@@ -63,7 +64,7 @@
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card teal hoverable">
+            <div class="card teal hoverable" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">
                 <div class="card-image">
                     <img src="app/images/educacion.png">
                     <span class="card-title"><strong>Educación</strong></span>
@@ -79,7 +80,7 @@
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card blue darken-4 hoverable">
+            <div class="card blue darken-4 hoverable" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">
                 <div class="card-image">
                     <img src="app/images/trabajo.png">
                     <span class="card-title"><strong>Trabajo</strong></span>
@@ -89,13 +90,13 @@
         <div class="col s12 m3">
             <div class="card pink hoverable">
                 <div class="card-image">
-                    <img src="app/images/transporte.png">
+                    <img src="app/images/transporte.png" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">
                     <span class="card-title"><strong>Transporte</strong></span>
                 </div>
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card red hoverable">
+            <div class="card red hoverable" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">
                 <div class="card-image">
                     <img src="app/images/comunicacion.png">
                     <span class="card-title"><strong>Comunicación</strong></span>
@@ -103,7 +104,7 @@
             </div>
         </div>
         <div class="col s12 m3">
-            <div class="card brown hoverable">
+            <div class="card brown hoverable" ui-sref="detalle-categoria({ categoriaName: 'todas'})">
                 <div class="card-image">
                     <img src="app/images/comunicacion.png">
                     <span class="card-title"><strong>Todas</strong></span>
@@ -130,104 +131,90 @@
 </section>
 
 <!--Jurado-->
-<section>
+<section id="jurado" ng-controller="JuradosCtrl">
     <h4 class="titulo col s12">Jurado</h4>
-    <div class="row white z-depth-1">
+    <div class="white z-depth-1">
         <br>
         <div class="center">
-            <div class="col s12 m2 offset-m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
+            <div class="row">
+                <div class="col s12 m2 offset-m2">
+                    <img ng-src='{{jurados[0].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[0].nombre}}</h5>
+                    <p>{{jurados[0].cargo}}</p>
+                    <p>{{jurados[0].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[1].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[1].nombre}}</h5>
+                    <p>{{jurados[1].cargo}}</p>
+                    <p>{{jurados[1].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[2].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[2].nombre}}</h5>
+                    <p>{{jurados[2].cargo}}</p>
+                    <p>{{jurados[2].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[3].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[3].nombre}}</h5>
+                    <p>{{jurados[3].cargo}}</p>
+                    <p>{{jurados[3].presentacion}}</p>
+                </div>
             </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2 offset-m3">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
-            </div>
-            <div class="col s12 m2">
-                <img src="https://image.freepik.com/iconos-gratis/hombre-y-mujer-de-cerca-siluetas-para-facebook_318-37230.png" class="circle responsive-img hoverable z-depth-1" alt="">
-                <h5>Nombre Apellido</h5>
-                <p>Cargo super mega importante en empresa conocida</p>
+            <div class="row">
+                <div class="col s12 m2 offset-m3">
+                    <img ng-src='{{jurados[4].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[4].nombre}}</h5>
+                    <p>{{jurados[4].cargo}}</p>
+                    <p>{{jurados[4].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[5].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[5].nombre}}</h5>
+                    <p>{{jurados[5].cargo}}</p>
+                    <p>{{jurados[5].presentacion}}</p>
+                </div>
+                <div class="col s12 m2">
+                    <img ng-src='{{jurados[6].imagen}}' class="circle responsive-img hoverable z-depth-1" alt="">
+                    <h5>{{jurados[6].nombre}}</h5>
+                    <p>{{jurados[6].cargo}}</p>
+                    <p>{{jurados[6].presentacion}}</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!--noticias-->
-<section>
+<section ng-controller="NoticiasCtrl">
     <h4 class="titulo">Noticias</h4>
-    <article class="row">
-        <div class="col s12 m4 l4">
-            <div class="card hoverable">
+    <article class="row grey darken-4 z-depth-1">
+        <div class="row">
+            <a ui-sref="noticias" class="btn right col m1 green">Más</a>
+        </div>
+        <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
+            <div class="card hoverable small">
                 <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
+                    <img ng-src="{{noticia.imagen}}">
+                    <span class="card-title">{{noticia.titulo}}</span>
                 </div>
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <p>{{noticia.texto_breve}}</p>
                 </div>
                 <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
+                    <a class="btn green accent-4" ui-sref="detalle-noticia({ noticiaID: noticia.id})">Ver Noticia</a>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="app/images/header.jpg">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action center">
-                    <a class="btn green accent-4" href="#">This is a link</a>
-                </div>
-            </div>
-        </div>
+        <div class="row"></div>
     </article>
 </section>
 
 <!--redes sociales-->
+<section>
 
+</section>
     
 <!--Auspisiadores -->
 <section class="row center">
@@ -245,4 +232,6 @@
         <a href="http://corfo.cl"><img class="img-blanco-negro" src="app/images/corfo.png"></a>
     </div>
 </section>
+
+
 

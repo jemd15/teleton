@@ -1,7 +1,7 @@
-<section>
+<section ng-controller="IdeasCtrl">
     <div class="center">
         <br>
-        <h3>Título Categoría</h3>
+        <h3>Categoría {{nombre_cat}}</h3>
         <br>
     </div>
 
@@ -9,69 +9,26 @@
     <div class="row grey darken-4 z-depth-1">
         <h4 class="col s12 m10 white-text">Más votados</h4>
         <a href="" class="btn right col m2 green">Ver Todos</a>
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'-num_vote' | limitTo:3">
             <div class="card small hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
+                    <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
+                    <span class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></span>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
                     <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <p>{{idea.short_description}}</p>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
+
+
         <div class="row"></div>
     </div>
     <br>
@@ -80,69 +37,26 @@
     <div class="row grey darken-4 z-depth-1">
         <h4 class="col s12 m10 white-text">Más Recientes</h4>
         <a href="" class="btn right col m2 green">Ver Todos</a>
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'-id' | limitTo:3">
             <div class="card small hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
+                    <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
+                    <span class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></span>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
                     <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <p>{{idea.short_description}}</p>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
+
+
         <div class="row"></div>
     </div>
     <br>
@@ -151,69 +65,25 @@
     <div class="row grey darken-4 z-depth-1">
         <h4 class="col s12 m10 white-text">Más Antiguos</h4>
         <a href="" class="btn right col m2 green">Ver Todos</a>
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'id' | limitTo:3">
             <div class="card small hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
+                    <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
+                    <span class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></span>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
                     <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <p>{{idea.short_description}}</p>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="app/images/header.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Título de la Idea<i class="material-icons right">more_vert</i></span>
-                    <p class="center"><a class="btn green" href="#">Ver Idea</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Título de la Idea<i class="material-icons right">close</i></span>
-                    <div class="chip">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <div class="chip">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                    </div>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
+
         <div class="row"></div>
     </div>
     <br>

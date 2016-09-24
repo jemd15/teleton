@@ -26,7 +26,7 @@ function scaleBannerVideoSize(element){
         videoWidth,
         videoHeight;
 
-    console.log(windowHeight);
+
 
     $(element).each(function(){
         var videoAspectRatio = $(this).data('height')/$(this).data('width');
@@ -54,7 +54,7 @@ function irArriba(){
     $(document).on("scroll", function(){
         var desplazamientoActual = $(document).scrollTop();
         var controlArriba = $("#irarriba");
-        console.log("Estoy en " , desplazamientoActual);
+
         if(desplazamientoActual > 100 && controlArriba.css("display") == "none"){
             controlArriba.fadeIn(500);
         }

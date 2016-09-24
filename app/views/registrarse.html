@@ -97,12 +97,16 @@
                                 </p>
                             </div>
                             <div class="col s12 input-field" ng-show="checkboxU.ischeck">
-                                <input id="universidad" name="new-your-name" type="text" ng-model="universidad">
-                                <label for="universidad">Universidad o Instituto Profesional</label>
+                                <select class="browser-default" ng-model="universidad">
+                                    <option value="" disabled selected>Casa de Estudio</option>
+                                    <option ng-repeat="y in universitys" value="{{y}}">{{y}}</option>
+                                </select>
                             </div>
                             <div class="col s12 input-field" ng-show="checkboxU.ischeck">
-                                <input id="carrera" name="new-your-email" type="text" ng-model="carrera">
-                                <label for="carrera">Carrera</label>
+                                <select class="browser-default" ng-model="carrera">
+                                    <option value="" disabled selected>Carrera</option>
+                                    <option ng-repeat="z in carrers" value="{{z}}">{{z}}</option>
+                                </select>
                             </div>
                         </div>
                     </div>

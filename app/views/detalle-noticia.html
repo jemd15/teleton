@@ -1,0 +1,48 @@
+<section class="row" ng-controller="NoticiasCtrl">
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <div class="card">
+                <div class="card-image">
+                    <img src="http://lorempixel.com/400/200">
+                    <h1 class="card-title">Título de la Noticia</h1>
+                </div>
+            </div>
+            <article class="card-panel col s9">
+                <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto, consequuntur cum
+                    dolor, dolorum eius enim fuga impedit incidunt iste iusto laudantium libero nam quaerat rem
+                    temporibus veniam voluptates voluptatum!</p>
+                <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto, consequuntur cum
+                    dolor, dolorum eius enim fuga impedit incidunt iste iusto laudantium libero nam quaerat rem
+                    temporibus veniam voluptates voluptatum!</p>
+            </article>
+            <aside class="col s3 center">
+                <div class="col s12 card-panel" style="margin: 8px">
+                    <h6>Compártelo en tus Redes Sociales</h6>
+                    <div class="addthis_inline_share_toolbox"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h4>Noticias Recientes</h4>
+            <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
+                <div class="card hoverable small">
+                    <div class="card-image">
+                        <img ng-src="{{noticia.imagen}}">
+                        <span class="card-title">{{noticia.titulo}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{noticia.texto_breve}}</p>
+                    </div>
+                    <div class="card-action center">
+                        <a class="btn green" ui-sref="detalle-noticia({ noticiaID: noticia.id})">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

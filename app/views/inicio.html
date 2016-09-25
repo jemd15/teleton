@@ -12,15 +12,10 @@
 
     <!--contador-->
 
-    <div id="countdown" >
+    <div id="countdown" ng-controller="ContadorCtrl">
         <!--{{loadcount()}}-->
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock">
-            <div countdown='' date='January 1, 2017 12:00:00'>&nbsp;</div>
-        </div>
-
-
-        <!--<div  ng-bind-html="clock"></div>-->
+        <div id="clock" ng-bind-html="clock"></div>
         <div id="units">
             <span class="white-text">Días</span>
             <span class="white-text">Hrs</span>
@@ -57,7 +52,7 @@
             <div class="card purple hoverable" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">
                 <div class="card-image">
                     <img id="card-categoria" src="app/images/entretencion.png">
-                    <h1 class="card-title"><strong>Entretención</strong></h1>
+                    <span class="card-title"><strong>Entretención</strong></span>
                 </div>
             </div>
         </div>
@@ -65,7 +60,7 @@
             <div class="card amber hoverable" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">
                 <div class="card-image">
                     <img src="app/images/vida-diaria.png">
-                    <h1 class="card-title"><strong>Vida Diaria</strong></h1>
+                    <span class="card-title"><strong>Vida Diaria</strong></span>
                 </div>
             </div>
         </div>
@@ -73,7 +68,7 @@
             <div class="card teal hoverable" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">
                 <div class="card-image">
                     <img src="app/images/educacion.png">
-                    <h1 class="card-title"><strong>Educación</strong></h1>
+                    <span class="card-title"><strong>Educación</strong></span>
                 </div>
             </div>
         </div>
@@ -81,7 +76,7 @@
             <div class="card hoverable">
                 <div class="card-image">
                     <img src="app/images/dibujo.jpg">
-                    <h1 class="card-title"></h1>
+                    <span class="card-title"></span>
                 </div>
             </div>
         </div>
@@ -89,7 +84,7 @@
             <div class="card blue darken-4 hoverable" ui-sref="detalle-categoria({ categoriaName: 'trabajo'})">
                 <div class="card-image">
                     <img src="app/images/trabajo.png">
-                    <h1 class="card-title"><strong>Trabajo</strong></h1>
+                    <span class="card-title"><strong>Trabajo</strong></span>
                 </div>
             </div>
         </div>
@@ -97,7 +92,7 @@
             <div class="card pink hoverable">
                 <div class="card-image">
                     <img src="app/images/transporte.png" ui-sref="detalle-categoria({ categoriaName: 'transporte'})">
-                    <h1 class="card-title"><strong>Transporte</strong></h1>
+                    <span class="card-title"><strong>Transporte</strong></span>
                 </div>
             </div>
         </div>
@@ -105,15 +100,15 @@
             <div class="card red hoverable" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">
                 <div class="card-image">
                     <img src="app/images/comunicacion.png">
-                    <h1 class="card-title"><strong>Comunicación</strong></h1>
+                    <span class="card-title"><strong>Comunicación</strong></span>
                 </div>
             </div>
         </div>
         <div class="col s12 m3">
             <div class="card brown hoverable" ui-sref="detalle-categoria({ categoriaName: 'todas'})">
                 <div class="card-image">
-                    <img src="app/images/comunicacion.png">
-                    <h1 class="card-title"><strong>Todas</strong></h1>
+                    <img src="app/images/todos.png">
+                    <span class="card-title"><strong>Todas</strong></span>
                 </div>
             </div>
         </div>
@@ -203,7 +198,7 @@
             <div class="card hoverable small">
                 <div class="card-image">
                     <img ng-src="{{noticia.imagen}}">
-                    <h1 class="card-title">{{noticia.titulo}}</h1>
+                    <span class="card-title">{{noticia.titulo}}</span>
                 </div>
                 <div class="card-content">
                     <p>{{noticia.texto_breve}}</p>

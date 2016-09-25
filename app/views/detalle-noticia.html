@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col s10 offset-s1">
             <div class="card">
-                <div class="card-image" id="imagen-detalle-noticia">
-                    <img materialboxed class="materialboxed" ng-src="{{noticia.imagen}}">
+                <div class="card-image">
+                    <img ng-src="{{noticia.imagen}}">
                     <h1 class="card-title">{{noticia.titulo}}</h1>
                 </div>
             </div>
@@ -21,14 +21,14 @@
     <div class="row" ng-controller="NoticiasCtrl">
         <div class="col s10 offset-s1">
             <h4>Noticias Recientes</h4>
-            <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
+            <div class="col s12 m4 l4" ng-repeat="not in noticias | orderBy:'-id' | limitTo:3">
                 <div class="card hoverable small">
                     <div class="card-image">
-                        <img ng-src="{{noticia.imagen}}">
-                        <h1 class="card-title">{{noticia.titulo}}</h1>
+                        <img ng-src="{{not.imagen}}">
+                        <span class="card-title">{{not.titulo}}</span>
                     </div>
                     <div class="card-content">
-                        <p>{{noticia.texto_breve}}</p>
+                        <p>{{not.texto_breve}}</p>
                     </div>
                     <div class="card-action center">
                         <a class="btn green" ui-sref="detalle-noticia({ noticiaID: noticia.id})">Ver más</a>

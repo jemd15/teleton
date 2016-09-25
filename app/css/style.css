@@ -259,3 +259,7 @@ section#jurado img.circle{
     max-height: 400px;
     overflow: hidden;
 }
+
+.card.medium .card-image{
+    max-height: 50%;
+}

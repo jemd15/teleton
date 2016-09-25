@@ -10,12 +10,13 @@
         <h4 class="col s12 m10 white-text">Más votados</h4>
         <a ui-sref="detalle-categoria-ordenada({categoriaName: nombre_original_cat, orden: 'mas-votados'})" class="btn right col m2 green">Ver Todos</a>
         <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'mas-votados' | limitTo:3">
-            <div class="card small hoverable">
+            <div class="card medium hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
                     <h1 class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></h1>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
@@ -23,7 +24,6 @@
                         <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
                     <p>{{idea.short_description}}</p>
-                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
             </div>
         </div>
@@ -36,12 +36,13 @@
         <h4 class="col s12 m10 white-text">Más Recientes</h4>
         <a  ui-sref="detalle-categoria-ordenada({categoriaName: nombre_original_cat, orden: 'recientes'})" class="btn right col m2 green">Ver Todos</a>
         <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'-id' | limitTo:3">
-            <div class="card small hoverable">
+            <div class="card medium hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
                     <h1 class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></h1>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
@@ -49,7 +50,6 @@
                         <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
                     <p>{{idea.short_description}}</p>
-                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
             </div>
         </div>
@@ -64,12 +64,13 @@
         <h4 class="col s12 m10 white-text">Más Antiguos</h4>
         <a ui-sref="detalle-categoria-ordenada({categoriaName: nombre_original_cat, orden: 'mas-antiguos'})" class="btn right col m2 green">Ver Todos</a>
         <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'id' | limitTo:3">
-            <div class="card small hoverable">
+            <div class="card medium hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" ng-src="{{idea.main_image}}">
                 </div>
                 <div class="card-content">
                     <h1 class="card-title activator grey-text text-darken-4">{{idea.title}}<i class="material-icons right">more_vert</i></h1>
+                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{idea.title}}<i class="material-icons right">close</i></span>
@@ -77,7 +78,6 @@
                         <i class="fa fa-heart" aria-hidden="true"> {{idea.num_vote}}</i>
                     </div>
                     <p>{{idea.short_description}}</p>
-                    <p class="center"><a class="btn green" ui-sref="detalle-proyecto({ ideaID: idea.id})">Ver Idea</a></p>
                 </div>
             </div>
         </div>

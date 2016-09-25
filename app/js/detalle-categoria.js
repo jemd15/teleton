@@ -7,18 +7,17 @@ angular.module('detalle-categoria',['rutas'])
         var categoria = $stateParams.categoriaName;
         var ordenamiento = $stateParams.orden;
         var id_categoria;
-        var orden_categoria = $scope.orden_cat;
         $scope.nombre_original_cat = $stateParams.categoriaName;
         
         switch(ordenamiento){
             case 'mas-votados':
-                orden_categoria = '-num_vote';
+                $scope.orden_categoria = '-num_vote';
                 break;
             case 'recientes':
-                orden_categoria = '-id';
+                $scope.orden_categoria = '-id';
                 break;
             case 'mas-antiguos':
-                orden_categoria = 'id';
+                $scope.orden_categoria = 'id';
                 break;
         }
 

@@ -45,7 +45,6 @@
 						minutes + 'm',
 						seconds + 's'
 						].join('');
-				console.log(cont2)
 				return cont2 ;
 
 			}

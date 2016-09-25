@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="950f07b9-0e45-4ec3-ba10-d2b5ce8539e1" name="Default" comment="elimine el modal">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/countdown.js" afterPath="$PROJECT_DIR$/app/js/countdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/registrar.js" afterPath="$PROJECT_DIR$/app/js/registrar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/inicio.html" afterPath="$PROJECT_DIR$/app/views/inicio.html" />
     </list>
     <list id="09e13691-4732-4bd2-88c9-bf047810feb7" name="Rejected commit: Default" comment="elimine el modal" />
     <ignored path="teleton.iws" />
@@ -44,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/app/js/countdown.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -311,7 +309,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127379000" />
+    <option name="totallyTimeSpent" value="127428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,7 +754,7 @@
     <entry file="file://$PROJECT_DIR$/app/js/countdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
           <folding />
         </state>
       </provider>

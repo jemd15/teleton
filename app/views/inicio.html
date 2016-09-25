@@ -12,10 +12,15 @@
 
     <!--contador-->
 
-    <div id="countdown" ng-controller="ContadorCtrl">
+    <div id="countdown" >
         <!--{{loadcount()}}-->
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock" ng-bind-html="clock"></div>
+        <div id="clock">
+            <div countdown='' date='January 1, 2017 12:00:00'>&nbsp;</div>
+        </div>
+
+
+        <!--<div  ng-bind-html="clock"></div>-->
         <div id="units">
             <span class="white-text">Días</span>
             <span class="white-text">Hrs</span>

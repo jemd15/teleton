@@ -1,6 +1,6 @@
 angular.module('SubirIdea', ['naif.base64'])
 
-    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http', function ($scope, $sessionStorage, $http) {
+    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location', function ($scope, $sessionStorage, $http,$location) {
 
         $scope.categorias = [
             {val: '1', name: 'Educación'},
@@ -18,6 +18,12 @@ angular.module('SubirIdea', ['naif.base64'])
             {val: '3', name: 'Cognitiva'},
             {val: '4', name: 'Física'}
         ];
+        
+        
+        $scope.vistaprevia =function () {
+
+            $('#preview').openModal();
+        }
 
 
         $scope.UpIdea = function ($location) {

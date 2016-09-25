@@ -52,6 +52,11 @@ angular.module('rutas',['ui.materialize','ui.router'])
                 url: '/detalle-noticia/:noticiaID',
                 templateUrl: 'app/views/detalle-noticia.html'
             })
+            .state('detalle-categoria-ordenada', {
+                url: '/detalle-categoria/:categoriaName/:orden',
+                templateUrl: 'app/views/ideas.html',
+                controller: 'IdeasCtrl'
+            })
             .state('detalle-categoria', {
                 url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',

@@ -5,7 +5,23 @@ angular.module('detalle-categoria',['rutas'])
 
     .controller('IdeasCtrl', ['$scope', '$sessionStorage', '$http','$stateParams', function ($scope, $sessionStorage, $http,$stateParams) {
         var categoria = $stateParams.categoriaName;
+        var ordenamiento = $stateParams.orden;
         var id_categoria;
+        var orden_categoria = $scope.orden_cat;
+        $scope.nombre_original_cat = $stateParams.categoriaName;
+        
+        switch(ordenamiento){
+            case 'mas-votados':
+                orden_categoria = '-num_vote';
+                break;
+            case 'recientes':
+                orden_categoria = '-id';
+                break;
+            case 'mas-antiguos':
+                orden_categoria = 'id';
+                break;
+        }
+
         switch (categoria){
             case 'educacion':
                 id_categoria=1;
@@ -40,8 +56,6 @@ angular.module('detalle-categoria',['rutas'])
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?category__id='+id_categoria+'&state=1')
             .success(function (data, status, headers, config) {
                $scope.ideas = data.results;
-
-
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);
@@ -51,16 +65,9 @@ angular.module('detalle-categoria',['rutas'])
             $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?state=1')
                 .success(function (data, status, headers, config) {
                     $scope.ideas = data.results;
-
-
                 })
                 .error(function (data, status, header, config) {
                     console.log("FALLO:"+data);
                 });
-
         }
-
-
-
-
     }]);

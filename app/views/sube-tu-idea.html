@@ -8,8 +8,8 @@
         <!--<a ui-sref="inicio" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>-->
     <!--</div>-->
 <!--</div>-->
-
-<section ng-controller="UpIdeaCtrl">
+<div ng-controller="UpIdeaCtrl">
+<section>
     <div class="section center imagen-registro">
         <h3 class="thin">Sube tu <img src="app/images/logo-negro.png" width="45px" height="45px"><strong class="bold"></strong> </h3>
     </div>
@@ -20,12 +20,6 @@
 
         <!--columna izquierda-->
         <div class="col s12 m4 offset-m1">
-            <!--<label for="">Título de la Idea</label>-->
-            <!--<input type="text" ng-model="nombre">-->
-            <!--<label for="">Breve Descripción del Proyecto</label>-->
-            <!--<textarea name="" id="" cols="30" rows="10" ng-model="descripcion_corta"></textarea>-->
-            <!--<label for="">Descripción del Proyecto</label>-->
-            <!--<textarea name="" id="" cols="30" rows="10" ng-model="descripcion"></textarea>-->
             <span class="input-field">
                 <input type="text" ng-model="nombre" length="20">
                 <label>Título de la Idea</label>
@@ -58,7 +52,7 @@
             <div class="file-field input-field">
                 <div class="btn grey darken-1">
                     <span>Foto 1</span>
-                    <input type="file" ng-model="img_prin" base-sixty-four-input >
+                    <input type="file" id="img_prin" ng-model="img_prin" base-sixty-four-input >
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text" placeholder="Sube tu imagen Principal">
@@ -94,9 +88,97 @@
         </div>
     </form>
     <div class="row center">
-        <button ng-click="UpIdea()"  class="btn" id="create-account-and-list">Sube tu idea</button>
+        <button ng-click="vistaprevia()"  class="btn" id="create-account-and-list">Vista Previa</button>
+        <!--<button ng-click="Vistaprevia()"  class="btn" id="create-account-and-list">Sube tu idea</button>-->
     </div>
+
+
 </section>
 <div class="divider"></div>
 <br>
 <br>
+
+<!-- Modal Structure -->
+<div id="preview" class="modal">
+    <div class="modal-content">
+
+        <section >
+            <div class="idea-header">
+                <br>
+                <br>
+                <div class="center">
+                    <h3 class="white-text">{{nombre}}</h3>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="center">
+                <br>
+
+                <img class="responsive-img" style="width: 50%;" data-ng-src="data:image/png;base64,{{img_prin.base64}}">
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="s12 ">
+                        <div class="col s12 m8">
+                            <div class="card-panel">
+                                <h5>Descripción de la Idea</h5>
+                                <p class="letra-detproy">{{descripcion_corta}}.</p>
+                                <p class="letra-detproy">{{descripcion}}.</p>
+
+                            </div>
+                            <div class="card-panel">
+                                <h5>Video</h5>
+                                <!--<div class="video-container">-->
+                                <!--<iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>-->
+                                <!--</div>-->
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <youtube-video class="embed-responsive-item" video-url="url_vid"></youtube-video>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="white">
+                                <div class="center">
+                                    <div class="card-panel">
+                                        <p class="letra-detproy">Categoría: {{categoria}}</p>
+                                        <p class="letra-detproy">Patología: {{beneficiario}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <br>
+                <h5 class="titulo">Imágenes</h5>
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="col s12 m4" >
+                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_2}}">
+                        </div>
+                        <div class="col s12 m4" >
+                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_3}}">
+                        </div>
+                        <div class="col s12 m4" >
+                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_4}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <div class="modal-footer">
+        <a href=""  ng-click="UpIdea()" class=" modal-action modal-close waves-effect waves-green btn-flat">Subir Idea</a>
+    </div>
+</div>
+
+</div>

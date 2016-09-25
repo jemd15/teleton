@@ -75,10 +75,7 @@
         </li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="noticias">Noticias</a></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="bases">Bases</a></li>
-        <!--<li class="white-text hide" ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>-->
-        <li class="color-scroll" ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a class="white-text" ui-sref="registrarse">Sube tu Idea</a></li>
-        <li class="color-scroll" ng-show="isReg"  ui-sref-active="active"><a class="white-text" ui-sref="sube-tu-idea">Sube tu Idea</a></li>
-        <li class="color-scroll" ng-hide="islogin"><a class="white-text" href='#login-modal' modal>Sube tu Idea</a></li>
+        <li><a href='' ng-click="Validar()">Sube tu Idea</a>
     </ul>
 
     <!--estructura del modal/login-->

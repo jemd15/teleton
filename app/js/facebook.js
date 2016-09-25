@@ -143,7 +143,7 @@ angular.module('AppFace', ['facebook','ngStorage',])
 
                                 var url = $location.path();
                                 console.log(url);
-                                if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                if (url.indexOf('/detalle-idea')!=-1) {$scope.idea=true;
                                 }
                                 else{
                                     $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
@@ -161,7 +161,7 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                             console.log(data);
                                         });
                                 }
-
+                                    $scope.logout();
                                     $('#cargando-modal').closeModal();
                                     swal({
                                             title: "Bienvenido!\n"+nombre,
@@ -170,9 +170,10 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                             confirmButtonText: "Aceptar",
                                             closeOnConfirm: true},
                                         function(){
-                                            $scope.logout();
+
                                             if($scope.bandera){ $location.path("/sube-tu-idea")}
-                                            else{  $location.path("/registrarse")}
+                                            if($scope.bandera ==false){ $location.path("/registrarse")}
+                                            if($scope.idea ==true){location.reload();}
                                         });
 
                             })

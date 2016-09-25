@@ -1,6 +1,6 @@
 angular.module('SubirIdea', ['naif.base64'])
 
-    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http', function ($scope, $sessionStorage, $http) {
+    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location', function ($scope, $sessionStorage, $http,$location) {
 
         $scope.categorias = [
             {val: '1', name: 'Educación'},
@@ -18,6 +18,12 @@ angular.module('SubirIdea', ['naif.base64'])
             {val: '3', name: 'Cognitiva'},
             {val: '4', name: 'Física'}
         ];
+        
+        
+        $scope.vistaprevia =function () {
+
+            $('#preview').openModal();
+        }
 
 
         $scope.UpIdea = function ($location) {
@@ -80,14 +86,14 @@ angular.module('SubirIdea', ['naif.base64'])
 
                             swal({
                                     title: "Idea Subida con exito!",
+                                    text: "Tu Idea será moderadada, espéra los resultados en las proximas horas!",
                                     type: "success",
                                     confirmButtonColor: "#DD6B55",
                                     confirmButtonText: "Ver Idea",
                                     closeOnConfirm: true
                                 },
                                 function () {
-
-                                    location.href = '/#/detalle-proyecto?id='+data.idea;
+                                    $location.path("/detalle-idea/"+data.idea);
                                 });
                         })
                         .error(function (data, status, header, config) {

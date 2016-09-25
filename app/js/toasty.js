@@ -5,25 +5,13 @@ $('document').ready(function () {
 
 });
 
-//codigo konami
-if ( window.addEventListener ) {
-    var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
-    window.addEventListener("keydown", function(e){
-        kkeys.push( e.keyCode );
-        if ( kkeys.toString().indexOf( konami ) >= 0 )
-            toasty();
-        kkeys = [];
-    }, true);
-}
-
-var toasty = function () {
+var easter_egg = new Konami(function () {
     console.log('toasty');
-    $("#donfran").removeClass('hide').addClass('slideInRight');
-    $("#donfran").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#donfran").removeClass('hide').addClass('slideInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
         $('#sound')[0].play();
-        $("#donfran").removeClass("slideInRight").addClass('slideOutRight');
-        $("#donfran").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $("#donfran").removeClass("slideOutRight").addClass('hide');
+        $("#donfran").removeClass("slideInRight").addClass('slideOutRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $(this).removeClass("slideOutRight").addClass('hide');
         });
     });
-};
+});
+

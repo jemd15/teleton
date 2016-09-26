@@ -121,37 +121,41 @@
             <div class="container">
                 <div class="row">
                     <div class="s12 ">
-                        <div class="col s12 m8">
+                        <div class="col s12 m12">
                             <div class="card-panel">
                                 <h5>Descripción de la Idea</h5>
                                 <p class="letra-detproy">{{descripcion_corta}}.</p>
                                 <p class="letra-detproy">{{descripcion}}.</p>
 
                             </div>
-                            <div class="card-panel">
-                                <h5>Video</h5>
-                                <!--<div class="video-container">-->
-                                <!--<iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>-->
-                                <!--</div>-->
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <youtube-video class="embed-responsive-item" video-url="url_vid"></youtube-video>
-                                </div>
-                            </div>
+
 
                         </div>
-                        <div class="col s12 m4">
-                            <div class="white">
-                                <div class="center">
-                                    <div class="card-panel">
-                                        <p class="letra-detproy">Categoría: {{categoria}}</p>
-                                        <p class="letra-detproy">Patología: {{beneficiario}}</p>
-                                    </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="white">
+                            <div class="center">
+                                <div class="card-panel">
+                                    <p class="letra-detproy">Categoría: {{categorianame}}</p>
+                                    <p class="letra-detproy">Patología: {{beneficiarioname}}</p>
                                 </div>
                             </div>
-                            <br>
-                            <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
-
                         </div>
+                        <br>
+                        <div class="card-panel">
+                            <h5>Video</h5>
+                            <!--<div class="video-container">-->
+                            <!--<iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>-->
+                            <!--</div>-->
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <youtube-video class="embed-responsive-item" video-id="Video" video-url="url_vid"></youtube-video>
+                            </div>
+                        </div>
+                        <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
+
                     </div>
                 </div>
             </div>
@@ -161,14 +165,14 @@
                 <h5 class="titulo">Imágenes</h5>
                 <div class="card-panel">
                     <div class="row">
-                        <div class="col s12 m4" >
-                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_2}}">
+                        <div class="col s12 m12" >
+                            <img class="responsive-img" style="width: 100%;" data-ng-src="data:image/png;base64,{{img_2.base64}}">
                         </div>
-                        <div class="col s12 m4" >
-                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_3}}">
+                        <div class="col s12 m12" >
+                            <img class="responsive-img" style="width: 100%;" data-ng-src="data:image/png;base64,{{img_3.base64}}">
                         </div>
-                        <div class="col s12 m4" >
-                            <img materialboxed class="materialboxed" data-caption="" data-ng-src="data:image/png;base64,{{img_4}}">
+                        <div class="col s12 m12" >
+                            <img class="responsive-img" style="width: 100%;" data-ng-src="data:image/png;base64,{{img_4.base64}}">
                         </div>
                     </div>
                 </div>
@@ -177,8 +181,13 @@
         </section>
     </div>
     <div class="modal-footer">
-        <a href=""  ng-click="UpIdea()" class=" modal-action modal-close waves-effect waves-green btn-flat">Subir Idea</a>
-    </div>
+        <div class="col s6 m6" >
+        <a href=""  ng-click="UpIdea()" class=" modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">note_add</i>Subir Idea</a>
+
+        <div class="col s6 m6" >
+            <a href=""  ng-click="cerrarmodal()" class="modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Seguir Editando</a>
+        </div>
+        </div>
 </div>
 
 </div>

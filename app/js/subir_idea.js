@@ -21,12 +21,26 @@ angular.module('SubirIdea', ['naif.base64'])
         
         
         $scope.vistaprevia =function () {
+            if($scope.categoria ==1){$scope.categorianame='Educación'}
+            if($scope.categoria ==2){$scope.categorianame='Vida diaria'}
+            if($scope.categoria ==3){$scope.categorianame='Trabajo'}
+            if($scope.categoria ==4){$scope.categorianame='Transporte'}
+            if($scope.categoria ==5){$scope.categorianame='Comunicación'}
+            if($scope.categoria ==6){$scope.categorianame='Entretención'}
+            if($scope.beneficiario ==1){$scope.beneficiarioname='Visual'}
+            if($scope.beneficiario ==2){$scope.beneficiarioname='Auditiva'}
+            if($scope.beneficiario ==3){$scope.beneficiarioname='Cognitiva'}
+            if($scope.beneficiario ==4){$scope.beneficiarioname='Física'}
 
             $('#preview').openModal();
         }
 
+        $scope.cerrarmodal =function () {
+            $('#preview').closeModal();
+        }
 
-        $scope.UpIdea = function ($location) {
+
+        $scope.UpIdea = function () {
             var config;
 
             var obj = {
@@ -89,11 +103,11 @@ angular.module('SubirIdea', ['naif.base64'])
                                     text: "Tu Idea será moderadada, espéra los resultados en las proximas horas!",
                                     type: "success",
                                     confirmButtonColor: "#DD6B55",
-                                    confirmButtonText: "Ver Idea",
+                                    confirmButtonText: "Aceptar",
                                     closeOnConfirm: true
                                 },
                                 function () {
-                                    $location.path("/detalle-idea/"+data.idea);
+                                    $location.path("/inicio");
                                 });
                         })
                         .error(function (data, status, header, config) {

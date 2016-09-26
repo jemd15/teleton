@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6{
 .side-nav .collapsible-header, .side-nav.fixed .collapsible-header{
     padding: 0;
 }
-ul#categorias{
+ul#categorias, ul#salir{
     margin-top: 80px;
     width: 130px !important;
 }
@@ -32,8 +32,12 @@ nav{
     height: 80px;
 }
 nav ul a {
-    padding: 8px 18px;
+    padding: 8px 15px;
     font-size: 15px;
+}
+nav ul a i{
+    padding: 0;
+    margin-right: 5px !important;
 }
 nav ul a:hover{
     color: #4caf50;
@@ -266,4 +270,7 @@ section#jurado img.circle{
 
 .usericon {
     margin-top: 0px!important;
+}
+.ir-arriba {
+    display:none;
 }

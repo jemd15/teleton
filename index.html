@@ -23,12 +23,12 @@
                 <a href="#" class="button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
                 <a ui-sref="inicio" class="brand-logo"><img class="hide-on-small-only" src="app/images/Ideatón-Logo.svg" alt=""><img class="hide-on-med-and-up" src="app/images/ampolleta.svg" alt=""></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li ng-show="islogin"><a href="" ng-click="logout()"><i class="tiny material-icons left usericon">perm_identity</i>{{usuario}}</a></li>
                     <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
                     <li ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
                     <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
                     <li ui-sref-active="active"><a ui-sref="bases">Bases</a></li>
                     <li><a href='' ng-click="Validar()">Sube tu Idea</a>
+                    <li ng-show="islogin"><a ng-click="logout()" href='javascript:void(0);' data-activates='salir' dropdown data-hover="true"><i class="tiny material-icons right usericon">account_circle</i>{{usuario}}</a></li>
                     <!--<li ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
                     <li ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
                     <li ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>-->
@@ -46,6 +46,11 @@
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'comunicacion'})">Comunicación</a></li>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'entretencion'})">Entretención</a></li>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'todas'})">Todas</a></li>
+    </ul>
+
+    <!--escructura del dropdown salir-->
+    <ul id="salir" class="dropdown-content grey darken-4">
+        <li><a class="white-text">Salir <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
     </ul>
 
     <!--menu lateral version movil-->
@@ -135,8 +140,8 @@
     <div ui-view></div>
 
     <!--boton flotante para subir al top-->
-    <div id="irarriba" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large green" href="#">
+    <div class="ir-arriba fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large green">
             <i class="fa fa-arrow-up"></i>
         </a>
     </div>

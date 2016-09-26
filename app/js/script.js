@@ -49,17 +49,21 @@ function scaleBannerVideoSize(element){
 $(document).ready(function() {
     $('input#input_text, textarea#descripcion').characterCounter();
   });
-  
-function irArriba(){
-    $(document).on("scroll", function(){
-        var desplazamientoActual = $(document).scrollTop();
-        var controlArriba = $("#irarriba");
 
-        if(desplazamientoActual > 100 && controlArriba.css("display") == "none"){
-            controlArriba.fadeIn(500);
-        }
-        if(desplazamientoActual < 100 && controlArriba.css("display") == "block"){
-            controlArriba.fadeOut(500);
+$(document).ready(function(){
+
+    $('.ir-arriba').click(function(){
+        $('body, html').animate({
+            scrollTop: '0px'
+        }, 300);
+    });
+
+    $(window).scroll(function(){
+        if( $(this).scrollTop() > 0 ){
+            $('.ir-arriba').slideDown(300);
+        } else {
+            $('.ir-arriba').slideUp(300);
         }
     });
-}
+
+});

@@ -23,6 +23,7 @@
                 <a href="#" class="button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
                 <a ui-sref="inicio" class="brand-logo"><img class="hide-on-small-only" src="app/images/Ideatón-Logo.svg" alt=""><img class="hide-on-med-and-up" src="app/images/ampolleta.svg" alt=""></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li ng-show="islogin"><a href="" ng-click="logout()"><i class="tiny material-icons left usericon">perm_identity</i>{{usuario}}</a></li>
                     <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
                     <li ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
                     <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
@@ -50,8 +51,12 @@
     <!--menu lateral version movil-->
     <ul id="slide-out" class="side-nav grey darken-4" ng-controller="ValidarReg">
         <li class="white-text"><img id="logo-nav-bar" src="app/images/Ideatón-Logo.svg" alt=""></li>
-        <li class="white-text"><a class="white-text" href='#login-modal' modal>Iniciar Sesión</a></li>
-        <li class="white-text"><div class="divider"></div></li>
+        <li ng-show="islogin"><div class="userView">
+            <a href="#!user" ng-click="logout()"><img class="circle" src="app/images/user.svg"></a>
+            <a href="#!name" ng-click="logout()"><span class="white-text name">{{usuario}}</span></a>
+            <a href="#!email" ng-click="logout()"><span class="white-text email">{{email}}</span></a>
+        </div></li>
+
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="inicio">Inicio</a></li>
         <li class="white-text" ui-sref-active="active">
             <ul class="collapsible" data-collapsible="accordion">
@@ -75,7 +80,7 @@
         </li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="noticias">Noticias</a></li>
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="bases">Bases</a></li>
-        <li><a href='' ng-click="Validar()">Sube tu Idea</a>
+        <li class="white-text"><a class="white-text" href='' ng-click="Validar()">Sube tu Idea</a>
     </ul>
 
     <!--estructura del modal/login-->

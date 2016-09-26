@@ -5,7 +5,13 @@ angular.module('validacion',['ngStorage'])
     if($sessionStorage.islogin == 1)
     {
         $scope.islogin= true;
+        $scope.usuario = $sessionStorage.nombre;
+        $scope.email = $sessionStorage.email;
+    }
 
+    $scope.logout=function () {
+        $sessionStorage.$reset();
+        location.reload();
     }
 
 

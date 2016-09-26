@@ -263,3 +263,7 @@ section#jurado img.circle{
 .card.medium .card-image{
     max-height: 50%;
 }
+
+.usericon {
+    margin-top: 0px!important;
+}

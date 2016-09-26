@@ -1,6 +1,6 @@
 angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
 
-    .controller('RegistroCtrl', ['$scope','$sessionStorage','$timeout','$http', function ($scope,$sessionStorage,$http,$timeout) {
+    .controller('RegistroCtrl', ['$scope','$sessionStorage','$timeout','$http', function ($scope,$sessionStorage,$timeout, $http) {
         $scope.checkboxU = {
             ischeck : false
         };

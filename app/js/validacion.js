@@ -1,6 +1,14 @@
 angular.module('validacion',['ngStorage'])
 
 .controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location', function ($scope,$http,$sessionStorage,$state,$location) {
+
+    if($sessionStorage.islogin == 1)
+    {
+        $scope.islogin= true;
+
+    }
+
+
      $scope.Validar=function () {
          if($sessionStorage.islogin != 1)
          {
@@ -27,14 +35,4 @@ angular.module('validacion',['ngStorage'])
          }
      }
 
-
-
-
-
-
-
-       
-   
-           
-        
 }]);

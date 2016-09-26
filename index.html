@@ -28,7 +28,7 @@
                     <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
                     <li ui-sref-active="active"><a ui-sref="bases">Bases</a></li>
                     <li><a href='' ng-click="Validar()">Sube tu Idea</a>
-                    <li ng-show="islogin"><a ng-click="logout()" href='javascript:void(0);' data-activates='salir' dropdown data-hover="true"><i class="tiny material-icons right usericon">account_circle</i>{{usuario}}</a></li>
+                    <li ng-show="islogin"><a href='javascript:void(0);' data-activates='salir' dropdown data-hover="true"><i class="tiny material-icons right usericon">account_circle</i>{{usuario}}</a></li>
                     <!--<li ng-show="!isReg" ng-hide="!islogin" ui-sref-active="active"><a ui-sref="registrarse">Sube tu Idea</a></li>
                     <li ng-show="isReg"  ui-sref-active="active"><a ui-sref="sube-tu-idea">Sube tu Idea</a></li>
                     <li ng-hide="islogin"><a href='#login-modal' modal>Sube tu Idea</a></li>-->
@@ -37,7 +37,7 @@
         </nav>
     </div>
 
-    <!--estructura de dropdown-->
+    <!--estructura del dropdown-->
     <ul id='categorias' class='dropdown-content grey darken-4'>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'vida-diaria'})">Vida Diaria</a></li>
         <li><a class="white-text" ui-sref="detalle-categoria({ categoriaName: 'educacion'})">Educación</a></li>
@@ -50,17 +50,19 @@
 
     <!--escructura del dropdown salir-->
     <ul id="salir" class="dropdown-content grey darken-4">
-        <li><a class="white-text">Salir <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+        <li><a href="" ng-click="logout()" class="white-text">Salir <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
     </ul>
 
     <!--menu lateral version movil-->
     <ul id="slide-out" class="side-nav grey darken-4" ng-controller="ValidarReg">
         <li class="white-text"><img id="logo-nav-bar" src="app/images/Ideatón-Logo.svg" alt=""></li>
-        <li ng-show="islogin"><div class="userView">
-            <a href="#!user" ng-click="logout()"><img class="circle" src="app/images/user.svg"></a>
-            <a href="#!name" ng-click="logout()"><span class="white-text name">{{usuario}}</span></a>
-            <a href="#!email" ng-click="logout()"><span class="white-text email">{{email}}</span></a>
-        </div></li>
+        <li ng-show="islogin">
+            <div class="userView">
+                <a href="#!user" ng-click="logout()"><img class="circle" src="app/images/user.svg"></a>
+                <a href="#!name" ng-click="logout()"><span class="white-text name">{{usuario}}</span></a>
+                <a href="#!email" ng-click="logout()"><span class="white-text email">{{email}}</span></a>
+            </div>
+        </li>
 
         <li class="white-text" ui-sref-active="active"><a class="white-text" ui-sref="inicio">Inicio</a></li>
         <li class="white-text" ui-sref-active="active">

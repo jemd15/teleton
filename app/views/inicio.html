@@ -18,8 +18,6 @@
         <div id="clock">
             <div countdown='' date='January 1, 2017 12:00:00'>&nbsp;</div>
         </div>
-
-
         <!--<div  ng-bind-html="clock"></div>-->
         <div id="units">
             <span class="white-text">Días</span>
@@ -193,7 +191,7 @@
             <a ui-sref="noticias" class="btn right col m1 green">Más</a>
         </div>
         <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
-            <div class="card hoverable small">
+            <div class="card hoverable medium">
                 <div class="card-image">
                     <img ng-src="{{noticia.imagen}}">
                     <h1 class="card-title">{{noticia.titulo}}</h1>

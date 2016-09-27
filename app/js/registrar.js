@@ -1,6 +1,7 @@
 angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
 
     .controller('RegistroCtrl', ['$scope','$sessionStorage','$timeout','$http', function ($scope,$sessionStorage,$timeout, $http) {
+
         $scope.checkboxU = {
             ischeck : false
         };
@@ -62,4 +63,20 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
 
             // setTimeout(location.reload.bind(location), 5000);
         };
+
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year
+            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+            weekdaysLetter: ['D', 'L', 'M', 'MI', 'J', 'V', 'S'],
+            today: 'hoy',
+            clear: 'borrar',
+            close: 'cerrar',
+            firstDay: 1,
+            format: 'dddd d !de mmmm !de yyyy',
+            formatSubmit: 'yyyy/mm/dd'
+        });
     }]);

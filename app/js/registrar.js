@@ -27,16 +27,26 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
         });
 
         $scope.UpdateUser = function ($location) {
+
+            var fecha = $scope.edad.split("-");
+            dia = fecha[0];
+            mes = fecha[1];
+            año = fecha[2];
+             var age =año+"-"+mes+"-"+dia;
             var obj = {
                 first_name: $scope.nombre,
                 last_name: $scope.apellido,
                 phone: $scope.telefono,
-                age: $scope.edad,
+                age: age,
                 commune: $scope.comuna,
                 is_student:$scope.checkboxU.ischeck,
                 career:$scope.carrera,
                 university:$scope.universidad
             };
+
+
+
+            console.log(obj.age);
             if($sessionStorage.islogin === 1)
             {
                 var config = {
@@ -84,14 +94,14 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
             selectYears: 100, // Creates a dropdown of 15 years to control year
             monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+            weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
             weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
             weekdaysLetter: ['D', 'L', 'M', 'MI', 'J', 'V', 'S'],
             today: 'hoy',
             clear: 'borrar',
             close: 'cerrar',
             firstDay: 1,
-            format: 'dddd d !de mmmm !de yyyy',
-            formatSubmit: 'yyyy/mm/dd'
+            format: 'dd!-mm!-yyyy',
+            formatSubmit: 'dd-mm-yyyy'
         });
     }]);

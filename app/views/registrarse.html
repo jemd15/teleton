@@ -10,13 +10,11 @@
     <div id="create-list-login-container" class="row create-list-button disabled">
         <div class="col s12 m6 l6">
             <div class="create-list-login-panel center create-list-connect-btn">
-                <!-- <p class="flow-text">Selecciona una cuenta para iniciar sesión y registrarte.</p> -->
                 <br>
                 <br>
                 <div class="imagen-registro">
                     <img src="app/images/logo-negro.png" width="400px" height="400px">
                 </div>
-               s
             </div>
         </div>
         <form ng-controller="RegistroCtrl">
@@ -44,7 +42,7 @@
                                        ng-model="edad"
                                        id="inputCreated"
                                        container=""
-                                       format="yyyy-mm-dd"
+                                       format="dd-mm-yyyy"
                                        months-full="{{ month }}"
                                        months-short="{{ monthShort }}"
                                        weekdays-full="{{ weekdaysFull }}"

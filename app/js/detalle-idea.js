@@ -8,7 +8,7 @@ angular.module('detalle-idea',['youtube-embed'])
         $scope.id_idea =id_idea;
         $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
             .success(function (data, status, headers, config) {
-                $scope.nombre= data.title;
+                $scope.title= data.title;
                 $scope.descripcion_corta=data.short_description;
                 $scope.descripcion= data.description;
                 $scope.url_vid = data.url_video;

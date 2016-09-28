@@ -88,7 +88,7 @@
         </div>
     </form>
     <div class="row center">
-        <button ng-click="vistaprevia()"  class="btn" id="create-account-and-list">Vista Previa</button>
+        <button data-target="preview" class="btn modal-trigger id="create-account-and-list">Vista Previa</button>
         <!--<button ng-click="Vistaprevia()"  class="btn" id="create-account-and-list">Sube tu idea</button>-->
     </div>
 
@@ -151,7 +151,7 @@
                             <!--<iframe width="853" height="480" src="//" frameborder="0" allowfullscreen></iframe>-->
                             <!--</div>-->
                             <div class="embed-responsive embed-responsive-16by9">
-                                <youtube-video class="embed-responsive-item" video-id="Video" video-url="url_vid"></youtube-video>
+                                <youtube-video class="embed-responsive-item"  player="Video" video-url="url_vid"></youtube-video>
                             </div>
                         </div>
                         <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
@@ -185,7 +185,7 @@
         <a href=""  ng-click="UpIdea()" class=" modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">note_add</i>Subir Idea</a>
 
         <div class="col s6 m6" >
-            <a href=""  ng-click="cerrarmodal()" class="modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Seguir Editando</a>
+            <a href=""  ng-click="Video.stopVideo()" class="modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Seguir Editando</a>
         </div>
         </div>
 </div>

@@ -48,18 +48,45 @@
                                         <div ng-controller="ValidarVotoCtrl">
                                         <div class="color-scroll" ng-hide="islogin"><a class="btn blue darken-4" href='#login-modal' modal>Logeate para Votar!</a></div>
                                           <div  ng-show="islogin" ng-controller="VotosCtrl">
-                                           <button ng-hide="isvote" class="button button-5 button-5a icon-remove" ng-click="Votar()"><i class="fa fa-heart"></i><span>Apoyar</span></button>
+                                           <button ng-hide="isvote" class="btn pink" ng-click="Votar()"><i class="fa fa-heart "></i><span> Votar</span></button>
                                           </div>
                                        </div>
                                     </div>
                                     <br>
                                     <h6>Compártelo en tus Redes Sociales</h6>
-                                    <div class="addthis_inline_share_toolbox"></div>
+                                    <div class="center">
+                                        <a
+                                                socialshare
+                                                socialshare-provider="facebook"
+                                                socialshare-text="{{nombre}}"
+                                                socialshare-media="{{img_prin}}"
+                                                socialshare-popup-height="450"
+                                                socialshare-popup-width="450">
+                                           <button class="btn-floating button-facebook"><i class="fa fa-facebook"></i></button>
+                                        </a>
+                                        <a
+                                                socialshare
+                                                socialshare-provider="twitter"
+                                                socialshare-text="{{nombre}}"
+                                                socialshare-via="teleton"
+                                                socialshare-hashtags="ideaton"
+                                                socialshare-popup-height="450"
+                                                socialshare-popup-width="450">
+                                            <button class="btn-floating button-twitter"><i class="fa fa-twitter"></i></button>
+                                        </a>
+                                        <a
+                                                socialshare
+                                                socialshare-provider="google"
+                                                socialshare-popup-height="450"
+                                                socialshare-popup-width="450">
+                                            <button class="btn-floating button-google"><i class="fa fa-google-plus"></i></button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <!--<img class="responsive-img" src="app/images/ideatonidea.svg">-->
+                        <img class="responsive-img" src="app/images/todos.svg"
 
                     </div>
                 </div>

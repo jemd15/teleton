@@ -1,4 +1,4 @@
-var app = angular.module('ideaton',['rutas','AppFace', 'AppGoogle','validacion','registro','SubirIdea','detalle-idea','inicio','detalle-categoria','contador','detalle-noticia' , 'environment']);
+var app = angular.module('ideaton',['rutas','AppFace', 'AppGoogle','validacion','registro','SubirIdea','detalle-idea','inicio','detalle-categoria','contador','detalle-noticia' , 'environment', '720kb.socialshare']);
 
 app.run(function($rootScope,$sessionStorage){
     $rootScope.$on('$stateChangeSuccess', function() {
@@ -39,13 +39,13 @@ app.config(function(envServiceProvider) {
 
         //try to get the environment from Node.js URL
         //obtener JSON con las universidades
-        #var initInjector = angular.injector(['ng']);
-        #var $http = initInjector.get('$http');
-
-        #$http.get('/environment')
-        #    .success(function (data, status, headers) {
-        #      console.log(data);
-        #});
+        // #var initInjector = angular.injector(['ng']);
+        // #var $http = initInjector.get('$http');
+        //
+        // #$http.get('/environment')
+        // #    .success(function (data, status, headers) {
+        // #      console.log(data);
+        // #});
 
 
 

@@ -30,13 +30,13 @@ app.config(function(envServiceProvider) {
 
         //try to get the environment from Node.js URL
         //obtener JSON con las universidades
-        var initInjector = angular.injector(['ng']);
-        var $http = initInjector.get('$http');
+        #var initInjector = angular.injector(['ng']);
+        #var $http = initInjector.get('$http');
 
-        $http.get('/environment')
-            .success(function (data, status, headers) {
-              console.log(data);
-        });
+        #$http.get('/environment')
+        #    .success(function (data, status, headers) {
+        #      console.log(data);
+        #});
 
 
 

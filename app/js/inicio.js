@@ -11,6 +11,7 @@ angular.module('inicio',[])
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);
+
             });
 
     }])

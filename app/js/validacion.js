@@ -1,13 +1,15 @@
-angular.module('validacion',['ngStorage'])
+angular.module('validacion',['ngStorage','ngSanitize'])
 
 .controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location', function ($scope,$http,$sessionStorage,$state,$location) {
-
+    /*$scope.islogin= false;
     if($sessionStorage.islogin == 1)
     {
-        $scope.islogin= true;
-        $scope.usuario = $sessionStorage.nombre;
-        $scope.email = $sessionStorage.email;
-    }
+
+            $scope.islogin= true;
+            $scope.usuario = $sessionStorage.nombre;
+            $scope.email = $sessionStorage.email;
+
+    }*/
 
     $scope.logout=function () {
         $sessionStorage.$reset();
@@ -27,11 +29,13 @@ angular.module('validacion',['ngStorage'])
 
                      if(data.results[0].commune !=""){
 
-                         $location.path("/sube-tu-idea")
+                         $state.go('sube-tu-idea', {}, {reload: true});
 
                      }
                      else{
-                         $location.path("/registrarse")
+                         $state.go('registrarse', {}, {reload: true});
+
+
                      }
                  })
                  .error(function (data, status, header) {

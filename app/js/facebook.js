@@ -179,6 +179,17 @@ angular.module('AppFace', ['facebook','ngStorage',])
                             })
                             .error(function(data, status, header) {
                                 console.log(data);
+                                swal({
+                                        title: "Algo salió mal!",
+                                        text: "Intentalo de nuevo!",
+                                        type: "error",
+                                        confirmButtonColor: "#DD6B55",
+                                        confirmButtonText: "Aceptar",
+                                        closeOnConfirm: true
+                                    },
+                                    function () {
+                                        location.reload();
+                                    });
                             });
                          }, 1000);
 

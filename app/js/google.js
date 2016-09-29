@@ -84,8 +84,9 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                                 confirmButtonText: "Aceptar",
                                                                 closeOnConfirm: true},
                                                             function(){
-                                                                $state.go('sube-tu-idea');
-                                                               $location.path("/sube-tu-idea");
+                                                                $state.go('sube-tu-idea', {}, {reload: true});
+                                                               // $state.go('sube-tu-idea');
+                                                               //$location.path("/sube-tu-idea");
 
                                                             });
 
@@ -100,14 +101,27 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                                                 confirmButtonText: "Aceptar",
                                                                 closeOnConfirm: true},
                                                             function(){
-                                                                $state.go('registrarse');
-                                                                $location.path("/registrarse");
+                                                                $state.go('registrarse', {}, {reload: true});
+                                                                //$state.go('registrarse');
+                                                                //$location.path("/registrarse");
 
                                                             });
                                                     }
                                                 })
                                                 .error(function (data, status, header) {
                                                     console.log(data);
+                                                    swal({
+                                                            title: "Algo salió mal!",
+                                                            text: "Intentalo de nuevo!",
+                                                            type: "error",
+                                                            confirmButtonColor: "#DD6B55",
+                                                            confirmButtonText: "Aceptar",
+                                                            closeOnConfirm: true
+                                                        },
+                                                        function () {
+                                                            location.reload();
+                                                        });
+
                                                 });
 
                                                                 }
@@ -118,6 +132,17 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                     })
                                     .error(function (data, status, header, config) {
                                         console.log("FALLO"+data);
+                                        swal({
+                                                title: "Algo salió mal!",
+                                                text: "Intentalo de nuevo!",
+                                                type: "error",
+                                                confirmButtonColor: "#DD6B55",
+                                                confirmButtonText: "Aceptar",
+                                                closeOnConfirm: true
+                                            },
+                                            function () {
+                                                location.reload();
+                                            });
                                     });
 
                             });

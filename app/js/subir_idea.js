@@ -2,9 +2,6 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
     .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location', function ($scope, $sessionStorage, $http,$location) {
 
-
-
-
         $scope.categorias = [
             {val: '1', name: 'Educación'},
             {val: '2', name: 'Vida diaria'},
@@ -125,12 +122,35 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
                         })
                         .error(function (data, status, header, config) {
                             console.log("FALLO"+data);
+                            swal({
+                                    title: "Algo salió mal!",
+                                    text: "Intentalo de nuevo!",
+                                    type: "error",
+                                    confirmButtonColor: "#DD6B55",
+                                    confirmButtonText: "Aceptar",
+                                    closeOnConfirm: true
+                                },
+                                function () {
+                                    location.reload();
+                                });
+
                         });
 
 
                 })
                 .error(function (data, status, header, config) {
                     console.log("FALLO"+data);
+                    swal({
+                            title: "Algo salió mal!",
+                            text: "Intentalo de nuevo!",
+                            type: "error",
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Aceptar",
+                            closeOnConfirm: true
+                        },
+                        function () {
+                            location.reload();
+                        });
                 });
 
             // setTimeout(location.reload.bind(location), 5000);

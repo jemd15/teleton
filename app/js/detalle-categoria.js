@@ -3,12 +3,12 @@
  */
 angular.module('detalle-categoria',['rutas'])
 
-    .controller('IdeasCtrl', ['$scope', '$sessionStorage', '$http','$stateParams', function ($scope, $sessionStorage, $http,$stateParams) {
+    .controller('IdeasCtrl', ['$scope', '$sessionStorage', '$http','$stateParams' , 'envService', function ($scope, $sessionStorage, $http,$stateParams, envService) {
         var categoria = $stateParams.categoriaName;
         var ordenamiento = $stateParams.orden;
         var id_categoria;
         $scope.nombre_original_cat = $stateParams.categoriaName;
-        
+
         switch(ordenamiento){
             case 'mas-votados':
                 $scope.orden_categoria = '-num_vote';
@@ -52,7 +52,8 @@ angular.module('detalle-categoria',['rutas'])
                 break;
         }
 
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?category__id='+id_categoria+'&state=1')
+        var apiUrl = envService.read('apiUrl');
+        $http.get(apiUrl + "/ideas/?category__id="+id_categoria+'&state=1')
             .success(function (data, status, headers, config) {
                $scope.ideas = data.results;
             })
@@ -61,7 +62,7 @@ angular.module('detalle-categoria',['rutas'])
             });
 
         if( categoria == "todas"){
-            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/?state=1')
+            $http.get(apiUrl + "/ideas/?state=1")
                 .success(function (data, status, headers, config) {
                     $scope.ideas = data.results;
                 })

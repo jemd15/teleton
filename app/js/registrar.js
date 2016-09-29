@@ -1,6 +1,6 @@
 angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
-    .controller('RegistroCtrl', ['$scope','$sessionStorage','$timeout','$http', function ($scope,$sessionStorage,$timeout, $http) {
-
+    .controller('RegistroCtrl', ['$scope','$sessionStorage','$timeout','$http','envService', function ($scope,$sessionStorage,$timeout, $http, envService) {
+        var apiUrl = envService.read('apiUrl');
         $scope.checkboxU = {
             ischeck : false
         };
@@ -54,10 +54,10 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                         'Authorization': 'token '+$sessionStorage.token
                     }
                 };
-                $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                     .success(function (data, status, headers) {
                         $scope.id= data.results[0].id;
-                        $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/editusers/'+ $scope.id+'/',obj,config)
+                        $http.patch(apiUrl + "/editusers/"+ $scope.id+'/',obj,config)
                             .success(function (data, status, headers,config) {
 
                                 swal({

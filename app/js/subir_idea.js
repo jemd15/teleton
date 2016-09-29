@@ -1,6 +1,6 @@
 angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
-    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location', function ($scope, $sessionStorage, $http,$location) {
+    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location','envService', function ($scope, $sessionStorage, $http,$location , envService) {
 
 
 
@@ -75,9 +75,9 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
                 }
             }
 
+            var apiUrl = envService.read('apiUrl');
 
-
-            $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_idea/', obj, config)
+            $http.post(apiUrl + "/upload_idea/", obj, config)
                 .success(function (data, status, headers, config) {
 
                     var img2 = {
@@ -94,21 +94,21 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
                     };
 
 
-                    $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img2, config)
+                    $http.post(apiUrl + "/upload_image/", img2, config)
                         .success(function (data, status, headers, config) {
 
                         })
                         .error(function (data, status, header, config) {
                             console.log("FALLO"+data);
                         });
-                    $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img3, config)
+                    $http.post(apiUrl + "/upload_image/", img3, config)
                         .success(function (data, status, headers, config) {
 
                         })
                         .error(function (data, status, header, config) {
                             console.log("FALLO"+data);
                         });
-                    $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/upload_image/', img4, config)
+                    $http.post(apiUrl + "/upload_image/", img4, config)
                         .success(function (data, status, headers, config) {
 
                             swal({
@@ -138,4 +138,3 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
         }
     }]);
-

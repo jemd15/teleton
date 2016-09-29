@@ -3,10 +3,11 @@
  */
 angular.module('detalle-noticia',[])
 
-.controller('NoticiaCtrl',['$scope','$location','$http','$stateParams', function ($scope,$location,$http,$stateParams) {
+.controller('NoticiaCtrl',['$scope','$location','$http','$stateParams', 'envService', function ($scope,$location,$http,$stateParams , envService) {
+    var apiUrl = envService.read('apiUrl');
 
     var id_noticia = $stateParams.noticiaID;
-    $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/noticias/'+id_noticia+"/")
+    $http.get(apiUrl + "/noticias/"+id_noticia+"/")
         .success(function (data, status, headers, config) {
             $scope.noticia= data;
 

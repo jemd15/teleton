@@ -1,6 +1,6 @@
 angular.module('validacion',['ngStorage'])
 
-.controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location', function ($scope,$http,$sessionStorage,$state,$location) {
+.controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location','envService', function ($scope,$http,$sessionStorage,$state,$location,envService) {
 
     if($sessionStorage.islogin == 1)
     {
@@ -22,7 +22,8 @@ angular.module('validacion',['ngStorage'])
 
          }
          else {
-             $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+              var apiUrl = envService.read('apiUrl');
+             $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                  .success(function (data, status, headers) {
 
                      if(data.results[0].commune !=""){

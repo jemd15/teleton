@@ -26,9 +26,9 @@ angular.module('AppFace', ['facebook','ngStorage',])
     // })
 
 
-    .controller('LoginFaceCtrl', ['$scope', '$timeout', 'Facebook', '$http','$sessionStorage','$location',
-        function($scope, $timeout, Facebook, $http, $sessionStorage,$location) {
-
+    .controller('LoginFaceCtrl', ['$scope', '$timeout', 'Facebook', '$http','$sessionStorage','$location' , 'envService',
+        function($scope, $timeout, Facebook, $http, $sessionStorage,$location, envService) {
+          var apiUrl = envService.read('apiUrl');
             // Define user empty data :/
             $scope.user = {};
 
@@ -135,7 +135,7 @@ angular.module('AppFace', ['facebook','ngStorage',])
 
                         $timeout(function(){
                         //POST EN API DJANGO-------
-                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/facebook/", $scope.obj)
+                        $http.post(apiUrl + "/rest-auth/facebook/", $scope.obj)
                             .success(function(data, status, headers) {
                                 var nombre= $sessionStorage.nombre;
                                 $sessionStorage.token = data.key;
@@ -146,7 +146,7 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                 if (url.indexOf('/detalle-idea')!=-1) {$scope.idea=true;
                                 }
                                 else{
-                                    $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                    $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                                         .success(function (data, status, headers) {
                                             if(data.results[0].commune !=""){
                                                 $scope.bandera=true;

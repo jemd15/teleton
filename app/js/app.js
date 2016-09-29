@@ -1,6 +1,6 @@
 var app = angular.module('ideaton',['rutas','AppFace', 'AppGoogle','validacion','registro','SubirIdea','detalle-idea','inicio','detalle-categoria','contador','detalle-noticia' , 'environment']);
 
-app.run(function($rootScope){
+app.run(function($rootScope,$sessionStorage){
     $rootScope.$on('$stateChangeSuccess', function() {
         $rootScope.islogin= false;
         if($sessionStorage.islogin == 1)

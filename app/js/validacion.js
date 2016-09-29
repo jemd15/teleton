@@ -1,6 +1,7 @@
 angular.module('validacion',['ngStorage','ngSanitize'])
 
 .controller('ValidarReg', ['$scope','$http','$sessionStorage','$state','$location', function ($scope,$http,$sessionStorage,$state,$location) {
+
     /*$scope.islogin= false;
     if($sessionStorage.islogin == 1)
     {
@@ -24,6 +25,7 @@ angular.module('validacion',['ngStorage','ngSanitize'])
 
          }
          else {
+             
              $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
                  .success(function (data, status, headers) {
 

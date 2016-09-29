@@ -8,9 +8,10 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
         }
     ])
 
-    .controller('LoginGoogleCtrl', ['$scope', 'GoogleSignin', '$http', '$sessionStorage','$rootScope','$location','$state',
+    .controller('LoginGoogleCtrl', ['$scope', 'GoogleSignin', '$http', '$sessionStorage','$rootScope','$location','$state','envService',
 
-        function ($scope, GoogleSignin, $http, $sessionStorage,$rootScope,$location,$state) {
+        function ($scope, GoogleSignin, $http, $sessionStorage,$rootScope,$location,$state, envService) {
+            //var apiUrl = envService.read('apiUrl');
             $scope.googleLogin = function () {
 
                 GoogleSignin.signIn().then(function (user) {
@@ -31,9 +32,9 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
 
                         }
 
+                        var apiUrl = envService.read('apiUrl');
 
-
-                        $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/registration/", obj)
+                        $http.post(apiUrl + "/rest-auth/registration/", obj)
                             .success(function (data, status, headers) {
                                 $sessionStorage.token = data.key;
                                 $sessionStorage.islogin = 1;
@@ -64,7 +65,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                 }
                                 console.log(obj2);
 
-                                $http.post("http://pyhackaton2016-hackatonteleton.rhcloud.com/rest-auth/login/", obj2)
+                                $http.post(apiUrl + "/rest-auth/login/", obj2)
                                     .success(function (data, status, headers, config) {
                                         $sessionStorage.token = data.key;
                                         $sessionStorage.islogin = 1;
@@ -72,7 +73,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         if (url.indexOf('/detalle-idea')!=-1) {location.reload();
                                         }
                                         else{
-                                            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/users/?email='+$sessionStorage.email)
+                                            $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                                                 .success(function (data, status, headers) {
                                                     if(data.results[0].commune !=""){
                                                         console.log("sube");

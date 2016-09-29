@@ -3,10 +3,11 @@
  */
 angular.module('detalle-idea',['youtube-embed'])
 
-    .controller('IdeaCtrl', ['$scope','$location','$http','$stateParams', function ($scope,$location,$http,$stateParams) {
+    .controller('IdeaCtrl', ['$scope','$location','$http','$stateParams','envService', function ($scope,$location,$http,$stateParams,envService) {
         var id_idea = $stateParams.ideaID;
         $scope.id_idea =id_idea;
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
+        var apiUrl = envService.read('apiUrl');
+        $http.get(apiUrl + "/ideas/"+id_idea+"/")
             .success(function (data, status, headers, config) {
                 $scope.title= data.title;
                 $scope.descripcion_corta=data.short_description;
@@ -35,7 +36,7 @@ angular.module('detalle-idea',['youtube-embed'])
                   console.log("FALLO:"+data);
             });
 
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/imagenes/?idea__id='+id_idea)
+        $http.get(apiUrl + "/imagenes/?idea__id="+id_idea)
             .success(function (data, status, headers, config) {
 
                 $scope.imagenes =data.results;
@@ -62,14 +63,15 @@ angular.module('detalle-idea',['youtube-embed'])
     }])
 
 
-    .controller('VotosCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams', function ($scope,$location,$http,$sessionStorage,$stateParams) {
+    .controller('VotosCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams', 'envService', function ($scope,$location,$http,$sessionStorage,$stateParams,envService) {
         var id_idea = $stateParams.ideaID;
+        var apiUrl = envService.read('apiUrl');
       $scope.Votar = function () {
           var vote = {
               idea: id_idea
           }
 
-          $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/")
+          $http.get(apiUrl + "/ideas/"+id_idea+"/")
               .success(function (data, status, headers, config) {
                   $scope.votos = data.num_vote;
                   var config = {
@@ -77,7 +79,7 @@ angular.module('detalle-idea',['youtube-embed'])
                           'Authorization': 'token ' + $sessionStorage.token
                       }
                   }
-                  $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_voto/', vote, config)
+                  $http.post(apiUrl + "/insert_voto/", vote, config)
                       .success(function (data, status, headers, config) {
                          $scope.votos=$scope.votos +1 ;
                                var obj = {
@@ -88,7 +90,7 @@ angular.module('detalle-idea',['youtube-embed'])
                                   'Authorization': 'token ' + $sessionStorage.token
                               }
                           }
-                          $http.patch('http://pyhackaton2016-hackatonteleton.rhcloud.com/ideas/'+id_idea+"/",obj,config)
+                          $http.patch(apiUrl + "/ideas/"+id_idea+"/",obj,config)
                               .success(function (data, status, headers,config) {
 
                                   swal({
@@ -142,11 +144,12 @@ angular.module('detalle-idea',['youtube-embed'])
 
     }])
 
-    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams', function ($scope,$location,$http, $sessionStorage,$stateParams) {
+    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams','envService', function ($scope,$location,$http, $sessionStorage,$stateParams,envService) {
         var id_idea = $stateParams.ideaID;
+        var apiUrl = envService.read('apiUrl');
         $scope.nombre_user = $sessionStorage.nombre;
 
-            $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/comentarios/?idea__id='+id_idea)
+            $http.get(apiUrl + "/comentarios/?idea__id="+id_idea)
                 .success(function (data, status, headers, config) {
 
                     $scope.comentarios = data.results;
@@ -183,7 +186,7 @@ angular.module('detalle-idea',['youtube-embed'])
             }
 
 
-            $http.post('http://pyhackaton2016-hackatonteleton.rhcloud.com/insert_comentario/', obj, config)
+            $http.post(apiUrl + "/insert_comentario/", obj, config)
                 .success(function (data, status, headers, config) {
 
                     location.reload();
@@ -208,9 +211,10 @@ angular.module('detalle-idea',['youtube-embed'])
 
     }])
 
-    .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams', function ($scope,$location,$http, $sessionStorage,$stateParams) {
+    .controller('ValidarVotoCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams','envService', function ($scope,$location,$http, $sessionStorage,$stateParams,envService) {
         var id_idea = $stateParams.ideaID;
-        $http.get('http://pyhackaton2016-hackatonteleton.rhcloud.com/votos/?idea__id='+id_idea)
+        var apiUrl = envService.read('apiUrl');
+        $http.get(apiUrl + "/votos/?idea__id="+id_idea)
             .success(function (data, status, headers, config) {
                 var data = data.results;
                 var x;
@@ -244,6 +248,3 @@ angular.module('detalle-idea',['youtube-embed'])
             });
 
     }]);
-
-
-

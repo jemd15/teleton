@@ -11,7 +11,7 @@ angular.module('detalle-idea',['youtube-embed'])
             .success(function (data, status, headers, config) {
                 $scope.title= data.title;
                 $scope.descripcion_corta=data.short_description;
-                $scope.descripcion= data.description;
+                $scope.descripcion= data.description.replace(/\n/g, "<br>");;
                 $scope.url_vid = data.url_video;
                 $scope.img_prin= data.main_image;
                 $scope.autor=    data.user.first_name+" "+data.user.last_name;
@@ -33,7 +33,7 @@ angular.module('detalle-idea',['youtube-embed'])
 
             })
             .error(function (data, status, header, config) {
-                  console.log("FALLO:"+data);
+                console.log("FALLO:"+data);
             });
 
         $http.get(apiUrl + "/imagenes/?idea__id="+id_idea)
@@ -66,93 +66,59 @@ angular.module('detalle-idea',['youtube-embed'])
     .controller('VotosCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams', 'envService', function ($scope,$location,$http,$sessionStorage,$stateParams,envService) {
         var id_idea = $stateParams.ideaID;
         var apiUrl = envService.read('apiUrl');
-      $scope.Votar = function () {
-          var vote = {
-              idea: id_idea
-          }
+        $scope.Votar = function () {
+            var vote = {
+                idea: id_idea
+            }
 
-          $http.get(apiUrl + "/ideas/"+id_idea+"/")
-              .success(function (data, status, headers, config) {
-                  $scope.votos = data.num_vote;
-                  var config = {
-                      headers: {
-                          'Authorization': 'token ' + $sessionStorage.token
-                      }
-                  }
-                  $http.post(apiUrl + "/insert_voto/", vote, config)
-                      .success(function (data, status, headers, config) {
-                         $scope.votos=$scope.votos +1 ;
-                               var obj = {
-                                   num_vote : $scope.votos
-                               }
-                          var config = {
-                              headers: {
-                                  'Authorization': 'token ' + $sessionStorage.token
-                              }
-                          }
-                          $http.patch(apiUrl + "/ideas/"+id_idea+"/",obj,config)
-                              .success(function (data, status, headers,config) {
-
-                                  swal({
-                                          title: "Has Votado!\n"+$sessionStorage.nombre,
-                                          type: "success",
-                                          confirmButtonColor: "#DD6B55",
-                                          confirmButtonText: "Aceptar",
-                                          closeOnConfirm: true},
-                                      function(){
-
-                                          location.reload();
-                                      });
-
-
-                              })
-                              .error(function (data, status, header, config) {
-                                  console.log("FALLO"+data);
-                              });
-                      })
-                      .error(function (data, status, header, config) {
-                          console.log("FALLO"+data);
-                          swal({
-                                  title: "Ya votaste!",
-                                  type: "success",
-                                  confirmButtonColor: "#DD6B55",
-                                  confirmButtonText: "Aceptar",
-                                  closeOnConfirm: true});
-                      });
-              })
-              .error(function (data, status, header, config) {
-                  console.log("FALLO:"+data);
-                  swal({
-                          title: "Algo salió mal!",
-                          text: "Intentalo de nuevo!",
-                          type: "error",
-                          confirmButtonColor: "#DD6B55",
-                          confirmButtonText: "Aceptar",
-                          closeOnConfirm: true
-                      },
-                      function () {
-                          location.reload();
-                      });
-              });
-
-
-
-
-
-      }//funcion votar()
-
-
-    }])
-
-    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams','envService', function ($scope,$location,$http, $sessionStorage,$stateParams,envService) {
-        var id_idea = $stateParams.ideaID;
-        var apiUrl = envService.read('apiUrl');
-        $scope.nombre_user = $sessionStorage.nombre;
-
-            $http.get(apiUrl + "/comentarios/?idea__id="+id_idea)
+            $http.get(apiUrl + "/ideas/"+id_idea+"/")
                 .success(function (data, status, headers, config) {
+                    $scope.votos = data.num_vote;
+                    var config = {
+                        headers: {
+                            'Authorization': 'token ' + $sessionStorage.token
+                        }
+                    }
+                    $http.post(apiUrl + "/insert_voto/", vote, config)
+                        .success(function (data, status, headers, config) {
+                            $scope.votos=$scope.votos +1 ;
+                            var obj = {
+                                num_vote : $scope.votos
+                            }
+                            var config = {
+                                headers: {
+                                    'Authorization': 'token ' + $sessionStorage.token
+                                }
+                            }
+                            $http.patch(apiUrl + "/ideas/"+id_idea+"/",obj,config)
+                                .success(function (data, status, headers,config) {
 
-                    $scope.comentarios = data.results;
+                                    swal({
+                                            title: "Has Votado!\n"+$sessionStorage.nombre,
+                                            type: "success",
+                                            confirmButtonColor: "#DD6B55",
+                                            confirmButtonText: "Aceptar",
+                                            closeOnConfirm: true},
+                                        function(){
+
+                                            location.reload();
+                                        });
+
+
+                                })
+                                .error(function (data, status, header, config) {
+                                    console.log("FALLO"+data);
+                                });
+                        })
+                        .error(function (data, status, header, config) {
+                            console.log("FALLO"+data);
+                            swal({
+                                title: "Ya votaste!",
+                                type: "success",
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "Aceptar",
+                                closeOnConfirm: true});
+                        });
                 })
                 .error(function (data, status, header, config) {
                     console.log("FALLO:"+data);
@@ -170,6 +136,40 @@ angular.module('detalle-idea',['youtube-embed'])
                 });
 
 
+
+
+
+        }//funcion votar()
+
+
+    }])
+
+    .controller('CommentCtrl', ['$scope','$location','$http','$sessionStorage','$stateParams','envService', function ($scope,$location,$http, $sessionStorage,$stateParams,envService) {
+        var id_idea = $stateParams.ideaID;
+        var apiUrl = envService.read('apiUrl');
+        $scope.nombre_user = $sessionStorage.nombre;
+
+        $http.get(apiUrl + "/comentarios/?idea__id="+id_idea)
+            .success(function (data, status, headers, config) {
+
+                $scope.comentarios = data.results;
+            })
+            .error(function (data, status, header, config) {
+                console.log("FALLO:"+data);
+                swal({
+                        title: "Algo salió mal!",
+                        text: "Intentalo de nuevo!",
+                        type: "error",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Aceptar",
+                        closeOnConfirm: true
+                    },
+                    function () {
+                        location.reload();
+                    });
+            });
+
+
         $scope.PostComentario = function () {
 
             var obj = {
@@ -183,6 +183,31 @@ angular.module('detalle-idea',['youtube-embed'])
                         'Authorization': 'token ' + $sessionStorage.token
                     }
                 }
+
+                if($sessionStorage.isreg === 0){
+                    var user = {
+                        first_name: $sessionStorage.first,
+                        last_name: $sessionStorage.last,
+                    }
+                    $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
+                        .success(function (data, status, headers) {
+                            $scope.id= data.results[0].id;
+                            $http.patch(apiUrl + "/editusers/"+ $scope.id+'/',user,config)
+                                .success(function (data, status, headers,config) {
+                                    $sessionStorage.isreg=1;
+                                    console.log("se agrego nombre");
+                                })
+                                .error(function (data, status, header, config) {
+                                    console.log("FALLO"+data);
+
+                                });
+
+                        })
+                        .error(function (data, status, header) {
+                            console.log("FALLO"+data);
+                        });
+                }
+
             }
 
 

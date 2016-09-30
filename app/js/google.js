@@ -21,6 +21,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                         $scope.nombreuser =user.w3.ig;
                         $sessionStorage.nombre = user.w3.ig;
                         $sessionStorage.email = user.w3.U3;
+                        $sessionStorage.first = user.w3.ofa;
+                        $sessionStorage.last = user.w3.wea;
                        // var password = Math.random().toString(36).slice(-8);
                         $scope.password = "Default123456";
                         console.log($scope.password);
@@ -47,9 +49,62 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         confirmButtonText: "Aceptar",
                                         closeOnConfirm: true},
                                     function(){
+                                            $sessionStorage.isreg=0;
                                         var url = $location.path();
                                         console.log(url);
-                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                        if (url.indexOf('/detalle-idea')!=-1) { $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
+                                            .success(function (data, status, headers) {
+                                                if(data.results[0].commune !=""){
+                                                    $sessionStorage.isreg=1;
+                                                    console.log("sube");
+                                                    $('#cargando-modal').closeModal();
+                                                    swal({
+                                                            title: "Bienvenido!\n"+$scope.nombreuser,
+                                                            type: "success",
+                                                            confirmButtonColor: "#DD6B55",
+                                                            confirmButtonText: "Aceptar",
+                                                            closeOnConfirm: true},
+                                                        function(){
+                                                            location.reload();
+                                                            // $state.go('sube-tu-idea');
+                                                            //$location.path("/sube-tu-idea");
+
+                                                        });
+
+                                                }
+                                                else{
+                                                    $sessionStorage.isreg=0;
+                                                    console.log("REG");
+                                                    $('#cargando-modal').closeModal();
+                                                    swal({
+                                                            title: "Bienvenido!\n"+$scope.nombreuser,
+                                                            type: "success",
+                                                            confirmButtonColor: "#DD6B55",
+                                                            confirmButtonText: "Aceptar",
+                                                            closeOnConfirm: true},
+                                                        function(){
+                                                            location.reload();
+                                                            //$state.go('registrarse');
+                                                            //$location.path("/registrarse");
+
+                                                        });
+                                                }
+                                            })
+                                            .error(function (data, status, header) {
+                                                console.log(data);
+                                                swal({
+                                                        title: "Algo salió mal!",
+                                                        text: "Intentalo de nuevo!",
+                                                        type: "error",
+                                                        confirmButtonColor: "#DD6B55",
+                                                        confirmButtonText: "Aceptar",
+                                                        closeOnConfirm: true
+                                                    },
+                                                    function () {
+                                                        location.reload();
+                                                    });
+
+                                            });
                                         }
                                         else{
                                              $location.path("/registrarse");
@@ -70,12 +125,67 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                         $sessionStorage.token = data.key;
                                         $sessionStorage.islogin = 1;
                                         var url = $location.path();
-                                        if (url.indexOf('/detalle-idea')!=-1) {location.reload();
+                                        if (url.indexOf('/detalle-idea')!=-1) {
+                                            $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
+                                                .success(function (data, status, headers) {
+                                                    if(data.results[0].commune !=""){
+                                                        $sessionStorage.isreg=1;
+                                                        console.log("sube");
+                                                        $('#cargando-modal').closeModal();
+                                                        swal({
+                                                                title: "Bienvenido!\n"+$scope.nombreuser,
+                                                                type: "success",
+                                                                confirmButtonColor: "#DD6B55",
+                                                                confirmButtonText: "Aceptar",
+                                                                closeOnConfirm: true},
+                                                            function(){
+                                                                location.reload();
+                                                                // $state.go('sube-tu-idea');
+                                                                //$location.path("/sube-tu-idea");
+
+                                                            });
+
+                                                    }
+                                                    else{
+                                                        $sessionStorage.isreg=0;
+                                                        console.log("REG");
+                                                        $('#cargando-modal').closeModal();
+                                                        swal({
+                                                                title: "Bienvenido!\n"+$scope.nombreuser,
+                                                                type: "success",
+                                                                confirmButtonColor: "#DD6B55",
+                                                                confirmButtonText: "Aceptar",
+                                                                closeOnConfirm: true},
+                                                            function(){
+                                                                location.reload();
+                                                                //$state.go('registrarse');
+                                                                //$location.path("/registrarse");
+
+                                                            });
+                                                    }
+                                                })
+                                                .error(function (data, status, header) {
+                                                    console.log(data);
+                                                    swal({
+                                                            title: "Algo salió mal!",
+                                                            text: "Intentalo de nuevo!",
+                                                            type: "error",
+                                                            confirmButtonColor: "#DD6B55",
+                                                            confirmButtonText: "Aceptar",
+                                                            closeOnConfirm: true
+                                                        },
+                                                        function () {
+                                                            location.reload();
+                                                        });
+
+                                                });
+
                                         }
                                         else{
                                             $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                                                 .success(function (data, status, headers) {
                                                     if(data.results[0].commune !=""){
+                                                        $sessionStorage.isreg=1;
                                                         console.log("sube");
                                                         $('#cargando-modal').closeModal();
                                                         swal({
@@ -93,6 +203,7 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
 
                                                     }
                                                     else{
+                                                        $sessionStorage.isreg=0;
                                                         console.log("REG");
                                                         $('#cargando-modal').closeModal();
                                                         swal({

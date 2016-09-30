@@ -4,6 +4,8 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
         $scope.checkboxU = {
             ischeck : false
         };
+        $scope.nombre=$sessionStorage.first;
+        $scope.apellido=$sessionStorage.last;
 
         //ejecutar este metodo una vez que la pagina se cargue completa
         angular.element(document).ready(function() {
@@ -59,7 +61,7 @@ angular.module('registro',['ngStorage','oitozero.ngSweetAlert'])
                         $scope.id= data.results[0].id;
                         $http.patch(apiUrl + "/editusers/"+ $scope.id+'/',obj,config)
                             .success(function (data, status, headers,config) {
-
+                                $sessionStorage.isreg=1;
                                 swal({
                                         title: "Datos Registrados\n"+$sessionStorage.nombre,
                                         type: "success",

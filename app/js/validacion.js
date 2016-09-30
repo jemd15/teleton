@@ -25,16 +25,18 @@ angular.module('validacion',['ngStorage','ngSanitize'])
 
          }
          else {
+
               var apiUrl = envService.read('apiUrl');
              $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
                  .success(function (data, status, headers) {
 
                      if(data.results[0].commune !=""){
-
+                         $sessionStorage.isreg=1;
                          $state.go('sube-tu-idea', {}, {reload: true});
 
                      }
                      else{
+                         $sessionStorage.isreg=0;
                          $state.go('registrarse', {}, {reload: true});
 
 

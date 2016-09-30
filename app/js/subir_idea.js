@@ -1,6 +1,12 @@
 angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
     .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location','envService', function ($scope, $sessionStorage, $http,$location , envService) {
+////
+        $scope.mostrar=false;
+          $scope.ver = function () {
+              $scope.mostrar=true;
+          }
+    ////
 
         $scope.categorias = [
             {val: '1', name: 'Educación'},

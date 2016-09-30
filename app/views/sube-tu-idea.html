@@ -25,11 +25,11 @@
                 <label>Título de la Idea</label>
             </span>
             <div class="input-field">
-                <textarea ng-model="descripcion_corta" class="materialize-textarea" required></textarea>
+                <textarea ng-model="descripcion_corta" class="materialize-textarea" maxlength="140" required></textarea>
                 <label>Breve Descripción del Proyecto</label>
             </div>
             <div class="input-field">
-                <textarea ng-model="descripcion" class="materialize-textarea" required></textarea>
+                <textarea ng-model="descripcion" class="materialize-textarea" maxlength="1000" required></textarea>
                 <label>Descripción del Proyecto</label>
             </div>
             <select class="browser-default" ng-model="categoria" required>
@@ -88,7 +88,7 @@
         </div>
     </form>
     <div class="row center">
-        <button data-target="preview" class="btn modal-trigger id="create-account-and-list" ng-disabled="formulario.nombre.$invalid || formulario.descripcion_corta.$invalid || formulario.descripcion.$invalid || formulario.categoria.$invalid || formulario.beneficiario.$invalid || formulario.img_prin.$invalid || formulario.img_2.$invalid || formulario.img_3.$invalid || formulario.img_4.$invalid">Vista Previa</button>
+        <button data-target="preview" class="btn modal-trigger id="create-account-and-list">Vista Previa</button>
         <!--<button ng-click="Vistaprevia()"  class="btn" id="create-account-and-list">Sube tu idea</button>-->
     </div>
 

@@ -1,12 +1,31 @@
 angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
-    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location','envService', function ($scope, $sessionStorage, $http,$location , envService) {
-////
+
+    .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location','envService','$anchorScroll', function ($scope, $sessionStorage, $http,$location , envService,$anchorScroll) {
+         $scope.autor_idea=$sessionStorage.nombre;
         $scope.mostrar=false;
           $scope.ver = function () {
+              $scope.player= "video";
+              if($scope.categoria ==1){$scope.categorianame='Educación'}
+              if($scope.categoria ==2){$scope.categorianame='Vida diaria'}
+              if($scope.categoria ==3){$scope.categorianame='Trabajo'}
+              if($scope.categoria ==4){$scope.categorianame='Transporte'}
+              if($scope.categoria ==5){$scope.categorianame='Comunicación'}
+              if($scope.categoria ==6){$scope.categorianame='Entretención'}
+              if($scope.beneficiario ==1){$scope.beneficiarioname='Visual'}
+              if($scope.beneficiario ==2){$scope.beneficiarioname='Auditiva'}
+              if($scope.beneficiario ==3){$scope.beneficiarioname='Cognitiva'}
+              if($scope.beneficiario ==4){$scope.beneficiarioname='Física'}
               $scope.mostrar=true;
+              $location.hash('vista_previa');
+              $anchorScroll();
           }
-    ////
+
+          $scope.editando=function () {
+              $scope.mostrar=false;
+              $location.hash('');
+
+          }
 
         $scope.categorias = [
             {val: '1', name: 'Educación'},
@@ -24,36 +43,6 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
             {val: '3', name: 'Cognitiva'},
             {val: '4', name: 'Física'}
         ];
-
-
-
-        $('.modal-trigger').leanModal({
-                dismissible: false, // Modal can be dismissed by clicking outside of the modal
-                opacity: .5, // Opacity of modal background
-                in_duration: 300, // Transition in duration
-                out_duration: 200, // Transition out duration
-                starting_top: '4%', // Starting top style attribute
-                ending_top: '10%', // Ending top style attribute
-                ready: function() {
-                    $scope.player= "video";
-                    if($scope.categoria ==1){$scope.categorianame='Educación'}
-                    if($scope.categoria ==2){$scope.categorianame='Vida diaria'}
-                    if($scope.categoria ==3){$scope.categorianame='Trabajo'}
-                    if($scope.categoria ==4){$scope.categorianame='Transporte'}
-                    if($scope.categoria ==5){$scope.categorianame='Comunicación'}
-                    if($scope.categoria ==6){$scope.categorianame='Entretención'}
-                    if($scope.beneficiario ==1){$scope.beneficiarioname='Visual'}
-                    if($scope.beneficiario ==2){$scope.beneficiarioname='Auditiva'}
-                    if($scope.beneficiario ==3){$scope.beneficiarioname='Cognitiva'}
-                    if($scope.beneficiario ==4){$scope.beneficiarioname='Física'} }, // Callback for Modal open
-                complete: function() {   $('#modal1').closeModal();} // Callback for Modal close
-            }
-        );
-
-
-        $scope.cerrarmodal =function () {
-            $('#preview').closeModal();
-        }
 
 
         $scope.UpIdea = function () {

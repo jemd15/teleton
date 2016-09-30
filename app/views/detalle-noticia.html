@@ -8,12 +8,39 @@
                 </div>
             </div>
             <article class="card-panel col s9">
-                <p ng-bind-html="descripcion_noticia"></p>
+                <p class="justify" ng-bind-html="descripcion_noticia"></p>
             </article>
             <aside class="col s3 center">
-                <div class="col s12 card-panel" style="margin: 8px">
+                <div id="panel-compartir-noticias" class="col s12 card-panel" style="margin: 8px">
                     <h6>Compártelo en tus Redes Sociales</h6>
-                    <div class="addthis_inline_share_toolbox"></div>
+                    <div class="center">
+                        <a
+                                socialshare
+                                socialshare-provider="facebook"
+                                socialshare-text="{{noticia.titulo}}"
+                                socialshare-media="{{noticia.imagen}}"
+                                socialshare-popup-height="450"
+                                socialshare-popup-width="450">
+                            <button class="btn-floating button-facebook"><i class="fa fa-facebook"></i></button>
+                        </a>
+                        <a
+                                socialshare
+                                socialshare-provider="twitter"
+                                socialshare-text="{{noticia.titulo}}"
+                                socialshare-via="teleton"
+                                socialshare-hashtags="ideaton"
+                                socialshare-popup-height="450"
+                                socialshare-popup-width="450">
+                            <button class="btn-floating button-twitter"><i class="fa fa-twitter"></i></button>
+                        </a>
+                        <a
+                                socialshare
+                                socialshare-provider="google"
+                                socialshare-popup-height="450"
+                                socialshare-popup-width="450">
+                            <button class="btn-floating button-google"><i class="fa fa-google-plus"></i></button>
+                        </a>
+                    </div>
                 </div>
             </aside>
         </div>

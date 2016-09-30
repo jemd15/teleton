@@ -29,38 +29,62 @@ angular.module('rutas',['ui.materialize','ui.router'])
             .state('inicio', {
                 url: '/inicio',
                 templateUrl: 'app/views/inicio.html',
-                controller: 'inicioCtrl'
+                controller: 'inicioCtrl',
+                data: {
+                  requireLogin: false
+                }
             })
             .state('sube-tu-idea', {
                 url: '/sube-tu-idea',
-                templateUrl: 'app/views/sube-tu-idea.html'
+                templateUrl: 'app/views/sube-tu-idea.html',
+                data: {
+                  requireLogin: true
+                }
             })
             .state('registrarse', {
                 url: '/registrarse',
-                templateUrl: 'app/views/registrarse.html'
+                templateUrl: 'app/views/registrarse.html',
+                data: {
+                  requireLogin: true
+                }
             })
             .state('detalle-proyecto',{
                 url: '/detalle-idea/:ideaID',
                 templateUrl: 'app/views/detalle-proyecto.html',
-                controller: 'detalleProyectoCtrl'
+                controller: 'detalleProyectoCtrl',
+                data: {
+                  requireLogin: false
+                }
             })
             .state('noticias',{
                 url: '/noticias',
-                templateUrl: 'app/views/noticias.html'
+                templateUrl: 'app/views/noticias.html',
+                data: {
+                  requireLogin: false
+                }
             })
             .state('detalle-noticia',{
                 url: '/detalle-noticia/:noticiaID',
-                templateUrl: 'app/views/detalle-noticia.html'
+                templateUrl: 'app/views/detalle-noticia.html',
+                data: {
+                  requireLogin: false
+                }
             })
             .state('detalle-categoria-ordenada', {
                 url: '/detalle-categoria/:categoriaName/:orden',
                 templateUrl: 'app/views/ideas.html',
-                controller: 'IdeasCtrl'
+                controller: 'IdeasCtrl',
+                data: {
+                  requireLogin: false
+                }
             })
             .state('detalle-categoria', {
                 url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',
-                controller: 'IdeasCtrl'
+                controller: 'IdeasCtrl',
+                data: {
+                  requireLogin: false
+                }
             });
 
         $urlRouterProvider.otherwise('/inicio')

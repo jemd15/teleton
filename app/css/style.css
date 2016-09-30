@@ -259,6 +259,21 @@ section#jurado img.circle{
     width: 200px;
     height: 200px;
 }
+
+/*Don Fran Toasty*/
+#donfran{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-delay: 0.5s;
+    /*-webkit-animation-iteration-count: infinite;*/
+
+    -moz-animation-duration: 0.3s;
+    -moz-animation-delay: 0.5s;
+    /*-moz-animation-iteration-count: infinite;*/
+}
 .card .card-image#imagen-detalle-noticia{
     max-height: 400px;
     overflow: hidden;

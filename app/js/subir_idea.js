@@ -53,6 +53,7 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
         $scope.UpIdea = function () {
             var config;
 
+
             var obj = {
                 title: $scope.nombre,
                 short_description: $scope.descripcion_corta,

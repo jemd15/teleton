@@ -67,3 +67,8 @@ $(document).ready(function(){
     });
 
 });
+
+
+$(document).ready(function() {
+    $('input#nombre').characterCounter();
+  });

@@ -14,7 +14,7 @@ angular.module('validacion',['ngStorage','ngSanitize'])
 
     $scope.logout=function () {
         $sessionStorage.$reset();
-        location.reload();
+        $state.go('inicio', {}, {reload: true});
     }
 
 

@@ -10,6 +10,7 @@ angular.module('detalle-noticia',[])
     $http.get(apiUrl + "/noticias/"+id_noticia+"/")
         .success(function (data, status, headers, config) {
             $scope.noticia= data;
+            $scope.descripcion_noticia=data.descripcion.replace(/\n/g, "<br>");
 
 
 

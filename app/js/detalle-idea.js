@@ -11,7 +11,7 @@ angular.module('detalle-idea',['youtube-embed'])
             .success(function (data, status, headers, config) {
                 $scope.title= data.title;
                 $scope.descripcion_corta=data.short_description;
-                $scope.descripcion= data.description;
+                $scope.descripcion= data.description.replace(/\n/g, "<br>");;
                 $scope.url_vid = data.url_video;
                 $scope.img_prin= data.main_image;
                 $scope.autor=    data.user.first_name+" "+data.user.last_name;

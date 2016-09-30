@@ -8,7 +8,7 @@
                 </div>
             </div>
             <article class="card-panel col s9">
-                <p class="flow-text">{{noticia.descripcion}}</p>
+                <div class="justify">{{noticia.descripcion}}</div>
             </article>
             <aside class="col s3 center">
                 <div class="col s12 card-panel" style="margin: 8px">
@@ -22,7 +22,7 @@
         <div class="col s10 offset-s1">
             <h4>Noticias Recientes</h4>
             <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id' | limitTo:3">
-                <div class="card hoverable small">
+                <div class="card hoverable medium">
                     <div class="card-image">
                         <img ng-src="{{noticia.imagen}}">
                         <h1 class="card-title">{{noticia.titulo}}</h1>
@@ -38,6 +38,4 @@
         </div>
     </div>
 </section>
-
-
 

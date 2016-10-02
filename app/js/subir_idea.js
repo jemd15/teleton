@@ -2,7 +2,19 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
 
     .controller('UpIdeaCtrl', ['$scope', '$sessionStorage', '$http','$location','envService','$anchorScroll', function ($scope, $sessionStorage, $http,$location , envService,$anchorScroll) {
-         $scope.autor_idea=$sessionStorage.nombre;
+        //validaciones
+        $('input#titulo_idea, textarea#short_idea,textarea#desc_idea').characterCounter();
+       /* function ytVidId(url) {
+            var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+            return (url.match(p)) ? RegExp.$1 : false;
+        }
+
+        $scope.$watch($scope.url_vid,function () {
+            $scope.isyoutube=ytVidId($scope.url_vid);
+            console.log($scope.isyoutube);
+        });*/
+        
+        $scope.autor_idea=$sessionStorage.nombre;
         $scope.mostrar=false;
           $scope.ver = function () {
               $scope.player= "video";

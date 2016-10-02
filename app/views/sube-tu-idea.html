@@ -21,17 +21,18 @@
             <!--columna izquierda-->
             <div class="col s12 m4 offset-m1">
             <span class="input-field">
-                <input type="text" ng-model="nombre" maxlength="70" required>
+                <input type="text" ng-model="nombre" id="titulo_idea" class="validate" maxlength="70" length="70" required>
                 <label>Título de la Idea</label>
             </span>
                 <div class="input-field">
-                    <textarea ng-model="descripcion_corta" class="materialize-textarea" maxlength="140" required></textarea>
+                    <textarea ng-model="descripcion_corta" id="short_idea" class="materialize-textarea validate" maxlength="140" length="140" required></textarea>
                     <label>Breve Descripción del Proyecto</label>
                 </div>
                 <div class="input-field">
-                    <textarea ng-model="descripcion" class="materialize-textarea" maxlength="2000" required></textarea>
+                    <textarea ng-model="descripcion" id="desc_idea" class="materialize-textarea" length="2000" maxlength="2000" required></textarea>
                     <label>Descripción del Proyecto</label>
                 </div>
+                <br>
                 <select class="browser-default" ng-model="categoria" required>
                     <option value="" disabled selected>Categoría</option>
                     <option ng-repeat="item in categorias" value="{{item.val}}">{{item.name}}</option>
@@ -46,7 +47,7 @@
             <!--columna derecha-->
             <div class="col s12 m4 offset-m2">
                 <div class="input-field">
-                    <input id="youtube" type="text" ng-model="url_vid">
+                    <input id="youtube"  type="url" ng-model="url_vid">
                     <label class="left-align" for="youtube">Link Video (youtube)</label>
                 </div>
                 <div class="file-field input-field">
@@ -108,18 +109,22 @@
                 <br>
                 <br>
             </div>
-            <div class="center">
-                <br>
-                <img class="responsive-img" style="width: 50%;" ng-src="{{'data:image/png;base64,'+img_prin.base64}}">
-            </div>
             <br>
             <div class="container">
                 <div class="row">
+                    <div class="center" style="padding: 0 10px">
+                        <div class="card">
+                            <div class="card-image" id="imagen-detalle-noticia">
+                                <img materialboxed class="materialboxed"  ng-src="{{'data:image/png;base64,'+img_prin.base64}}">
+                            </div>
+                        </div>
+                    </div>
                     <div class="s12 ">
                         <div class="col s12 m8">
                             <div class="card-panel">
                                 <h5>Descripción de la Idea</h5>
                                 <p class="letra-detproy">{{descripcion_corta}}</p>
+                                <p class="letra-detproy">{{descripcion}}</p>
 
                             </div>
                             <div class="card-panel">

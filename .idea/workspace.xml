@@ -27,8 +27,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sube-tu-idea.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+      <file leaf-file-name="inicio.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/inicio.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="31" column="97" selection-start-line="31" selection-start-column="97" selection-end-line="31" selection-end-column="97" />
@@ -77,8 +77,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detalle-proyecto.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
+      <file leaf-file-name="equipo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/equipo.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
@@ -87,8 +87,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="detalle-proyecto.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2265">
               <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="155" selection-end-column="10" />
@@ -128,7 +128,6 @@
         <option value="$PROJECT_DIR$/app/views/detalle-categoria.html" />
         <option value="$PROJECT_DIR$/app/js/detalle-categoria.js" />
         <option value="$PROJECT_DIR$/app/js/script.js" />
-        <option value="$PROJECT_DIR$/app/views/inicio.html" />
         <option value="$PROJECT_DIR$/app/js/countdown.js" />
         <option value="$PROJECT_DIR$/app/views/vista-previa.html" />
         <option value="$PROJECT_DIR$/app/js/rutas.js" />
@@ -137,7 +136,6 @@
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/views/detalle-noticia.html" />
         <option value="$PROJECT_DIR$/app/js/detalle-noticia.js" />
-        <option value="$PROJECT_DIR$/app/views/detalle-proyecto.html" />
         <option value="$PROJECT_DIR$/app/js/facebook.js" />
         <option value="$PROJECT_DIR$/app/js/validacion.js" />
         <option value="$PROJECT_DIR$/app/js/google.js" />
@@ -157,9 +155,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
-    <option name="height" value="743" />
+    <option name="x" value="73" />
+    <option name="y" value="96" />
+    <option name="width" value="1240" />
+    <option name="height" value="582" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -235,24 +234,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teleton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teleton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,7 +379,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
+    <frame x="73" y="96" width="1240" height="582" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -479,13 +460,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/js/registrar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="32" selection-end-line="86" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -631,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticias.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/css/countdown.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -653,13 +620,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/vista-previa.html" />
-    <entry file="file://$PROJECT_DIR$/app/views/inicio.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/detalle-categoria.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
@@ -744,10 +704,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/detalle-proyecto.html">
+    <entry file="file://$PROJECT_DIR$/app/js/subir_idea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sube-tu-idea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="173" column="52" selection-start-line="173" selection-start-column="52" selection-end-line="173" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/rutas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="14" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -770,7 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+    <entry file="file://$PROJECT_DIR$/app/views/detalle-noticia.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />

@@ -21,15 +21,15 @@
             <!--columna izquierda-->
             <div class="col s12 m4 offset-m1">
             <span class="input-field">
-                <input type="text" ng-model="nombre" maxlength="20" required>
+                <input type="text" ng-model="nombre" maxlength="70" required>
                 <label>Título de la Idea</label>
             </span>
                 <div class="input-field">
-                    <textarea ng-model="descripcion_corta" class="materialize-textarea" required></textarea>
+                    <textarea ng-model="descripcion_corta" class="materialize-textarea" maxlength="140" required></textarea>
                     <label>Breve Descripción del Proyecto</label>
                 </div>
                 <div class="input-field">
-                    <textarea ng-model="descripcion" class="materialize-textarea" required></textarea>
+                    <textarea ng-model="descripcion" class="materialize-textarea" maxlength="2000" required></textarea>
                     <label>Descripción del Proyecto</label>
                 </div>
                 <select class="browser-default" ng-model="categoria" required>

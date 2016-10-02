@@ -104,6 +104,14 @@ nav i.material-icons{
     color: white;
     background: #3b5998;
 }
+.button-linkedin {
+    color: white;
+    background: #0077b5;
+}
+.button-github {
+    color: white;
+    background: #9c27b0;
+}
 .imagen-registro{
     width: 100%;
 }
@@ -214,3 +222,4 @@ section#jurado img.circle{
 #panel-compartir-noticias{
     padding: 15px 0;
 }
+

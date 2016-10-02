@@ -63,6 +63,13 @@ angular.module('rutas',['ui.materialize','ui.router'])
                   requireLogin: false
                 }
             })
+            .state('equipo',{
+                url: '/equipo',
+                templateUrl: 'app/views/equipo.html',
+                data: {
+                    requireLogin: false
+                }
+            })
             .state('detalle-noticia',{
                 url: '/detalle-noticia/:noticiaID',
                 templateUrl: 'app/views/detalle-noticia.html',

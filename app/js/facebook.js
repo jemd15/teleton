@@ -28,7 +28,7 @@ angular.module('AppFace', ['facebook','ngStorage',])
 
     .controller('LoginFaceCtrl', ['$scope', '$timeout', 'Facebook', '$http','$sessionStorage','$location' , 'envService',
         function($scope, $timeout, Facebook, $http, $sessionStorage,$location, envService) {
-          var apiUrl = envService.read('apiUrl');
+            var apiUrl = envService.read('apiUrl');
             // Define user empty data :/
             $scope.user = {};
 
@@ -91,10 +91,11 @@ angular.module('AppFace', ['facebook','ngStorage',])
             $scope.me = function () {
                 Facebook.api('/me?fields=email', {fields: 'email,name'}, function (response) {
 
-                        $scope.nombre =response.name;
-                        $scope.user = response;
-                        $sessionStorage.email=response.email;
-                        $sessionStorage.nombre=response.name;
+                    $scope.nombre =response.name;
+                    $scope.user = response;
+                    console.log(response.email);
+                    $sessionStorage.email=response.email;
+                    $sessionStorage.nombre=response.name;
 
                 });
             };
@@ -117,63 +118,69 @@ angular.module('AppFace', ['facebook','ngStorage',])
              */
             $scope.$on('Facebook:statusChange', function(ev, data) {
                 console.log('Status: ', data);
-                $scope.obj = {
-                    'access_token': data.authResponse.accessToken,
-                    'code': data.authResponse.signedRequest
 
-                }
                 if (data.status == 'connected') {
-                        $scope.salutation = true;
-                        $scope.logged = true;
-                        $scope.byebye = false;
-                        $scope.me();
+                    $scope.salutation = true;
+                    $scope.logged = true;
+                    $scope.byebye = false;
+                    $scope.me();
+
+                    $scope.obj = {
+                        'access_token': data.authResponse.accessToken,
+                        'code': data.authResponse.signedRequest
+
+                    }
 
 
 
-                        console.log($scope.obj);
+                    $timeout(function(){
+                        console.log("sessionStorage"+$sessionStorage.email);
+                        if($sessionStorage.email!=undefined){
+
+                            //POST EN API DJANGO-------
+                            $http.post(apiUrl + "/rest-auth/facebook/", $scope.obj)
+                                .success(function(data, status, headers) {
+                                    var nombre= $sessionStorage.nombre;
+                                    $sessionStorage.token = data.key;
+                                    $sessionStorage.islogin = 1;
+
+                                    var url = $location.path();
+                                    console.log(url);
+                                    if (url.indexOf('/detalle-idea')!=-1) {
+                                        $scope.logout();
+                                        $('#cargando-modal').closeModal();
+                                        $scope.idea=true;
+                                    }
+                                    else{
+                                        $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
+                                            .success(function (data, status, headers) {
+                                                $scope.logout();
+                                                $('#cargando-modal').closeModal();
+                                                if(data.results[0].commune !=""){
+                                                    $scope.bandera=true;
 
 
-                        $timeout(function(){
-                        //POST EN API DJANGO-------
-                        $http.post(apiUrl + "/rest-auth/facebook/", $scope.obj)
-                            .success(function(data, status, headers) {
-                                var nombre= $sessionStorage.nombre;
-                                $sessionStorage.token = data.key;
-                                $sessionStorage.islogin = 1;
+                                                }
+                                                else{
+                                                    $scope.bandera=false
+                                                }
+                                            })
+                                            .error(function (data, status, header) {
+                                                console.log(data);
+                                                swal({
+                                                        title: "Algo salió mal!",
+                                                        text: "Intenta registrarte nuevamente",
+                                                        type: "error",
+                                                        confirmButtonColor: "#DD6B55",
+                                                        confirmButtonText: "Aceptar",
+                                                        closeOnConfirm: true
+                                                    },
+                                                    function () {
+                                                        location.reload();
+                                                    });
+                                            });
+                                    }
 
-                                var url = $location.path();
-                                console.log(url);
-                                if (url.indexOf('/detalle-idea')!=-1) {$scope.idea=true;
-                                }
-                                else{
-                                    $http.get(apiUrl + "/users/?email="+$sessionStorage.email)
-                                        .success(function (data, status, headers) {
-                                            if(data.results[0].commune !=""){
-                                                $scope.bandera=true;
-
-
-                                            }
-                                            else{
-                                                $scope.bandera=false
-                                            }
-                                        })
-                                        .error(function (data, status, header) {
-                                            console.log(data);
-                                            swal({
-                                                    title: "Algo salió mal!",
-                                                    text: "Intentalo de nuevo!",
-                                                    type: "error",
-                                                    confirmButtonColor: "#DD6B55",
-                                                    confirmButtonText: "Aceptar",
-                                                    closeOnConfirm: true
-                                                },
-                                                function () {
-                                                    location.reload();
-                                                });
-                                        });
-                                }
-                                    $scope.logout();
-                                    $('#cargando-modal').closeModal();
                                     swal({
                                             title: "Bienvenido!\n"+nombre,
                                             type: "success",
@@ -187,22 +194,42 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                             if($scope.idea ==true){location.reload();}
                                         });
 
-                            })
-                            .error(function(data, status, header) {
-                                console.log(data);
-                                swal({
-                                        title: "Algo salió mal!",
-                                        text: "Intentalo de nuevo!",
-                                        type: "error",
-                                        confirmButtonColor: "#DD6B55",
-                                        confirmButtonText: "Aceptar",
-                                        closeOnConfirm: true
-                                    },
-                                    function () {
-                                        location.reload();
-                                    });
-                            });
-                         }, 1000);
+                                })
+                                .error(function(data, status, header) {
+                                    $scope.logout();
+                                    $('#cargando-modal').closeModal();
+                                    console.log(data);
+                                    swal({
+                                            title: "Algo salió mal!",
+                                            text: "Intentalo de nuevo!",
+                                            type: "error",
+                                            confirmButtonColor: "#DD6B55",
+                                            confirmButtonText: "Aceptar",
+                                            closeOnConfirm: true
+                                        },
+                                        function () {
+                                            location.reload();
+                                        });
+                                });
+                        }
+                        else{
+                            $scope.logout();
+                            $('#cargando-modal').closeModal();
+                            swal({
+                                    title: "Algo salió mal!",
+                                    text: "Verifíca tu correo de Facebook",
+                                    type: "error",
+                                    confirmButtonColor: "#DD6B55",
+                                    confirmButtonText: "Aceptar",
+                                    closeOnConfirm: true
+                                },
+                                function () {
+                                    location.reload();
+                                });
+
+                        }}, 1000);
+
+
 
 
                 } else {

@@ -85,6 +85,14 @@ angular.module('rutas',['ui.materialize','ui.router'])
                   requireLogin: false
                 }
             })
+            .state('bases', {
+                url: '/bases',
+                templateUrl: 'app/views/bases.html',
+                //controller: 'IdeasCtrl',
+                data: {
+                  requireLogin: false
+                }
+            })
             .state('detalle-categoria', {
                 url: '/detalle-categoria/:categoriaName',
                 templateUrl: 'app/views/detalle-categoria.html',

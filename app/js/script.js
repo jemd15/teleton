@@ -67,6 +67,7 @@ $(document).ready(function(){
     });
 
 });
+/*
 
 $(document).ready(function() {
     var heights = $(".igualar-height").map(function() {
@@ -76,4 +77,4 @@ $(document).ready(function() {
         maxHeight = Math.max.apply(null, heights);
 
     $(".igualar-height").height(maxHeight);
-});
+});*/

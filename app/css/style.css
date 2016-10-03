@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 0;
 }
 ul#categorias, ul#salir{
-    margin-top: 80px;
+    margin-top: 100px;
     width: 130px !important;
 }
 .dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
@@ -29,11 +29,11 @@ iframe{
     margin: 10px;
 }
 nav{
-    height: 80px;
+    height: 100px;
 }
 nav ul a {
-    padding: 8px 15px;
-    font-size: 15px;
+    padding: 17px 15px;
+    font-size: 20px;
 }
 nav ul a i{
     padding: 0;
@@ -60,7 +60,7 @@ nav i.material-icons{
 }
 /**********************/
 .brand-logo img{
-    width: 150px;
+    width: 200px;
     margin: 8px;
 }
 @media(max-width: 600px){
@@ -74,7 +74,7 @@ nav i.material-icons{
 }
 #logo-nav-bar{
     margin: 8px 0 0 8px;
-    width: 50%;
+    width: 60%;
 }
 /*ventana modal*/
 #login-modal{

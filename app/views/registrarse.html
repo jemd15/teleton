@@ -12,7 +12,7 @@
                 <img src="app/images/logo-negro.png" width="400px" height="400px">
             </div>
         </div>
-        <form ng-controller="RegistroCtrl">
+        <form ng-controller="RegistroCtrl" name="formreg">
             <div class="col s12 m6 l6">
                 <div class="center">
                     <div>
@@ -63,7 +63,7 @@
                                        required/>
                             </div>
                             <div class="col s6 input-field">
-                                <input id="telefono" name="new-your-name" type="tel" class="validate" ng-model="telefono" maxlength="11" length="11" required>
+                                <input id="telefono" name="new-your-name" type="tel" class="validate" ng-model="telefono" maxlength="13" length="13" required>
                                 <label for="telefono">Telefono</label>
                             </div>
                             <div class="col s12">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="row center">
-                        <button ng-click="UpdateUser()" class="btn" id="create-account-and-list" ng-disabled="formulario.nombre.$invalid || formulario.apellido.$invalid || formulario.inputCreated.$invalid || formulario.telefono.$invalid">Guardar</button>
+                        <button ng-click="UpdateUser()" class="btn" id="create-account-and-list" ng-disabled="!formreg.$valid">Guardar</button>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,8 @@ app.config(function(envServiceProvider) {
             domains: {
                 development: ['localhost'],
                 testing: ['ideaton-hackatonteleton.rhcloud.com' , 'nodejs-testideaton.rhcloud.com'],
-                production: ['www.ideaton.cl' , 'ideaton.cl']
+                productionNonPublic: ['front-ideaton2016.rhcloud.com'],
+                productionPublic: ['www.ideaton.cl' , 'ideaton.cl']
             },
             vars: {
                 development: {
@@ -43,8 +44,11 @@ app.config(function(envServiceProvider) {
                 testing: {
                     apiUrl: 'http://pyhackaton2016-hackatonteleton.rhcloud.com'
                 },
-                production: {
+                productionNonPublic: {
                     apiUrl: 'http://api-ideaton2016.rhcloud.com'
+                },
+                productionPublic: {
+                    apiUrl: 'http://api.ideaton.cl'
                 }
             }
         });

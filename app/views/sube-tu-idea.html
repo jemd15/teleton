@@ -17,16 +17,20 @@
             <div class="center col s12 m10 offset-m1">
                 <p class="flow-text">Registra tu idea.</p>
             </div>
+            <div class="col s4 offset-m4">
+                <div input-field>
+                    <input type="text" ng-model="dummyInputs.inputFieldInput" length="150">
+                    <label>Input label</label>
+                </div>
+            </div>
 
             <!--columna izquierda-->
             <div class="col s12 m4 offset-m1">
-            <span class="input-field">
-                <label>Título de la Idea</label>
-                <input type="text" ng-model="nombre" id="titulo_idea" class="validate" maxlength="70" length="70" required>
-
-            </span>
                 <div class="input-field">
-                    <label>Breve Descripción del Proyecto</label>
+                    <input type="text" ng-model="nombre" id="titulo_idea" class="validate" maxlength="70" length="70" required>
+                    <label>Título de la Idea</label>
+                </div>
+                <div class="input-field">
                     <textarea ng-model="descripcion_corta" id="short_idea" class="materialize-textarea validate" maxlength="140" length="140" required></textarea>
 
                 </div>

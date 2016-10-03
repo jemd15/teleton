@@ -32,7 +32,7 @@ nav{
     height: 100px;
 }
 nav ul a {
-    padding: 17px 15px;
+    padding: 18px 15px;
     font-size: 20px;
 }
 nav ul a i{
@@ -159,6 +159,7 @@ img.circle.responsive-img{
 /*letras de color con contorno de otro color*/
 .stroke {
     -webkit-text-stroke: 1.5px black;
+    -moz-text-stroke: 1.5px black;
 }
 
 .embed-responsive {
@@ -211,7 +212,7 @@ section#jurado img.circle{
 }
 
 .usericon {
-    margin-top: 0px!important;
+    margin-top: 0!important;
 }
 .ir-arriba {
     display:none;
@@ -222,4 +223,7 @@ section#jurado img.circle{
 #panel-compartir-noticias{
     padding: 15px 0;
 }
-
+a#team{
+    padding: 0;
+    text-transform: none;
+}

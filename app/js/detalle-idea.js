@@ -7,6 +7,7 @@ angular.module('detalle-idea',['youtube-embed'])
         var id_idea = $stateParams.ideaID;
         $scope.id_idea =id_idea;
         var apiUrl = envService.read('apiUrl');
+
         $http.get(apiUrl + "/ideas/"+id_idea+"/")
             .success(function (data, status, headers, config) {
                 $scope.title= data.title;
@@ -30,8 +31,13 @@ angular.module('detalle-idea',['youtube-embed'])
                 if(data.beneficiary ==3){$scope.beneficiario = "Cognitiva"}
                 if(data.beneficiary ==4){$scope.beneficiario = "Física"}
 
+                $scope.showVideo = true;
 
-            })
+                //determinar si se muestra o no el video
+                if($scope.url_vid === undefined || $scope.url_vid.trim().length == 0){
+                    $scope.showVideo = false;
+                }
+              })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);
             });
@@ -40,9 +46,9 @@ angular.module('detalle-idea',['youtube-embed'])
             .success(function (data, status, headers, config) {
 
                 $scope.imagenes =data.results;
-                $scope.img1 = data.results[0].image;
-                $scope.img2 = data.results[1].image;
-                $scope.img3 = data.results[2].image;
+                if(data.results[0] !== undefined){$scope.img1 = data.results[0].image; $scope.showImages = true;}
+                if(data.results[1] !== undefined){$scope.img2 = data.results[1].image; $scope.showImages = true;}
+                if(data.results[2] !== undefined){$scope.img3 = data.results[2].image; $scope.showImages = true;}
 
             })
             .error(function (data, status, header, config) {
@@ -59,7 +65,6 @@ angular.module('detalle-idea',['youtube-embed'])
                         location.reload();
                     });
             });
-
     }])
 
 

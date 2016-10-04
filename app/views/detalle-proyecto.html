@@ -27,7 +27,7 @@
                     <h5>Descripción del Proyecto</h5>
                     <p class="letra-detproy" ng-bind-html="descripcion"></p>
                 </div>
-                <div class="card-panel">
+                <div class="card-panel" ng-show="showVideo">
                     <h5>Video</h5>
                     <div class="embed-responsive embed-responsive-16by9">
                         <youtube-video class="embed-responsive-item" video-url="url_vid"></youtube-video>
@@ -39,13 +39,13 @@
                     <div class="center">
                         <div class="card-panel">
                             <p>{{autor}} {{autor_last}}</p>
-                            <p class="letra-detproy">Ubicación:{{comuna}}</p>
+                            <p class="letra-detproy">Ubicación: {{comuna}}</p>
                             <p class="letra-detproy">Categoría: {{categoria}}</p>
                             <p class="letra-detproy">Patología: {{beneficiario}}</p>
                             <p class="letra-detproy">Votos: {{votos}}</p>
                             <div ng-controller="ValidarReg">
                                 <div ng-controller="ValidarVotoCtrl">
-                                <div class="color-scroll" ng-hide="islogin"><a class="btn blue darken-4" href='#login-modal' modal>Logeate para Votar!</a></div>
+                                <div class="color-scroll" ng-hide="islogin"><a class="btn blue darken-4" href='#login-modal' modal>Ingresa para Votar!</a></div>
                                   <div  ng-show="islogin" ng-controller="VotosCtrl">
                                    <button id="votar" ng-hide="isvote" class="pink btn-large" ng-click="Votar()"><i class="fa fa-heart"></i><span>Apoyar</span></button>
                                   </div>
@@ -93,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" ng-show="showImages">
         <br>
         <h5 class="titulo">Imágenes</h5>
         <div class="card-panel">
@@ -149,7 +149,7 @@
             </div>
         </form>
             <div ng-hide="islogin" class="center">
-                <a class="btn blue darken-4" href='#login-modal' modal>Logeate para comentar!</a>
+                <a class="btn blue darken-4" href='#login-modal' modal>Ingresa para comentar!</a>
             </div>
         </div>
     </div>

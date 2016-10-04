@@ -2,7 +2,6 @@ var app = angular.module('ideaton',['rutas','720kb.socialshare','AppFace', 'AppG
 
 app.run(function($rootScope,$sessionStorage,$state){
     $rootScope.$on('$stateChangeSuccess', function() {
-      console.log("$stateChangeSuccess");
         $rootScope.islogin= false;
         if($sessionStorage.islogin == 1)
         {

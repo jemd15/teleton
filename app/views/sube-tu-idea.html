@@ -21,16 +21,19 @@
             <!--columna izquierda-->
             <div class="col s12 m4 offset-m1">
             <span class="input-field">
-                <input type="text" ng-model="nombre" id="titulo_idea" class="validate" maxlength="70" length="70" required>
                 <label>Título de la Idea</label>
+                <input type="text" ng-model="nombre" id="titulo_idea" class="validate" maxlength="70" length="70" required>
+
             </span>
                 <div class="input-field">
-                    <textarea ng-model="descripcion_corta" id="short_idea" class="materialize-textarea validate" maxlength="140" length="140" required></textarea>
                     <label>Breve Descripción del Proyecto</label>
+                    <textarea ng-model="descripcion_corta" id="short_idea" class="materialize-textarea validate" maxlength="140" length="140" required></textarea>
+
                 </div>
                 <div class="input-field">
-                    <textarea ng-model="descripcion" id="desc_idea" class="materialize-textarea" length="2000" maxlength="2000" required></textarea>
                     <label>Descripción del Proyecto</label>
+                    <textarea ng-model="descripcion" id="desc_idea" class="materialize-textarea" length="2000" maxlength="2000" required></textarea>
+
                 </div>
                 <br>
                 <select class="browser-default" ng-model="categoria" required>
@@ -47,8 +50,9 @@
             <!--columna derecha-->
             <div class="col s12 m4 offset-m2">
                 <div class="input-field">
-                    <input id="youtube"  type="url" ng-model="url_vid">
                     <label class="left-align" for="youtube">Link Video (youtube)</label>
+                    <input id="youtube"  type="url" ng-model="url_vid">
+
                 </div>
                 <div class="file-field input-field">
                     <div class="btn grey darken-1">

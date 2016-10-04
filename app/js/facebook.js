@@ -89,13 +89,15 @@ angular.module('AppFace', ['facebook','ngStorage',])
              * me
              */
             $scope.me = function () {
-                Facebook.api('/me?fields=email', {fields: 'email,name'}, function (response) {
+                Facebook.api('/me?fields=email', {fields: 'email,name,last_name,first_name'}, function (response) {
 
                     $scope.nombre =response.name;
                     $scope.user = response;
-                    console.log(response.email);
+                    console.log(response);
                     $sessionStorage.email=response.email;
                     $sessionStorage.nombre=response.name;
+                    $sessionStorage.first = response.first_name;
+                    $sessionStorage.last = response.last_name;
 
                 });
             };

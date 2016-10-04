@@ -20,14 +20,14 @@
             </div>
             <div class="col s12 m8">
                 <div class="card-panel">
-                    <h5>Descripcion Breve</h5>
+                    <h5>Descripción Breve</h5>
                     <p class="letra-detproy" ng-bind-html="descripcion_corta"></p>
                 </div>
                 <div class="card-panel">
                     <h5>Descripción del Proyecto</h5>
                     <p class="letra-detproy" ng-bind-html="descripcion"></p>
                 </div>
-                <div class="card-panel">
+                <div class="card-panel" ng-show="showVideo">
                     <h5>Video</h5>
                     <div class="embed-responsive embed-responsive-16by9">
                         <youtube-video class="embed-responsive-item" video-url="url_vid"></youtube-video>
@@ -39,7 +39,7 @@
                     <div class="center">
                         <div class="card-panel">
                             <p>{{autor}} {{autor_last}}</p>
-                            <p class="letra-detproy">Ubicación:{{comuna}}</p>
+                            <p class="letra-detproy">Ubicación: {{comuna}}</p>
                             <p class="letra-detproy">Categoría: {{categoria}}</p>
                             <p class="letra-detproy">Patología: {{beneficiario}}</p>
                             <p class="letra-detproy">Votos: {{votos}}</p>
@@ -93,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" ng-show="showImages">
         <br>
         <h5 class="titulo">Imágenes</h5>
         <div class="card-panel">

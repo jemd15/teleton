@@ -82,8 +82,8 @@
       <file leaf-file-name="facebook.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -402,12 +402,12 @@
       <workItem from="1475464055360" duration="428000" />
       <workItem from="1475504361299" duration="1719000" />
       <workItem from="1475518950740" duration="73000" />
-      <workItem from="1475519526502" duration="12164000" />
+      <workItem from="1475519526502" duration="11958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197826000" />
+    <option name="totallyTimeSpent" value="197620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,7 +420,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25614297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -834,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
           <folding />
         </state>
       </provider>

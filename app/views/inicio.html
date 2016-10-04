@@ -1,4 +1,4 @@
-<header class="row video-container">
+<header class="row video-container z-depth-1">
     <div id="video" class="homepage-hero-module">
         <div class="video-container center">
             <video autoplay loop class="fillWidth">
@@ -8,7 +8,7 @@
     </div>
 
     <!--contador-->
-    <div id="countdown" >
+    <div id="countdown" ng-controler="ValidarReg">
         <!--{{loadcount()}}-->
         <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
         <div id="clock">
@@ -23,7 +23,10 @@
         </div>
         <div class="row">
             <div class="center">
-                <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
+                <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br> Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
+                <div class="row"></div>
+                <div class="row"></div>
+                <a href="" class="btn green" ng-click="Validar()">Sube tu Idea</a>
             </div>
         </div>
     </div>
@@ -70,7 +73,7 @@
     <h4 class="titulo">Inspírate y aporta tus mejores ideas</h4>
     <article class="row">
         <div class="col s12 m3">
-            <div ng-style="cardcopia" class="card-panel cardfome hoverable z-depth-1">
+            <div ng-style="cardcopia" class="card-panel cardfome hoverable z-depth-1 justify">
                 <span class="flow-text">Ideatón apuesta por encontrar ideas que aporten con la inclusión de las personas
                         con discapacidad y que estén enfocadas en cualquiera de estos ámbitos.</span>
                 <!--<div class="card-content">

@@ -45,7 +45,7 @@
                             <p class="letra-detproy">Votos: {{votos}}</p>
                             <div ng-controller="ValidarReg">
                                 <div ng-controller="ValidarVotoCtrl">
-                                <div class="color-scroll" ng-hide="islogin"><a class="btn blue darken-4" href='#login-modal' modal>Logeate para Votar!</a></div>
+                                <div class="color-scroll" ng-hide="islogin"><a class="btn blue darken-4" href='#login-modal' modal>Ingresa para Votar!</a></div>
                                   <div  ng-show="islogin" ng-controller="VotosCtrl">
                                    <button id="votar" ng-hide="isvote" class="pink btn-large" ng-click="Votar()"><i class="fa fa-heart"></i><span>Apoyar</span></button>
                                   </div>
@@ -148,7 +148,7 @@
             </div>
         </form>
             <div ng-hide="islogin" class="center">
-                <a class="btn blue darken-4" href='#login-modal' modal>Logeate para comentar!</a>
+                <a class="btn blue darken-4" href='#login-modal' modal>Ingresa para comentar!</a>
             </div>
         </div>
     </div>

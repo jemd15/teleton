@@ -19,6 +19,7 @@ angular.module('validacion',['ngStorage','ngSanitize'])
 
 
      $scope.Validar=function () {
+         console.log("fui presionado");
          if($sessionStorage.islogin != 1)
          {
              $('#login-modal').openModal();

@@ -5,28 +5,29 @@
                 <source src="app/videos/The-Boulevard.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             </video>
         </div>
-    </div>
 
-    <!--contador-->
-    <div id="countdown" ng-controler="ValidarReg">
-        <!--{{loadcount()}}-->
-        <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
-        <div id="clock">
-            <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>
-        </div>
-        <!--<div  ng-bind-html="clock"></div>-->
-        <div id="units">
-            <span class="white-text">Días</span>
-            <span class="white-text">Hrs</span>
-            <span class="white-text">Min</span>
-            <span class="white-text">Seg</span>
-        </div>
-        <div class="row">
-            <div class="center">
-                <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br> Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
-                <div class="row"></div>
-                <div class="row"></div>
-                <a href="" class="btn green" ng-click="Validar()">Sube tu Idea</a>
+        <!--contador-->
+        <div id="countdown">
+            <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
+            <div id="clock">
+                <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>
+            </div>
+            <!--<div  ng-bind-html="clock"></div>-->
+            <div id="units">
+                <span class="white-text">Días</span>
+                <span class="white-text">Hrs</span>
+                <span class="white-text">Min</span>
+                <span class="white-text">Seg</span>
+            </div>
+            <div class="row center" ng-controller="ValidarReg">
+                <div class="col s6 m12">
+                    <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br> Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
+                </div>
+                <div class="col s6 m12">
+                    <div class="row hide-on-med-and-down"></div>
+                    <div class="row hide-on-med-and-down"></div>
+                    <a href='' class="btn green" ng-click="Validar()">Sube tu Idea</a>
+                </div>
             </div>
         </div>
     </div>

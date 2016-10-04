@@ -1,6 +1,6 @@
 div#countdown{
     position: absolute;
-    top: 200px;
+    top: 100px;
     z-index: 98;
     left: 20%;
     right: 20%;
@@ -64,12 +64,17 @@ div#countdown{
 }
 @media (max-width: 970px){
     div#countdown{
-        top: 150px;
+        top: 50px;
     }
 }
-@media (max-width: 660px){
+@media (max-width: 740px){
     div#countdown{
-        top: 100px;
+        top: 50px;
+    }
+}
+@media (max-width: 800px){
+    div#countdown{
+        top: 25px;
     }
 }
 @media (max-width: 550px){

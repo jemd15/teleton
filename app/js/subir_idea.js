@@ -130,8 +130,8 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
                     $timeout(function () {
                         swal({
-                                title: "Idea Subida con exito!",
-                                text: "Tu Idea será moderadada, espéra los resultados en las proximas horas!",
+                                title: "Idea Subida con éxito!",
+                                text: "Tu Idea será moderadada, espera los resultados en las próximas horas!",
                                 type: "success",
                                 confirmButtonColor: "#DD6B55",
                                 confirmButtonText: "Aceptar",

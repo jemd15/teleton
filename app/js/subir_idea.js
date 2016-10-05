@@ -58,8 +58,8 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
 
 
         $scope.UpIdea = function () {
-            var config;
-
+            $('#cargando-modal').openModal();
+            var config
 
             var obj = {
                 title: $scope.nombre,
@@ -138,6 +138,7 @@ angular.module('SubirIdea', ['naif.base64','youtube-embed'])
                                 closeOnConfirm: true
                             },
                             function () {
+                                $('#cargando-modal').closeModal();
                                 $location.path("/inicio");
                             });
                     }, 1000);

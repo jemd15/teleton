@@ -9,7 +9,7 @@
     <div class="row grey darken-4 z-depth-1">
         <h4 class="col s12 m10 white-text">Más votados</h4>
         <a ui-sref="detalle-categoria-ordenada({categoriaName: nombre_original_cat, orden: 'mas-votados'})" class="btn right col m2 green">Ver Todos</a>
-        <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'mas-votados' | limitTo:3">
+        <div class="col s12 m4" ng-repeat="idea in ideas | orderBy:'-num_vote' | limitTo:3">
             <div class="card medium hoverable">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" ng-src="{{idea.main_image}}">

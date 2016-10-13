@@ -47,7 +47,7 @@ total_horas_perdidas_aquí = 0;
                 <a ui-sref="inicio" class="brand-logo"><img class="hide-on-small-only" src="app/images/Ideatón-Logo.svg" alt=""><img class="hide-on-med-and-up" src="app/images/ampolleta.svg" alt=""></a>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><h6>{{num_ideas}}</h6></li>
+                    <li ui-sref-active="active"><a ui-sref="detalle-categoria({ categoriaName: 'todas'})" class="waves-effect btn_lindo btn green z-depth-3">{{num_ideas}} Ideas</a></li>
                     <li ui-sref-active="active"><a ui-sref="inicio">Inicio</a></li>
                     <li ui-sref-active="active"><a class='dropdown-button' href='javascript:void(0);' data-activates='categorias' dropdown data-hover="true">Ideas</a></li>
                     <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>

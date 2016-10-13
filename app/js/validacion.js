@@ -11,11 +11,23 @@ angular.module('validacion',['ngStorage','ngSanitize'])
             $scope.email = $sessionStorage.email;
 
     }*/
+    //NUMERO DE IDEAS
+    var apiUrl = envService.read('apiUrl');
+    $http.get(apiUrl + "/ideas/?state=1")
+        .success(function (data, status, headers) {
+            $scope.num_ideas=data.count;
+        })
+        .error(function (data, status, header) {
+            console.log("FALLO"+data);
+        });
+
 
     $scope.logout=function () {
         $sessionStorage.$reset();
         $state.go('inicio', {}, {reload: true});
     }
+
+
 
 
      $scope.Validar=function () {

@@ -42,11 +42,9 @@ nav ul a i{
 nav ul a:hover{
     color: #4caf50;
 }
-.btn_lindo:hover{
-    color:white;
-}
-.btn_lindo{
-    margin-top: 32px!important;
+.btn-brand-logo{
+    margin-top: 22px!important;
+    padding: 0 10px!important;
 }
 .dropdown-content li > a:hover{
     color: #4caf50 !important;

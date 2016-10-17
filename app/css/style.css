@@ -231,7 +231,6 @@ a#team{
     padding: 0;
     text-transform: none;
 }
-
 .cardfome{
     display: block;
     border-radius: 2px 2px 0 0;
@@ -242,7 +241,9 @@ a#team{
     bottom: 0;
     width: 100%;
     overflow:hidden;
-
+}
+#header-movil{
+    margin-top: 8px;
 }
 
 

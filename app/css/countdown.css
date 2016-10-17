@@ -64,29 +64,17 @@ div#countdown{
 }
 @media (max-width: 970px){
     div#countdown{
-        top: 50px;
-    }
-}
-@media (max-width: 740px){
-    div#countdown{
-        top: 50px;
-    }
-}
-@media (max-width: 800px){
-    div#countdown{
-        top: 25px;
+        top: 60px;
     }
 }
 @media (max-width: 550px){
     div#countdown{
-        top: 50px;
         left: 10%;
         right: 10%;
     }
 }
 @media (max-width: 440px){
     div#countdown{
-        top: 50px;
         left: 0;
         right: 0;
     }

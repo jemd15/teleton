@@ -8,6 +8,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
+    $('ul .indicators').addClass('hide');
 
     $('.ir-arriba').click(function(){
         $('body, html').animate({
@@ -24,14 +25,3 @@ $(document).ready(function(){
     });
 
 });
-/*
-
-$(document).ready(function() {
-    var heights = $(".igualar-height").map(function() {
-            return $(this).height();
-        }).get(),
-
-        maxHeight = Math.max.apply(null, heights);
-
-    $(".igualar-height").height(maxHeight);
-});*/

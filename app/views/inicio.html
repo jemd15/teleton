@@ -1,18 +1,47 @@
-<header class="row video-container z-depth-1">
-    <div id="video" class="homepage-hero-module">
-        <div class="video-container center">
-            <video autoplay loop class="fillWidth">
-                <source src="app/videos/The-Boulevard.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            </video>
-        </div>
+<header class="row">
+    <div class="video-container hide-on-med-and-down z-depth-1">
+        <div id="video" class="homepage-hero-module">
+            <div class="video-container center">
+                <video autoplay loop class="fillWidth">
+                    <source src="app/videos/The-Boulevard.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
+            </div>
 
+            <!--contador-->
+            <div id="countdown">
+                <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
+                <div id="clock">
+                    <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>
+                </div>
+                <!--<div  ng-bind-html="clock"></div>-->
+                <div id="units">
+                    <span class="white-text">Días</span>
+                    <span class="white-text">Hrs</span>
+                    <span class="white-text">Min</span>
+                    <span class="white-text">Seg</span>
+                </div>
+                <div class="row center" ng-controller="ValidarReg">
+                    <div class="col s6 m12">
+                        <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br> Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
+                    </div>
+                    <div class="col s6 m12">
+                        <div class="row hide-on-med-and-down"></div>
+                        <div class="row hide-on-med-and-down"></div>
+                        <a href='' class="btn green z-depth-3" ng-click="Validar()">Sube tu Idea</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="header-movil" class="hide-on-large-only">
+        <img src="app/videos/The-Boulevard.png" width="100%" class="z-depth-1">
         <!--contador-->
         <div id="countdown">
             <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
             <div id="clock">
                 <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>
             </div>
-            <!--<div  ng-bind-html="clock"></div>-->
             <div id="units">
                 <span class="white-text">Días</span>
                 <span class="white-text">Hrs</span>
@@ -20,10 +49,10 @@
                 <span class="white-text">Seg</span>
             </div>
             <div class="row center" ng-controller="ValidarReg">
-                <div class="col s6 m12">
+                <div class="col s12">
                     <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br> Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
                 </div>
-                <div class="col s6 m12">
+                <div class="col s12">
                     <div class="row hide-on-med-and-down"></div>
                     <div class="row hide-on-med-and-down"></div>
                     <a href='' class="btn green z-depth-3" ng-click="Validar()">Sube tu Idea</a>

@@ -1,7 +1,6 @@
-<!--noticias-->
-<section ng-controller="NoticiasCtrl">
-    <br>
-    <h4 class="titulo center">Noticias</h4>
+<section ng-controller="NoticiasCtrl" class="row">
+<br/>
+    <div class="center"><h3>Infórmate sobre #Ideatón</h3></div>
     <article class="row">
         <div class="col s12 m4 l4" ng-repeat="noticia in noticias | orderBy:'-id'">
             <div class="card hoverable medium">

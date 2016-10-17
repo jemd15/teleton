@@ -1,5 +1,8 @@
 <section ng-controller="IdeasCtrl" class="row">
-    <h2>{{nombre_cat}}</h2>
+  <div class="center">
+      <br/>
+        <h3>{{nombre_cat}}</h3>
+  </div>
     <div class="col s12 m4" ng-repeat="idea in ideas | orderBy: orden_categoria">
         <!--div class="card medium hoverable"-->
             <div class="card medium hoverable">

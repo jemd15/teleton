@@ -9,7 +9,9 @@
 
             <!--contador-->
             <div id="countdown" ng-controller="ValidarReg">
-                <h1 class="center white-text flow-text">¡YA TENEMOS {{num_ideas}} IDEAS!</h1>
+                <div class="row">
+                    <h1 class="center white-text flow-text">¡YA TENEMOS <strong class="green-text grey darken-4 circle">{{num_ideas}}</strong> IDEAS!</h1>
+                </div>
                 <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
                 <div id="clock">
                     <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>

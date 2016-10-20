@@ -8,9 +8,8 @@
             </div>
 
             <!--contador-->
-
-            <div id="countdown">
-                <h1 class="center white-text flow-text">¡YA TENEMOS XX IDEAS!</h1>
+            <div id="countdown" ng-controller="ValidarReg">
+                <h1 class="center white-text flow-text">¡YA TENEMOS {{num_ideas}} IDEAS!</h1>
                 <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
                 <div id="clock">
                     <div countdown='' date='November 10, 2016 23:59:59'>&nbsp;</div>
@@ -22,7 +21,7 @@
                     <span class="white-text">Min</span>
                     <span class="white-text">Seg</span>
                 </div>
-                <div class="row center" ng-controller="ValidarReg">
+                <div class="row center">
                     <div class="col s6 m12">
                         <h5 class="white-text col s12 flow-text">¿Qué harías si el mundo no estuviera diseñado para ti? <br/>Sube tu idea y súmate a una nueva forma de pensar la discapacidad.</h5>
                     </div>
@@ -38,6 +37,7 @@
 
     <div id="header-movil" class="hide-on-large-only">
         <img src="app/videos/The-Boulevard.png" width="100%" class="z-depth-1">
+
         <!--contador-->
         <div id="countdown">
             <h3 class="center white-text flow-text">Etapa Ideación | Sólo quedan:</h3>
@@ -66,6 +66,7 @@
 
 <!--Auspiciadores -->
 <section class="row">
+    
     <!--h4>Auspician</h4-->
     <div class="col s12 m6 l3">
         <h6>Esta es una iniciativa de:</h6>

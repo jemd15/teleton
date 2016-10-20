@@ -42,10 +42,6 @@ nav ul a i{
 nav ul a:hover{
     color: #4caf50;
 }
-.btn-brand-logo{
-    margin-top: 22px!important;
-    padding: 0 10px!important;
-}
 .dropdown-content li > a:hover{
     color: #4caf50 !important;
 }
@@ -231,6 +227,7 @@ a#team{
     padding: 0;
     text-transform: none;
 }
+
 .cardfome{
     display: block;
     border-radius: 2px 2px 0 0;
@@ -241,9 +238,10 @@ a#team{
     bottom: 0;
     width: 100%;
     overflow:hidden;
-}
-#header-movil{
-    margin-top: 8px;
+
 }
 
 
+h1.center.white-text.flow-text{
+    font-size: 3em;
+}

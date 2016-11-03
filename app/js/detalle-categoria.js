@@ -7,6 +7,7 @@ angular.module('detalle-categoria',['rutas'])
         var categoria = $stateParams.categoriaName;
         var ordenamiento = $stateParams.orden;
         var id_categoria;
+
         $scope.nombre_original_cat = $stateParams.categoriaName;
 
         switch(ordenamiento){
@@ -53,21 +54,17 @@ angular.module('detalle-categoria',['rutas'])
         }
 
         var apiUrl = envService.read('apiUrl');
-        $http.get(apiUrl + "/ideas/?category__id="+id_categoria+'&state=1')
+        var ideaUrl = apiUrl + "/ideas/?state=1"; //filtramos solo las "moderadas"
+
+        if( categoria != "todas"){ //en caso de seleccionar una categoría se especifica cual es
+          ideaUrl = ideaUrl + "&category__id="+id_categoria;
+        }
+
+        $http.get(ideaUrl)
             .success(function (data, status, headers, config) {
                $scope.ideas = data.results;
             })
             .error(function (data, status, header, config) {
                 console.log("FALLO:"+data);
             });
-
-        if( categoria == "todas"){
-            $http.get(apiUrl + "/ideas/?state=1")
-                .success(function (data, status, headers, config) {
-                    $scope.ideas = data.results;
-                })
-                .error(function (data, status, header, config) {
-                    console.log("FALLO:"+data);
-                });
-        }
     }]);

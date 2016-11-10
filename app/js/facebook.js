@@ -5,7 +5,8 @@ angular.module('AppFace', ['facebook','ngStorage',])
     .config([
         'FacebookProvider',
         function(FacebookProvider) {
-            var myAppId = '1267990573260917';
+            var myAppId = '1267990573260917'; //Desarrollo
+            //var myAppId = '1192059834191298'; //Producción
 
             // You can set appId with setApp method
             // FacebookProvider.setAppId('myAppId');

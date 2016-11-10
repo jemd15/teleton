@@ -1,4 +1,4 @@
-var app = angular.module('ideaton',['rutas','720kb.socialshare','AppFace', 'AppGoogle','validacion','registro','SubirIdea','detalle-idea','inicio','detalle-categoria','contador','detalle-noticia' , 'environment']);
+var app = angular.module('ideaton',['rutas','720kb.socialshare','AppFace', 'AppGoogle','validacion','registro','SubirIdea','detalle-idea','inicio','detalle-categoria','contador','detalle-noticia' , 'contador-ideas','environment']);
 
 app.run(function($rootScope,$sessionStorage,$state){
     $rootScope.$on('$stateChangeSuccess', function() {

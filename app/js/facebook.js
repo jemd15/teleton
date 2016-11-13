@@ -5,8 +5,8 @@ angular.module('AppFace', ['facebook','ngStorage',])
     .config([
         'FacebookProvider',
         function(FacebookProvider) {
-            var myAppId = '1267990573260917'; //Desarrollo
-            //var myAppId = '1192059834191298'; //Producción
+            //var myAppId = '1267990573260917'; //Desarrollo
+            var myAppId = '1192059834191298'; //Producción
 
             // You can set appId with setApp method
             // FacebookProvider.setAppId('myAppId');
@@ -203,8 +203,8 @@ angular.module('AppFace', ['facebook','ngStorage',])
                                     $('#cargando-modal').closeModal();
                                     console.log(data);
                                     swal({
-                                            title: "Algo salió mal!",
-                                            text: "Intentalo de nuevo!",
+                                            title: "Tu correo se encuentra ingresado previamente",
+                                            text: "Por favor, intenta loguearte con tu cuenta de Google",
                                             type: "error",
                                             confirmButtonColor: "#DD6B55",
                                             confirmButtonText: "Aceptar",

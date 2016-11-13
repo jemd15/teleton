@@ -3,8 +3,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
     .config(['GoogleSigninProvider',
         function (GoogleSigninProvider) {
             GoogleSigninProvider.init({
-                client_id: '708699237962-vvd72e3atlu3eao56gmpe1kb87il8l44.apps.googleusercontent.com', //Desarrollo
-                //client_id: '967523360840-74o0m867ttit62dal7ivklnjc3ore6gf.apps.googleusercontent.com', //Producción
+                //client_id: '708699237962-vvd72e3atlu3eao56gmpe1kb87il8l44.apps.googleusercontent.com', //Desarrollo
+                client_id: '967523360840-74o0m867ttit62dal7ivklnjc3ore6gf.apps.googleusercontent.com', //Producción
             });
         }
     ])
@@ -246,8 +246,8 @@ angular.module('AppGoogle', ['google-signin', 'ngStorage','rutas','oitozero.ngSw
                                     .error(function (data, status, header, config) {
                                         console.log("FALLO"+data);
                                         swal({
-                                                title: "Algo salió mal!",
-                                                text: "Intentalo de nuevo!",
+                                                title: "Tu correo se encuentra ingresado previamente",
+                                                text: "Por favor, intenta loguearte con tu cuenta de Facebook!",
                                                 type: "error",
                                                 confirmButtonColor: "#DD6B55",
                                                 confirmButtonText: "Aceptar",
